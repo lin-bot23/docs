@@ -1,10 +1,11 @@
 ---
 title: '通过 API Key 集成来使用 ComfyUI API 节点'
 description: '本文介绍了如何通过 API Key 集成来使用 ComfyUI API 节点'
-sidebarTitle: 'API Key 集成'
+sidebarTitle: 'Partner Node API 集成'
+icon: 'puzzle-piece'
 ---
 
-从[PR #8041](https://github.com/comfyanonymous/ComfyUI/pull/8041)开始，ComfyUI 支持通过创建 API Key 来直接使用 ComfyUI 内置的 API 节点，无需特定的前端界面（甚至可以完全不使用前端）。
+从[PR #8041](https://github.com/Comfy-Org/ComfyUI/pull/8041)开始，ComfyUI 支持通过创建 API Key 来直接使用 ComfyUI 内置的 API 节点，无需特定的前端界面（甚至可以完全不使用前端）。
 
 这意味着你可以创建工作流来组合：
 - 本地操作系统模型
@@ -18,11 +19,11 @@ sidebarTitle: 'API Key 集成'
 ## 前提条件
 
 使用 API Key 来调用 ComfyUI 内置的 API 节点需要：
-- 确保你的 ComfyUI 版本 >= [PR #8041](https://github.com/comfyanonymous/ComfyUI/pull/8041)
-- 对应账户的 API Key
+- 确保你的 ComfyUI 版本 >= [PR #8041](https://github.com/Comfy-Org/ComfyUI/pull/8041)
+- 对应账户的 [API Key](/zh/development/api-development/getting-an-api-key)
 - 足够的账户积分
 
-使用 API Key 来调用 ComfyUI 内置的 API 节点需要先在 [ComfyUI Platform](https://platform.comfy.org/login) 上注册一个账户，然后创建 API key
+使用 API Key 来调用 ComfyUI 内置的 API 节点需要先在 [ComfyUI Platform](https://platform.comfy.org/login) 上注册一个账户，然后[创建 API key](/zh/development/api-development/getting-an-api-key)
 
 <Card title="使用 API Key 进行登录" icon="link" href="/zh/interface/user#使用-api-key-进行登录">
 请参考用户界面章节了解如何使用 API Key 进行登录

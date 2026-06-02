@@ -1,10 +1,197 @@
 ---
 title: "変更履歴"
-description: "ComfyUI の最新機能、改善点、およびバグ修正を追跡します。詳細なリリースノートについては、[GitHub リリースページ](https://github.com/comfyanonymous/ComfyUI/releases) をご覧ください。"
+description: "ComfyUI の最新機能、改善点、およびバグ修正を追跡します。詳細なリリースノートについては、[GitHub リリースページ](https://github.com/Comfy-Org/ComfyUI/releases) をご覧ください。"
 icon: "clock-rotate-left"
 translationSourceHash: c4a3b192
 translationFrom: changelog/index.mdx, zh/changelog/index.mdx
 ---
+
+<Update label="v0.22.0" description="2026年5月20日">
+
+**オープンソースモデル対応**
+* [**Stable Audio 3.0**](https://blog.comfy.org/p/stable-audio-3-day-0-support)：音声生成能力を強化した最新の Stable Audio 3 モデルに対応
+* **MoGe：** ジオメトリ処理を強化する MoGe モデルに対応
+* **HiDream-O1：** より精密な画像生成制御のためのエリア条件付けに対応
+* **LTXV 強化：** ダウンスケール IC-LoRA と任意の attention_mask 入力で動画制御を改善
+* **時系列処理：** downscale_ratio_temporal を実装し、動画ワークフローの時系列制御を改善
+* **LTX2.3 最適化：** guide_mask 使用時のピーク VRAM を削減し、動画生成を効率化
+
+**パートナーノード**
+* **Seed2.0：** ByteDance の言語モデル機能を強化する新ノードを追加
+* **Opus 4.7：** 非推奨の temperature パラメータを修正し、モデル互換性を改善
+
+**ノード強化**
+* **StringFormat ノード：** ワークフロー内の高度な文字列操作向けに新規追加
+* **音声処理：** 音声潜在ノードの時系列ダウンスケールを改善し、再利用性を向上
+* **バッチノード：** Image／Mask／Latent バッチノードの最小バッチサイズを 2 から 1 に変更し、柔軟性を向上
+* **負の値のサポート：** 特定ノードパラメータで負の値を許可し、表現の幅を拡大
+
+**その他**
+* **モデルサンプリング：** 連鎖する model_sampling パッチ間で noise_scale／shift を保持し、結果の一貫性を確保
+* **テキスト生成：** Qwen3.5 のマルチ画像プロンプト処理を修正し、テキスト生成ワークフローを改善
+* **Dynamic CLIP：** 動的 CLIP の保存機能を適切に実装
+* **BiRefNet：** 互換性の問題を解消し、背景除去の性能を改善
+* **Hunyuan3D 2.1：** attention と forward pass のバッチサイズクラッシュを修正
+* 各種ノードの表示名・説明・カテゴリを更新し、ユーザー体験を改善
+* フロントエンドのバージョン警告を改善し、互換性チェックを強化
+* README にアプリおよびクラウドへのリンクを追加し、リソースへのアクセスを改善
+* セキュリティドキュメントと採用情報をプロジェクトリソースに追加
+* FeatherMask の負のゼロインデックスを修正し、右／下方向のフェザリングを正常化
+* OOM メモリサマリーのフォーマットを修正し、エラー表示を明確化
+* バッチ処理の問題を修正し、モデル読み込みの安定性を改善
+* 各種ワークフロー互換性および非推奨パラメータの処理を解消
+
+</Update>
+
+<Update label="v0.21.1" description="2026年5月13日">
+
+**新しいパートナーノード**
+* **Flux2ImageNode / GrokImageEditNodeV2：** 画像生成・編集ワークフローを強化するノードを追加
+* **ByteDanceSeedreamNodeV2：** DynamicCombo と Autogrow によりパラメータを扱いやすくした新版
+* **OpenAI Image ノード：** DynamicCombo／Autogrow に対応した新しい統合
+* **Claude LLM ノード：** テキスト生成ワークフロー向けに Claude 言語モデルを追加
+
+**モデル対応の強化**
+* **Anima TE LoRA：** Kohya 形式の Anima TE LoRA に対応
+* **HiDream-O1-Image：** dtype 修正と非ダイナミック VRAM 構成でのメモリ使用改善を含め、HiDream-O1-Image をフル対応
+
+**技術面の改善**
+* モデルパッチャーで fp8 形式の Safetensors 保存が正しく行われるよう修正
+* LTXV の動画中盤でのマルチフレームガイドの整合を修正し、動画処理を改善
+* RuntimeError を解消し VOID モデルの互換性を向上
+* Save3D ノードで頂点カラーおよびテクスチャに対応し、3D ワークフローを拡充
+
+**UI・ドキュメント**
+* 「動画を作成」をエッセンシャルタブに追加し、動画生成ワークフローへのアクセスを改善
+* 埋め込みドキュメントを v0.5.0、ワークフローテンプレートを v0.9.75 に更新
+* LoadAudio の `define_schema` で入力ディレクトリ作成を修正し、音声ワークフローを改善
+
+**バグ修正**
+* ワークフロー互換のための破壊的変更をロールバック
+* Quiver ノードの動作を修正
+* OpenAPI で非推奨のクラウドランタイムエンドポイントの記述を是正
+
+</Update>
+
+<Update label="v0.21.0" description="2026年5月11日">
+
+**オープンソースモデル対応**
+* [**BiRefNet**](https://github.com/Comfy-Org/ComfyUI/pull/12747)：背景除去
+* [**Gemma4**](https://github.com/Comfy-Org/ComfyUI/pull/13376)：LLM テキスト生成
+* [**Void**](https://github.com/Comfy-Org/ComfyUI/pull/13403)：パス 1／2 モデル対応
+
+**パートナーモデル対応**
+* [**Tripo 3.1**](https://github.com/Comfy-Org/ComfyUI/pull/13788)：本番運用を想定した 3D 生成
+* **NanoBanana2** ノード v2：DynamicCombo と Autogrow の UX 更新
+
+**ノード改善**
+* **Math Expression：** Boolean 対応でより複雑な計算が可能に
+* **Flux2 潜在プレビュー：** Flux2 潜在の高品質プレビュー
+* **コア Blueprint：** 新しい組み込み Blueprint テンプレート
+
+**バグ修正・安定性**
+* LTX-2.x が出力した音声潜在との VAEDecodeAudio 互換性を修正
+* SolidMask／MaskComposite のデバイス不一致を解消
+* そのほかの修正（CPU TE メタテンソル処理、ポート使用中エラー、末尾アンダースコアなしの保存ファイル名など）
+
+**その他のモデル・メディア**
+* **CogVideoX：** 動画生成モデル対応
+* **Wan-Dancer：** モデル対応
+* **メディア読み込み：** 動画ローダーで音声／動画を統合読み込み；画像は Pillow から PyAV へ（JPEG メモリ、tRNS PNG）；メタデータに基づく向きの自動補正
+
+**パフォーマンス・動画生成**
+* ブロック先読みと LoRA 非同期読み込み（LTX などで効果大）
+* 動的 VRAM 調整（`--cache-ram 2`、動画処理のピーク VRAM 低減）
+* Triton ComfyUI kitchen 用 CLI オプション
+* 自己回帰動画、因果モデル向け I2V、`causal_window_fix`、フレーム補間のメモリ／オーバーヘッド改善
+
+**追加のパートナー統合**
+* **Luma UNI-1**、**Topaz Astra 2**、**GPT-5.5**／**GPT-5.5-pro**
+
+**ノードまわりの追加修正**
+* `--gpu-only` 時の画像ブレンド、JoinImageWithAlpha のバッチブロードキャスト、SplitImageToTileList／ImageMergeTileList のタイルストライド
+
+**開発者・API**
+* `--feature-flag` レジストリ、OpenAPI（クラウドランタイムと実験エンドポイント）、Blueprint サブグラフの説明、ControlNet の決定的な読み込み順序
+
+</Update>
+
+<Update label="v0.20.1" description="2026年4月27日">
+
+**新しいモデル対応**
+* **SUPIR：** SUPIR 画像超解像モデルに対応
+* **SAM 3.1：** Segment Anything Model 3.1 に対応し、高度な画像セグメンテーションを実現
+* **RIFE / FILM：** スムーズな動画フレーム生成のためのフレーム補間モデルを追加
+* **LTXV Audio VAE：** 単体の LTXV Audio VAE モデルに対応し、ネイティブ統合を改善
+
+**パートナーノードの強化**
+* **動画生成：** ByteDance 2 / Veo / Kling ノードに 4K 解像度対応を追加
+* **Veo 3 Lite：** より高速な動画生成向けの軽量版 Veo モデルを追加
+* **SD2 Real Human：** Stable Diffusion 2 のリアル人物生成に対応
+* **GPT-Image 2：** 新しいバージョンオプション、追加解像度対応、価格バッジ修正
+* **HappyHorse：** 新しいモデル統合で画像生成機能を強化
+
+**パフォーマンス最適化**
+* Ernie モデル推論を最適化し高速化
+* LTXV Audio VAE 処理をよりネイティブな実装に改善
+* ModelPatcherDynamic を強化し、ComfyUI レイヤー向けの重み処理を改善
+* 実行システムにアンチサイクル検証を追加し、ワークフロー安定性を向上
+
+**動画処理の改善**
+* より高ビット深度の動画読み込みに対応し、色再現を改善
+* 動画読み込みで透明度（アルファ）チャンネルに対応
+* ByteDance 2 ノードに自動スケーリング機能を追加し処理を最適化
+
+**技術更新**
+* SQLAlchemy のバージョン固定（>= 2.0）を修正し、DB 互換性を改善
+* ComfyUI アプリファイルのログ機能を強化し、デバッグを改善
+* OpenAPI 3.1 仕様を追加し、API ドキュメントを拡充
+* textureSize を用いて、ぼかし／シャープ化のシェーダー処理を改善
+
+**UI / フロントエンド**
+* ComfyUI フロントエンドを 1.42.15 に更新（各種改善）
+* Preview Any ノードを強化し、より多くのテンソル値を表示してデバッグ性を向上
+* range 型サポートを追加し、ノードパラメータ処理を改善
+
+</Update>
+
+<Update label="v0.20.0" description="2026年4月27日">
+
+**新しいモデル対応**
+* **SUPIR モデル対応：** 高品質なアップスケール用の強化型超解像機能を追加
+* **RIFE / FILM フレーム補間：** スムーズな動画遷移のための高度なフレーム補間モデルを導入
+* **SAM 3.1 対応：** Segment Anything Model を更新し、セグメンテーション精度を向上
+* **LTXV 音声 VAE 改善：** 単体の LTXV 音声 VAE に対応し、ネイティブ音声処理を強化
+
+**パフォーマンス最適化**
+* Ernie 推論を最適化し、生成時間を短縮
+* ワークフロー実行ループを防ぐアンチサイクル検証を追加
+* ModelPatcherDynamic の重み処理を改善し、モデル互換性を向上
+
+**動画処理の強化**
+* より高ビット深度の動画読み込みに対応し、品質保持を改善
+* 動画読み込みワークフローでアルファチャンネルに対応
+* 大容量動画を扱うため、ByteDance 2 ノードに自動ダウンスケール機能を追加
+
+**パートナーノードの更新**
+* **Veo モデル：** 4K 解像度対応と Veo 3 Lite モデルを追加
+* **Kling ノード：** 4K 解像度対応を強化
+* **GPTImage：** `gpt-image-2` のバージョン選択と新しい解像度に対応
+* **HappyHorse モデル：** 新しいパートナーモデルを統合
+* **SD2 Real Human 対応：** リアルな人物生成能力を強化
+
+**UI / API の改善**
+* OpenAPI 3.1 仕様を追加し、API ドキュメントを改善
+* ぼかし／シャープ化シェーダーの textureSize 処理を修正し、効果をより正確に
+* Preview Any ノードを強化し、デバッグ用により多くのテンソル値を表示
+
+**バグ修正**
+* SQLAlchemy 互換性のため、バージョンを >= 2.0 に固定
+* Stable_Zero123 の cc_projection 重みのパラメータ割り当てを修正
+* LTXV Reference Audio ノードの動作を修正
+* veo-3.0 モデルの 4K 解像度制限を修正
+
+</Update>
 
 <Update label="v0.19.3" description="2026年4月17日">
 

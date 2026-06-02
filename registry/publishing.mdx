@@ -27,7 +27,7 @@ Your publisher id is found after the `@` symbol on your profile page.
 ### Create a Registry Publishing API Key
 
 <Note>
-  **Important:** This API key is specifically for **publishing custom nodes to the Registry and ComfyUI-Manager**. If you're looking to use paid API nodes in your workflows instead, see [API Nodes Overview](/tutorials/partner-nodes/overview).
+  **Important:** This API key is specifically for **publishing custom nodes to the Registry and ComfyUI-Manager**. If you're looking to use paid Partner Nodes in your workflows instead, see [Partner Nodes Overview](/tutorials/partner-nodes/overview).
 </Note>
 
 Go [here](https://registry.comfy.org/nodes) and click on the publisher you want to create an API key for. This key will be used to publish custom nodes to the Registry (which powers ComfyUI-Manager) via the CLI or GitHub Actions. 
@@ -67,6 +67,26 @@ Icon = "https://example.com/icon.png" # SVG, PNG, JPG or GIF (MAX. 800x400px)
 ```
 
 Add this file to your repository. Check the [specifications](/registry/specifications) for more information on the pyproject.toml file.
+
+### Exclude Files with `.comfyignore`
+
+By default `comfy node publish` packages every file tracked by `git`. To keep development-only files (tests, design assets, large samples) out of the published archive, add a `.comfyignore` file to your repository root. The syntax matches [`.gitignore`](https://git-scm.com/docs/gitignore):
+
+```gitignore
+# Development-only assets
+docs/
+tests/
+*.psd
+.vscode/
+```
+
+<Note>
+
+- `.comfyignore` layers on top of `.gitignore` — files not tracked by git are already excluded. Use `.comfyignore` to drop files you *keep* in git but don't want in the registry archive.
+- Directories listed in [`[tool.comfy].includes`](/registry/specifications) are force-included even if they match a `.comfyignore` pattern (useful when a built `dist/` folder is git-ignored but must ship).
+- Commit `.comfyignore` to your repo so local runs and CI produce the same archive.
+
+</Note>
 
 ## Publish to the Registry
 

@@ -1,8 +1,194 @@
 ---
 title: "Changelog"
-description: "Track ComfyUI's latest features, improvements, and bug fixes. For detailed release notes, see the [Github releases](https://github.com/comfyanonymous/ComfyUI/releases) page."
+description: "Track ComfyUI's latest features, improvements, and bug fixes. For detailed release notes, see the [Github releases](https://github.com/Comfy-Org/ComfyUI/releases) page."
 icon: "clock-rotate-left"
 ---
+
+<Update label="v0.22.0" description="May 20, 2026">
+
+**Open-Source Model Support**
+* [**Stable Audio 3.0**](https://blog.comfy.org/p/stable-audio-3-day-0-support): Support for the latest Stable Audio 3 model with improved audio generation capabilities
+* **MoGe:** Added support for MoGe models for enhanced geometry processing
+* **HiDream-O1:** Added area conditioning support for more precise image generation control
+* **LTXV Enhancements:** Added downscaled IC-LoRA support and optional attention_mask input for improved video control
+* **Temporal Processing:** Implemented downscale_ratio_temporal functionality for better temporal control in video workflows
+* **LTX2.3 Optimization:** Reduced peak VRAM usage when guide_mask is in use for more efficient video generation
+
+**Partner Node**
+* **Seed2.0:** New node added for enhanced language model capabilities from ByteDance
+* **Opus 4.7:** Fixed deprecated temperature parameter for better model compatibility
+
+**Node Enhancements**
+* **StringFormat Node:** New node added for advanced string manipulation in workflows
+* **Audio Processing:** Improved audio latent nodes with temporal downscale support for better reusability
+* **Batch Nodes:** Reduced minimum batch size from 2 to 1 for Image/Mask/Latent batch nodes, providing more flexibility
+* **Negative Values Support:** Allow negative values on specific node parameters for expanded creative control
+
+**Others**
+* **Model Sampling:** Preserved noise_scale/shift across chained model_sampling patches for consistent results
+* **Text Generation:** Fixed Qwen3.5 multi-image prompt handling for improved text generation workflows
+* **Dynamic CLIP:** Implemented proper dynamic CLIP saving functionality
+* **BiRefNet:** Resolved compatibility issues for better background removal performance
+* **Hunyuan3D 2.1:** Fixed batch size crashes in attention and forward pass operations
+* Various node display names, descriptions, and categories updated for better user experience
+* Improved frontend version warning system for better compatibility checking
+* Enhanced README with application and cloud links for easier access to resources
+* Added security documentation and careers information to project resources
+* Fixed FeatherMask negative zero indexing for proper right/bottom feathering
+* Corrected OOM memory summary format for clearer error reporting
+* Fixed Batch processing issues and improved model loading stability
+* Resolved various workflow compatibility issues and deprecated parameter handling
+
+</Update>
+
+<Update label="v0.21.1" description="May 13, 2026">
+
+**New Partner Nodes**
+* **Flux2ImageNode and GrokImageEditNodeV2:** Added new nodes for enhanced image generation and editing workflows
+* **ByteDanceSeedreamNodeV2:** New version with DynamicCombo and Autogrow features for improved parameter handling
+* **OpenAI Image node:** New integration with DynamicCombo and Autogrow capabilities
+* **Claude LLM node:** Added Claude language model support for text generation workflows
+
+**Model Support Enhancements**
+* **Anima TE LoRA:** Added support for Anima TE LoRA in Kohya format
+* **HiDream-O1-Image:** Full support for HiDream-O1-Image model with dtype fixes and improved memory usage for non-dynamic VRAM configurations
+
+**Technical Improvements**
+* Fixed safetensors saving of fp8 format in model patcher
+* Corrected LTXV mid-video multi-frame guide alignment for better video processing
+* Improved VOID model compatibility by fixing RuntimeError issues
+* Enhanced Save3D node to support vertex colors and textures for comprehensive 3D workflow support
+
+**UI and Documentation Updates**
+* Added "Create Video" to the essentials tab for easier access to video generation workflows
+* Updated embedded documentation to v0.5.0 and workflow templates to v0.9.75
+* Fixed input directory creation in LoadAudio define_schema for better audio workflow handling
+
+**Bug Fixes**
+* Reverted breaking changes to maintain workflow compatibility
+* Fixed Quiver nodes functionality
+* Corrected deprecated cloud-runtime endpoints marking in API specification
+
+</Update>
+
+<Update label="v0.21.0" description="May 11, 2026">
+
+**Open-source model support**
+* [**BiRefNet**](https://github.com/Comfy-Org/ComfyUI/pull/12747): Background removal
+* [**Gemma4**](https://github.com/Comfy-Org/ComfyUI/pull/13376): LLM text generation
+* [**Void**](https://github.com/Comfy-Org/ComfyUI/pull/13403): Pass 1 & 2 model support
+
+**Partner model support**
+* [**Tripo 3.1**](https://github.com/Comfy-Org/ComfyUI/pull/13788): Production-ready 3D generation
+* **NanoBanana2** node v2: DynamicCombo and Autogrow UX refresh
+
+**Node improvements**
+* **Math Expression:** Added Boolean support for more complex calculations
+* **Flux2 latent previews:** High-quality preview support for Flux2 model latents
+* **Core Blueprints:** New built-in blueprint templates
+
+**Bug fixes & stability**
+* Corrected VAEDecodeAudio compatibility with LTX-2.x generated audio latents
+* Resolved SolidMask and MaskComposite device mismatch issues
+* Other fixes and improvements (CPU TE meta-tensor handling, port-in-use errors, save filenames without trailing underscores, and more)
+
+**Additional model & media updates**
+* **CogVideoX:** Video generation models
+* **Wan-Dancer:** Model support
+* **Major media loading:** Unified audio/video in the video loader; PyAV replaces Pillow for images (JPEG memory, tRNS PNG); automatic metadata rotation
+
+**Performance & video generation**
+* Block prefetch and LoRA async loading (notably faster for LTX)
+* Dynamic VRAM tuning with `--cache-ram 2` and lower peak usage for video
+* Triton ComfyUI kitchen CLI option for advanced optimizations
+* Auto-regressive video; image-to-video for causal models; `causal_window_fix` for long sequences; improved frame interpolation memory and overhead
+
+**More partner integrations**
+* **Luma UNI-1**, **Topaz Astra 2**, **GPT-5.5** / **GPT-5.5-pro**
+
+**Further node fixes**
+* Image blending fixes with `--gpu-only`; batch broadcasting on JoinImageWithAlpha; tile stride fixes on SplitImageToTileList and ImageMergeTileList
+
+**Developer & API**
+* `--feature-flag` registry; OpenAPI cloud-runtime and experiment endpoints; blueprint subgraph descriptions; deterministic ControlNet load order
+
+</Update>
+
+<Update label="v0.20.1" description="April 27, 2026">
+
+**New Model Support**
+* **SUPIR:** Added support for SUPIR image super-resolution models
+* **SAM 3.1:** Introduced segment anything model 3.1 support for advanced image segmentation
+* **RIFE and FILM:** New frame interpolation models for smooth video frame generation
+* **LTXV Audio VAE:** Support for standalone LTXV audio VAE models with improved native integration
+
+**Partner Node Enhancements**
+* **Video Generation:** Added 4K resolution support for ByteDance 2, Veo models, and Kling nodes
+* **Veo 3 Lite:** New lightweight version of Veo model for faster video generation
+* **SD2 Real Human:** Added support for Stable Diffusion 2 real human generation
+* **GPT-Image 2:** New version option with additional resolution support and fixed price badges
+* **HappyHorse:** New model integration for enhanced image generation capabilities
+
+**Performance Optimizations**
+* Faster Ernie model inference through targeted optimizations
+* Improved LTXV audio VAE processing with more native implementation
+* Enhanced ModelPatcherDynamic with better weight handling for ComfyUI layers
+* Anti-cycle validation added to execution system for improved workflow stability
+
+**Video Processing Improvements**
+* Support for loading higher bit depth videos with proper color accuracy
+* Alpha channel support for video loading, enabling transparency workflows
+* Auto-downscaling functionality for ByteDance 2 nodes to optimize processing
+
+**Technical Updates**
+* Fixed SQLAlchemy version pinning (>=2.0) for improved database compatibility
+* Enhanced logging capabilities in ComfyUI app files for better debugging
+* Added OpenAPI 3.1 specification for comprehensive API documentation
+* Improved shader handling for blur/sharpen operations using textureSize
+
+**UI & Frontend**
+* Updated ComfyUI frontend to version 1.42.15 with various improvements
+* Enhanced Preview Any node to display more tensor values for better debugging
+* Added range type support for improved node parameter handling
+
+</Update>
+<Update label="v0.20.0" description="April 27, 2026">
+
+**New Model Support**
+* **SUPIR model support:** Added enhanced super-resolution capabilities for high-quality upscaling workflows
+* **RIFE and FILM frame interpolation:** Introduced advanced frame interpolation models for smooth video transitions
+* **SAM 3.1 support:** Updated Segment Anything Model with improved segmentation accuracy
+* **LTX audio VAE improvements:** Enhanced native audio processing with support for standalone LTXV audio VAEs
+
+**Performance Optimizations**
+* Optimized Ernie inference for faster generation times
+* Added anti-cycle validation to prevent workflow execution loops
+* Improved ModelPatcherDynamic weight handling for better model compatibility
+
+**Video Processing Enhancements**
+* Support for loading higher bit depth videos with improved quality preservation
+* Added alpha channel support for video loading workflows
+* Auto-downscaling capabilities for ByteDance 2 nodes to handle large video files
+
+**Partner Node Updates**
+* **Veo models:** Added 4K resolution support and Veo 3 Lite model
+* **Kling nodes:** Enhanced with 4K resolution capabilities
+* **GPTImage:** Added gpt-image-2 version option and new resolution support
+* **HappyHorse model:** New partner model integration
+* **SD2 real human support:** Enhanced realistic human generation capabilities
+
+**UI and API Improvements**
+* Added OpenAPI 3.1 specification for better API documentation
+* Fixed texture size handling in blur/sharpen shaders for more accurate effects
+* Enhanced Preview Any node to display more tensor values for debugging
+
+**Bug Fixes**
+* Fixed SQLAlchemy compatibility by pinning version ≥2.0
+* Resolved Parameter assignment for Stable_Zero123 cc_projection weights
+* Corrected LTXV Reference Audio node functionality
+* Fixed 4K resolution restriction for veo-3.0 models
+
+</Update>
 
 <Update label="v0.19.3" description="April 17, 2026">
 
@@ -15,7 +201,6 @@ icon: "clock-rotate-left"
 * Corrected StabilityAI price badges for accurate API node pricing information
 
 </Update>
-
 <Update label="v0.19.2" description="April 17, 2026">
 
 **Performance & memory**
@@ -46,7 +231,6 @@ icon: "clock-rotate-left"
 * Preview as Text node update: Support any value to string conversion
 
 </Update>
-
 <Update label="v0.19.0" description="April 13, 2026">
 
 **Model & Generation Support**

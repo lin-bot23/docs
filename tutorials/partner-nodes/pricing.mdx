@@ -9,22 +9,53 @@ The following table lists the pricing of the current Partner Nodes. All prices a
 
 211 credits = 1 USD
 
+## Beeble
+
+| Product Name               | Configuration                             | Credits       | Category |
+| :------------------------- | :---------------------------------------- | :------------ | :------- |
+| SwitchX | model: switchx, output_type: video, resolution: 720p | 30.17 / 30 frames | Video    |
+| SwitchX | model: switchx, output_type: video, resolution: 1080p | 90.52 / 30 frames | Video    |
+| SwitchX | model: switchx, output_type: image, resolution: 720p  | 30.17 / run       | Image    |
+| SwitchX | model: switchx, output_type: image, resolution: 1080p | 90.52 / run       | Image    |
+
 ## BFL
 
-| Product Name               | Configuration              | Credits                       | Category |
-| :------------------------- | :------------------------- | :---------------------------- | :------- |
-| prod-v1-BFL Image Products | model: flux-dev            | 5.28 / run                    | Image    |
-| prod-v1-BFL Image Products | model: flux-kontext-max    | 16.88 / run                   | Image    |
-| prod-v1-BFL Image Products | model: flux-kontext-pro    | 8.44 / run                    | Image    |
-| prod-v1-BFL Image Products | model: flux-pro-1.0-canny  | 10.55 / run                   | Image    |
-| prod-v1-BFL Image Products | model: flux-pro-1.0-depth  | 10.55 / run                   | Image    |
-| prod-v1-BFL Image Products | model: flux-pro-1.0-expand | 10.55 / run                   | Image    |
-| prod-v1-BFL Image Products | model: flux-pro-1.0-fill   | 10.55 / run                   | Image    |
-| prod-v1-BFL Image Products | model: flux-pro-1.1        | 8.44 / run                    | Image    |
-| prod-v1-BFL Image Products | model: flux-pro-1.1-ultra  | 12.66 / run                   | Image    |
-| prod-v1-BFL Image Products | model: /v1/flux-pro        | 10.55 / run                   | Image    |
-| prod-v1-BFL Image Products | model: flux-2-pro          | 6.33 / run + 3.17 / extra MP  | Image    |
-| prod-v1-BFL Image Products | model: flux-2-max          | 14.77 / run + 6.33 / extra MP | Image    |
+| Model                      | Credits                       | Category |
+| :------------------------- | :---------------------------- | :------- |
+| flux-dev                   | 5.28 / run                    | Image    |
+| flux-kontext-max           | 16.88 / run                   | Image    |
+| flux-kontext-pro           | 8.44 / run                    | Image    |
+| flux-pro-1.0-canny         | 10.55 / run                   | Image    |
+| flux-pro-1.0-depth         | 10.55 / run                   | Image    |
+| flux-pro-1.0-expand        | 10.55 / run                   | Image    |
+| flux-pro-1.0-fill          | 10.55 / run                   | Image    |
+| flux-tools/erase-v1        | 6.33 / run + 0.84 / extra MP | Image    |
+| flux-tools/vto-v1          | 7.91 / run + 1.06 / extra MP | Image    |
+| flux-pro-1.1               | 8.44 / run                    | Image    |
+| flux-pro-1.1-ultra         | 12.66 / run                   | Image    |
+| /v1/flux-pro               | 10.55 / run                   | Image    |
+| flux-2-pro                 | 6.33 / run + 3.17 / extra MP | Image    |
+| flux-2-max                 | 14.77 / run + 6.33 / extra MP | Image    |
+
+## Anthropic
+
+Anthropic partner nodes bill the same underlying USD usage as the public Anthropic API. **Credits = USD × 211** (see page header). Token prices below are per million tokens. Cache pricing multipliers match Anthropic's prompt caching documentation.
+
+### Chat (`ClaudeNode`)
+
+Models: per 1M tokens.
+
+| Model           | Input credits / 1M | 5m Cache Write credits / 1M | 1h Cache Write credits / 1M | Cache Hit credits / 1M | Output credits / 1M |
+| :-------------- | -----------------: | -------------------------: | -------------------------: | ---------------------: | ------------------: |
+| `claude-opus-4-7` | 1055 | 1318.75 | 2110 | 105.5 | 5275 |
+| `claude-opus-4-6` | 1055 | 1318.75 | 2110 | 105.5 | 5275 |
+| `claude-opus-4-5-20251101` | 1055 | 1318.75 | 2110 | 105.5 | 5275 |
+| `claude-opus-4-1-20250805` | 3165 | 3956.25 | 6330 | 316.5 | 15825 |
+| `claude-sonnet-4-6` | 633 | 791.25 | 1266 | 63.3 | 3165 |
+| `claude-sonnet-4-5-20250929` | 633 | 791.25 | 1266 | 63.3 | 3165 |
+| `claude-haiku-4-5-20251001` | 211 | 263.75 | 422 | 21.1 | 1055 |
+
+Optional images add tokens billed at the same model input rates.
 
 ## Bria
 
@@ -38,6 +69,15 @@ The following table lists the pricing of the current Partner Nodes. All prices a
 
 | Product Name                                         | Configuration                                                   | Credits           | Category |
 | :--------------------------------------------------- | :-------------------------------------------------------------- | :---------------- | :------- |
+| BytePlus Seed Input Text Tokens (Per 1M tokens)     | model: seed-2-0-pro-260328                                     | 105.5 / 1M tokens | Text     |
+| BytePlus Seed Input Text Tokens (Per 1M tokens)     | model: seed-2-0-lite-260228                                    | 52.75 / 1M tokens  | Text     |
+| BytePlus Seed Input Text Tokens (Per 1M tokens)     | model: seed-2-0-mini-260215                                    | 21.1 / 1M tokens   | Text     |
+| BytePlus Seed Output Text Tokens (Per 1M tokens)    | model: seed-2-0-pro-260328                                     | 633 / 1M tokens    | Text     |
+| BytePlus Seed Output Text Tokens (Per 1M tokens)    | model: seed-2-0-lite-260228                                    | 422 / 1M tokens    | Text     |
+| BytePlus Seed Output Text Tokens (Per 1M tokens)    | model: seed-2-0-mini-260215                                    | 84.4 / 1M tokens   | Text     |
+| BytePlus Seed Cache Hit Input Tokens (Per 1M tokens)| model: seed-2-0-pro-260328                                     | 21.1 / 1M tokens   | Text     |
+| BytePlus Seed Cache Hit Input Tokens (Per 1M tokens)| model: seed-2-0-lite-260228                                    | 10.55 / 1M tokens  | Text     |
+| BytePlus Seed Cache Hit Input Tokens (Per 1M tokens)| model: seed-2-0-mini-260215                                    | 4.22 / 1M tokens   | Text     |
 | BytePlus Image Generation Product                    | model: seededit-3-0-i2i-250628                                  | 6.33 / run        | Image    |
 | BytePlus Image Generation Product                    | model: seedream-3-0-t2i-250415                                  | 6.33 / run        | Image    |
 | BytePlus Image Generation Product                    | model: seedream-4-0-250828                                      | 6.33 / run        | Image    |
@@ -52,18 +92,18 @@ The following table lists the pricing of the current Partner Nodes. All prices a
 | BytePlus Video Generation Product (Per 1M tokens)    | model: seedream-4-5-251128, video_type: text-to-video           | 211 / 1M tokens   | Video    |
 | BytePlus Video Generation With Audio (Per 1M tokens) | generate_audio: false, model: seedance-1-5-pro-251215           | 253.2 / 1M tokens | Video    |
 | BytePlus Video Generation With Audio (Per 1M tokens) | generate_audio: true, model: seedance-1-5-pro-251215            | 506.4 / 1M tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 720P, video_type: text-to-video (no video input: text or image)  | 1.477 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 720P, video_type: image-to-video (no video input: text or image) | 1.477 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 720P, video_type: video-to-video (with video input)              | 0.907 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 1080P, video_type: text-to-video (no video input: text or image)  | 3.693 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 1080P, video_type: image-to-video (no video input: text or image) | 3.693 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 1080P, video_type: video-to-video (with video input)              | 2.268 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 720P, video_type: text-to-video (no video input: text or image)  | 1.182 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 720P, video_type: image-to-video (no video input: text or image) | 1.182 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 720P, video_type: video-to-video (with video input)              | 0.696 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 1080P, video_type: text-to-video (no video input: text or image)  | 2.955 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 1080P, video_type: image-to-video (no video input: text or image) | 2.955 / K tokens | Video    |
-| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 1080P, video_type: video-to-video (with video input)              | 1.740 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 720P, video_type: text-to-video (no video input: text or image)  | 2.112 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 720P, video_type: image-to-video (no video input: text or image) | 2.112 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 720P, video_type: video-to-video (with video input)              | 1.297 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 1080P, video_type: text-to-video (no video input: text or image)  | 5.281 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 1080P, video_type: image-to-video (no video input: text or image) | 5.281 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0, resolution: 1080P, video_type: video-to-video (with video input)              | 3.243 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 720P, video_type: text-to-video (no video input: text or image)  | 1.690 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 720P, video_type: image-to-video (no video input: text or image) | 1.690 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 720P, video_type: video-to-video (with video input)              | 0.995 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 1080P, video_type: text-to-video (no video input: text or image)  | 4.226 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 1080P, video_type: image-to-video (no video input: text or image) | 4.226 / K tokens | Video    |
+| BytePlus Video Generation Product (Per K tokens)     | model: dreamina-seedance-2-0-fast, resolution: 1080P, video_type: video-to-video (with video input)              | 2.488 / K tokens | Video    |
 
 > **Seedance 2.0 token calculation:** Output tokens = (Input video duration + Output video duration) × Output video length × Output video width × Output video frame rate ÷ 1024. When input is text, image, or audio, input duration = 0. Seedance 2.0 outputs at 24fps. For video-to-video inputs, a minimum token usage limit applies. **Per‑K token credits** depend on output resolution: **1080P is 2.5× the 720P rate** for the same model and `video_type`.
 
@@ -136,6 +176,8 @@ The following table lists the pricing of the current Partner Nodes. All prices a
 | Gemini Output Image Tokens (per 1M) Product | model: gemini-3.1-flash-image-preview                      | 12660 / 1M tokens  | Image    |
 | Gemini Output Image Tokens (per 1M) Product | model: gemini-3.1-pro-preview                              | 25320 / 1M tokens  | Image    |
 | Gemini Output Image Tokens (per 1M) Product | model: gemini-3-pro-image-preview                          | 25320 / 1M tokens  | Image    |
+| Nano Banana 2 Image Generation              | model: gemini-3.1-flash-image-preview, resolution: 2K      | 21.31 / run        | Image    |
+| Nano Banana 2 Image Generation              | model: gemini-3.1-flash-image-preview, resolution: 4K      | 32.49 / run        | Image    |
 | Gemini Input Video Tokens (per 1M) Product  | model: gemini-2.5-flash-image                              | 63.3 / 1M tokens   | Video    |
 | Gemini Input Video Tokens (per 1M) Product  | model: gemini-2.5-flash-image-preview                      | 63.3 / 1M tokens   | Video    |
 | Gemini Input Video Tokens (per 1M) Product  | model: gemini-2.5-flash                                    | 63.3 / 1M tokens   | Video    |
@@ -181,6 +223,13 @@ The following table lists the pricing of the current Partner Nodes. All prices a
 | Gemini Input Video Tokens (per 1M) Product  | model: gemini-3.1-flash-lite-preview                       | 52.75 / 1M tokens  | Video    |
 | Gemini Input Audio Tokens (per 1M) Product  | model: gemini-3.1-flash-lite-preview                       | 105.5 / 1M tokens  | Audio    |
 | Gemini Thoughts Tokens (per 1M) Product     | model: gemini-3.1-flash-lite-preview                       | 316.5 / 1M tokens  | Text     |
+
+## HappyHorse
+
+| Product Name                        | Configuration                       | Credits     | Category |
+| :---------------------------------- | :---------------------------------- | :---------- | :------- |
+| HappyHorse Video Generation Product | model: happyhorse1.0, resolution: 720P  | 29.54 / sec | Video    |
+| HappyHorse Video Generation Product | model: happyhorse1.0, resolution: 1080P | 50.64 / sec | Video    |
 
 ## Hitpaw
 
@@ -312,48 +361,92 @@ The following table lists the pricing of the current Partner Nodes. All prices a
 | prod-v1-Ideogram Image Generation Product | endpoint: remix, model: v_2                                            | 24.14 / run | Image    |
 | prod-v1-Ideogram Image Generation Product | endpoint: remix, model: v_2_turbo                                      | 15.09 / run | Image    |
 
+## Krea
+
+| Product Name | Configuration | Credits | Category |
+| :----------- | :------------ | :------ | :------- |
+| Krea 2 Image Generation | model: krea-2-medium | 6.4 / run | Image |
+| Krea 2 Image Generation | model: krea-2-medium, with image style reference | 7.4 / run | Image |
+| Krea 2 Image Generation | model: krea-2-medium, with moodboard | 8.5 / run | Image |
+| Krea 2 Image Generation | model: krea-2-large | 12.7 / run | Image |
+| Krea 2 Image Generation | model: krea-2-large, with image style reference | 13.8 / run | Image |
+| Krea 2 Image Generation | model: krea-2-large, with moodboard | 14.8 / run | Image |
+
 ## Kling
 
 | Product Name                              | Configuration                                                | Credits      | Category |
 | :---------------------------------------- | :----------------------------------------------------------- | :----------- | :------- |
+| prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v1                                   | 103.39 / run | Video    |
 | prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v1-5                                 | 103.39 / run | Video    |
 | prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v1-6                                 | 103.39 / run | Video    |
-| prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v1                                   | 103.39 / run | Video    |
-| prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v2-1-master                          | 295.4 / run  | Video    |
 | prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v2-1                                 | 103.39 / run | Video    |
+| prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v2-1-master                          | 295.4 / run  | Video    |
 | prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v2-5-turbo                           | 73.85 / run  | Video    |
 | prod-v1-Kling Video Generation Product    | mode: pro, model: kling-v2-master                            | 295.4 / run  | Video    |
+| prod-v1-Kling Video Generation Product    | mode: std, model: kling-v1                                   | 29.54 / sec  | Video    |
 | prod-v1-Kling Video Generation Product    | mode: std, model: kling-v1-5                                 | 59.08 / run  | Video    |
 | prod-v1-Kling Video Generation Product    | mode: std, model: kling-v1-6                                 | 59.08 / run  | Video    |
-| prod-v1-Kling Video Generation Product    | mode: std, model: kling-v1                                   | 29.54 / sec  | Video    |
-| prod-v1-Kling Video Generation Product    | mode: std, model: kling-v2-1-master                          | 295.4 / run  | Video    |
 | prod-v1-Kling Video Generation Product    | mode: std, model: kling-v2-1                                 | 59.08 / run  | Video    |
+| prod-v1-Kling Video Generation Product    | mode: std, model: kling-v2-1-master                          | 295.4 / run  | Video    |
 | prod-v1-Kling Video Generation Product    | mode: std, model: kling-v2-master                            | 295.4 / run  | Video    |
-| Kling Virtual Try On                      | model: kolors-virtual-try-on-v1-5                            | 14.77 / run  | Image    |
-| Kling Virtual Try On                      | model: kolors-virtual-try-on-v1                              | 14.77 / run  | Image    |
-| Kling Image Generation Product            | model: kling-v1-5, operation: image_to_image                 | 5.91 / run   | Image    |
-| Kling Image Generation Product            | model: kling-v1-5, operation: text_to_image                  | 2.95 / run   | Image    |
-| Kling Image Generation Product            | model: kling-v1, operation: image_to_image                   | 0.74 / run   | Image    |
-| Kling Image Generation Product            | model: kling-v1, operation: text_to_image                    | 0.74 / run   | Image    |
-| Kling Image Generation Product            | model: kling-v2, operation: text_to_image                    | 2.95 / run   | Image    |
-| Kling Video Extension Product             | NA                                                           | 59.08 / run  | Video    |
-| Kling Lip Sync Product                    | NA                                                           | 14.77 / run  | Image    |
-| Kling Image Generation w/ N               | model: kling-v1-5, operation: image_to_image                 | 5.91 / run   | Image    |
-| Kling Image Generation w/ N               | model: kling-v1-5, operation: text_to_image                  | 2.95 / run   | Image    |
-| Kling Image Generation w/ N               | model: kling-v1, operation: image_to_image                   | 0.74 / run   | Image    |
-| Kling Image Generation w/ N               | model: kling-v1, operation: text_to_image                    | 0.74 / run   | Image    |
-| Kling Image Generation w/ N               | model: kling-v2, operation: text_to_image                    | 2.95 / run   | Image    |
+| Kling Video Generation with Sound Product | mode: pro, model: kling-v2-6, sound: off                     | 14.77 / sec  | Video    |
+| Kling Video Generation with Sound Product | mode: pro, model: kling-v2-6, sound: on                      | 29.54 / sec  | Video    |
+| Kling Video Generation with Sound Product | resolution: 1080p, model: kling-v3, no_sound: true           | 23.63 / sec  | Video    |
+| Kling Video Generation with Sound Product | resolution: 1080p, model: kling-v3, no_sound: false          | 35.45 / sec  | Video    |
+| Kling Video Generation with Sound Product | resolution: 720p, model: kling-v3, no_sound: true            | 17.72 / sec  | Video    |
+| Kling Video Generation with Sound Product | resolution: 720p, model: kling-v3, no_sound: false           | 26.59 / sec  | Video    |
+| Kling Video Generation with Sound Product | mode: pro, model: kling-v3-omni, no_sound: true              | 23.63 / sec  | Video    |
+| Kling Video Generation with Sound Product | mode: pro, model: kling-v3-omni, no_sound: false             | 29.54 / sec  | Video    |
+| Kling Video Generation with Sound Product | mode: std, model: kling-v3-omni, no_sound: true              | 17.72 / sec  | Video    |
+| Kling Video Generation with Sound Product | mode: std, model: kling-v3-omni, no_sound: false             | 23.63 / sec  | Video    |
+| Kling Video Generation with Sound Product | mode: pro, model: kling-v3-4k                                | 88.62 / sec  | Video    |
 | Kling Omni Video Product                  | generate_with_video: false, mode: pro, model: kling-video-o1 | 23.63 / sec  | Video    |
 | Kling Omni Video Product                  | generate_with_video: false, mode: std, model: kling-video-o1 | 17.72 / sec  | Video    |
 | Kling Omni Video Product                  | generate_with_video: true, mode: pro, model: kling-video-o1  | 35.45 / sec  | Video    |
 | Kling Omni Video Product                  | generate_with_video: true, mode: std, model: kling-video-o1  | 26.59 / sec  | Video    |
-| Kling Omni Image Product                  | model: kling-image-o1                                        | 5.91 / run   | Image    |
-| Kling Video Generation with Sound Product | mode: pro, model: kling-v2-6, sound: off                     | 14.77 / sec  | Video    |
-| Kling Video Generation with Sound Product | mode: pro, model: kling-v2-6, sound: on                      | 29.54 / sec  | Video    |
-| Kling Motion Control Product              | mode: pro, model: kling-v2-6                                 | 23.63 / run  | Image    |
+| Kling Video Extension Product             | NA                                                           | 59.08 / run  | Video    |
+| Kling Lip Sync Product                    | NA                                                           | 14.77 / run  | Image    |
 | Kling Motion Control Product              | mode: std, model: kling-v2-6                                 | 14.77 / run  | Image    |
+| Kling Motion Control Product              | mode: pro, model: kling-v2-6                                 | 23.63 / run  | Image    |
+| Kling Virtual Try On                      | model: kolors-virtual-try-on-v1                              | 14.77 / run  | Image    |
+| Kling Virtual Try On                      | model: kolors-virtual-try-on-v1-5                            | 14.77 / run  | Image    |
+| Kling Image Generation Product            | model: kling-v1, operation: text_to_image                    | 0.74 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v1, operation: image_to_image                   | 0.74 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v1-5, operation: text_to_image                  | 2.95 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v1-5, operation: image_to_image                 | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v2, operation: text_to_image                    | 2.95 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v2-new, operation: image_to_image_restyle       | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v2-1, operation: text_to_image                  | 2.95 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3, specs: 1k, operation: text_to_image         | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3, specs: 2k, operation: text_to_image         | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3, specs: 1k, operation: image_to_image        | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3, specs: 2k, operation: image_to_image        | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3, specs: 1k, operation: image_editing         | 11.82 / run  | Image    |
+| Kling Image Generation Product            | model: kling-v3, specs: 4k, operation: image_editing         | 11.82 / run  | Image    |
+| Kling Image Generation Product            | model: kling-v3-omni, specs: 1k, operation: text_to_image    | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3-omni, specs: 2k, operation: text_to_image    | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3-omni, specs: 1k, operation: image_to_image   | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3-omni, specs: 2k, operation: image_to_image   | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-v3-omni, specs: 1k, operation: image_editing    | 11.82 / run  | Image    |
+| Kling Image Generation Product            | model: kling-v3-omni, specs: 4k, operation: image_editing    | 11.82 / run  | Image    |
+| Kling Image Generation Product            | model: kling-image-o1, operation: text_to_image               | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-image-o1, operation: image_to_image              | 5.91 / run   | Image    |
+| Kling Image Generation Product            | model: kling-image-o1, operation: image_editing               | 5.91 / run   | Image    |
+| Kling Image Generation w/ N               | model: kling-v1, operation: text_to_image                    | 0.74 / run   | Image    |
+| Kling Image Generation w/ N               | model: kling-v1, operation: image_to_image                   | 0.74 / run   | Image    |
+| Kling Image Generation w/ N               | model: kling-v1-5, operation: text_to_image                  | 2.95 / run   | Image    |
+| Kling Image Generation w/ N               | model: kling-v1-5, operation: image_to_image                 | 5.91 / run   | Image    |
+| Kling Image Generation w/ N               | model: kling-v2, operation: text_to_image                    | 2.95 / run   | Image    |
 | Kling Credits                             | type: image                                                  | 0.74 / run   | Image    |
 | Kling Credits                             | type: video                                                  | 29.54 / run  | Image    |
+| Kling Camera Control Product              | type: text-to-video                                           | 29.54 / run  | Video    |
+| Kling Camera Control Product              | type: image-to-video                                          | 103.39 / run | Video    |
+| Kling Avatar Product                      | mode: std                                                     | 11.82 / sec  | Video    |
+| Kling Avatar Product                      | mode: pro                                                     | 23.63 / sec  | Video    |
+| Kling 2.6 Audio Product                   | mode: text-to-video, no_sound: true                           | 14.77 / sec  | Video    |
+| Kling 2.6 Audio Product                   | mode: text-to-video, no_sound: false                          | 29.54 / sec  | Video    |
+| Kling 2.6 Audio Product                   | mode: image-to-video, no_sound: true                          | 14.77 / sec  | Video    |
+| Kling 2.6 Audio Product                   | mode: image-to-video, no_sound: false                         | 29.54 / sec  | Video    |
 
 ## Lightricks
 
@@ -374,13 +467,35 @@ The following table lists the pricing of the current Partner Nodes. All prices a
 
 ## Luma
 
-| Product Name                                        | Configuration         | Credits    | Category |
-| :-------------------------------------------------- | :-------------------- | :--------- | :------- |
-| prod-v1-Luma Video Generation Product               | model: ray-1-6        | 0.97 / sec | Video    |
-| prod-v1-Luma Video Generation Product               | model: ray-2          | 1.93 / sec | Video    |
-| prod-v1-Luma Video Generation Product               | model: ray-flash-2    | 0.66 / sec | Video    |
-| Luma Image Generations (millions of pixels) Product | model: photon-1       | 2.2 / run  | Image    |
-| Luma Image Generations (millions of pixels) Product | model: photon-flash-1 | 0.57 / run | Image    |
+| Product Name                                        | Configuration                                                                                          | Credits      | Category |
+| :-------------------------------------------------- | :----------------------------------------------------------------------------------------------------- | :----------- | :------- |
+| prod-v1-Luma Video Generation Product               | model: ray-1-6                                                                                         | 0.97 / sec   | Video    |
+| prod-v1-Luma Video Generation Product               | model: ray-2                                                                                           | 1.93 / sec   | Video    |
+| prod-v1-Luma Video Generation Product               | model: ray-flash-2                                                                                     | 0.66 / sec   | Video    |
+| Luma Image Generations (millions of pixels) Product | model: photon-1                                                                                        | 2.2 / run    | Image    |
+| Luma Image Generations (millions of pixels) Product | model: photon-flash-1                                                                                  | 0.57 / run   | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: text-to-image                                                                      | 8.52 / run   | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-to-image                                                                     | 9.16 / run   | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 1                                           | 9.16 / run   | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 2                                           | 9.79 / run   | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 3                                           | 10.42 / run  | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 4                                           | 11.06 / run  | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 5                                           | 11.69 / run  | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 6                                           | 12.32 / run  | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 7                                           | 12.96 / run  | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 8                                           | 13.59 / run  | Image    |
+| Luma Agents uni-1 Image Product                     | model: uni-1, task: image-reference, num_reference_images: 9                                           | 14.22 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: text-to-image                                                                  | 21.10 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-to-image                                                                 | 21.73 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 1                                       | 21.73 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 2                                       | 22.37 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 3                                       | 23.00 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 4                                       | 23.63 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 5                                       | 24.27 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 6                                       | 24.90 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 7                                       | 25.53 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 8                                       | 26.16 / run  | Image    |
+| Luma Agents uni-1-max Image Product                 | model: uni-1-max, task: image-reference, num_reference_images: 9                                       | 26.80 / run  | Image    |
 
 ## Meshy
 
@@ -419,6 +534,10 @@ The following table lists the pricing of the current Partner Nodes. All prices a
 | Minimax Video Generation_models after Hailuo-02 | duration: 6, model: minimax-hailuo-02, resolution: 768P  | 59.08 / run  | Video    |
 
 ## Moonvalley
+
+<Warning>
+  **Service unavailable**: The Moonvalley API service is no longer available. The nodes listed below have been deprecated and may not function as expected.
+</Warning>
 
 | Product Name                  | Configuration | Credits      | Category |
 | :---------------------------- | :------------ | :----------- | :------- |
@@ -472,20 +591,24 @@ The UI shows approximate **USD ranges** per run by quality (`low` / `medium` / `
 
 ### Chat (`OpenAIChatNode`)
 
-Models selectable in the node: `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `o3`, `o4-mini`, `o1`, `o1-pro`. Standard tier, per 1M tokens (cached column is OpenAI’s cached-input rate where listed).
+Models selectable in the node: `gpt-5.5`, `gpt-5.5-pro`, `gpt-5`, `gpt-5-mini`, `gpt-5-nano`, `gpt-4.1`, `gpt-4.1-mini`, `gpt-4.1-nano`, `o3`, `o4-mini`, `o1`, `o1-pro`. Standard tier, per 1M tokens (cached column is OpenAI’s cached-input rate where listed). For models with both short- and long-context pricing, the long-context rate applies once the request exceeds the short-context window.
 
-| Model       | Input credits / 1M | Cached input credits / 1M | Output credits / 1M |
-| :---------- | -------------------: | ------------------------: | ------------------: |
-| gpt-5       | 263.75               | 26.38                     | 2110                |
-| gpt-5-mini  | 52.75                | 5.28                      | 422                 |
-| gpt-5-nano  | 10.55                | 1.06                      | 84.4                |
-| gpt-4.1     | 422                  | 105.5                     | 1688                |
-| gpt-4.1-mini | 84.4                | 21.1                      | 337.6               |
-| gpt-4.1-nano | 21.1                | 5.28                      | 84.4                |
-| o3          | 422                  | 105.5                     | 1688                |
-| o4-mini     | 232.1                | 58.03                     | 928.4               |
-| o1          | 3165                 | 1582.5                    | 12660               |
-| o1-pro      | 31650                | —                         | 126600              |
+| Model                       | Input credits / 1M | Cached input credits / 1M | Output credits / 1M |
+| :-------------------------- | -------------------: | ------------------------: | ------------------: |
+| gpt-5.5 (short context)     | 1055                 | 105.5                     | 6330                |
+| gpt-5.5 (long context)      | 2110                 | 211                       | 9495                |
+| gpt-5.5-pro (short context) | 6330                 | —                         | 37980               |
+| gpt-5.5-pro (long context)  | 12660                | —                         | 56970               |
+| gpt-5                       | 263.75               | 26.38                     | 2110                |
+| gpt-5-mini                  | 52.75                | 5.28                      | 422                 |
+| gpt-5-nano                  | 10.55                | 1.06                      | 84.4                |
+| gpt-4.1                     | 422                  | 105.5                     | 1688                |
+| gpt-4.1-mini                | 84.4                 | 21.1                      | 337.6               |
+| gpt-4.1-nano                | 21.1                 | 5.28                      | 84.4                |
+| o3                          | 422                  | 105.5                     | 1688                |
+| o4-mini                     | 232.1                | 58.03                     | 928.4               |
+| o1                          | 3165                 | 1582.5                    | 12660               |
+| o1-pro                      | 31650                | —                         | 126600              |
 
 Optional images and files add tokens billed at the same model input rates.
 
@@ -500,6 +623,36 @@ USD is **(per-second rate) × (duration in seconds)**; duration can be 4, 8, or 
 | OpenAI Sora video generation | model: sora-2-pro, size: 1024x1792 or 1792x1024 | 105.50    | Video    |
 
 Example: `sora-2`, 1280x720, 8 seconds → about **168.8** credits ($0.10 × 8 × 211).
+
+## OpenRouter
+
+### OpenRouter LLM (`OpenRouterLLMNode`)
+
+Per 1M tokens.
+
+| Model                              | Input credits / 1M | Output credits / 1M |
+| :----------------------------------- | -----------------: | ------------------: |
+| `anthropic/claude-opus-4.7`          |               1055 |                5275 |
+| `openai/gpt-5.5-pro`                 |               6330 |               37980 |
+| `openai/gpt-5.5`                     |               1055 |                6330 |
+| `google/gemini-3.5-flash`            |              316.5 |                1899 |
+| `x-ai/grok-4.20`                     |             263.75 |               527.5 |
+| `x-ai/grok-4.3`                      |             263.75 |               527.5 |
+| `deepseek/deepseek-v4-pro`           |             91.785 |              183.57 |
+| `deepseek/deepseek-v4-flash`         |             23.632 |              47.264 |
+| `deepseek/deepseek-v3.2`             |             53.172 |              79.758 |
+| `qwen/qwen3.6-max-preview`           |             219.44 |             1316.64 |
+| `qwen/qwen3.6-plus`                  |            68.575 |              411.45 |
+| `qwen/qwen3.6-flash`                 |           39.5625 |             237.375 |
+| `mistralai/mistral-large-2512`       |              105.5 |               316.5 |
+| `mistralai/mistral-medium-3-5`       |              316.5 |              1582.5 |
+| `z-ai/glm-4.6`                       |              90.73 |              367.14 |
+| `z-ai/glm-5`                         |              126.6 |              405.12 |
+| `moonshotai/kimi-k2.6`               |             154.03 |              736.39 |
+| `moonshotai/kimi-k2-thinking`        |              126.6 |               527.5 |
+| `perplexity/sonar-pro`               |                633 |                3165 |
+| `perplexity/sonar-reasoning-pro`     |                422 |                1688 |
+| `perplexity/sonar-deep-research`     |                422 |                1688 |
 
 ## Pika
 
@@ -570,10 +723,20 @@ Example: `sora-2`, 1280x720, 8 seconds → about **168.8** credits ($0.10 × 8 �
 
 ## Rodin
 
+### Hyper3D Rodin (Gen-2)
+
 | Product Name                      | Configuration | Credits     | Category |
 | :-------------------------------- | :------------ | :---------- | :------- |
 | Rodin 3D Generation (no addons)   | NA            | 84.4 / run  | 3D       |
 | Rodin 3D Generation (with AddOns) | NA            | 253.2 / run | 3D       |
+
+### Hyper3D Rodin Gen-2.5 (`Rodin3D_Gen25_Image` / `Rodin3D_Gen25_Text`)
+
+| Product Name                | Configuration                                 | Credits       | Category |
+| :-------------------------- | :-------------------------------------------- | :------------ | :------- |
+| Rodin Gen-2.5 (Regular/Fast) | mode: Regular or Fast                         | 158.25 / run  | 3D       |
+| Rodin Gen-2.5 (Extreme-High) | mode: Extreme-High                            | 316.5 / run   | 3D       |
+| Rodin Gen-2.5 HighPack Addon | addon_highpack: true                          | +168.8 / run  | 3D       |
 
 ## Runway
 
@@ -647,12 +810,14 @@ Example: `sora-2`, 1280x720, 8 seconds → about **168.8** credits ($0.10 × 8 �
 | Topaz Video Enhance | interpolation_model: apo-8, input resolution: 720p                             | 2.55 / sec  | Video    |
 | Topaz Video Enhance | interpolation_model: apo-8, input resolution: 1080p                            | 5.57 / sec  | Video    |
 | Topaz Video Enhance | interpolation_model: apo-8, input resolution: 4K                               | 21.59 / sec | Video    |
+| Topaz Video Enhance | model: Astra 2 (ast-2), resolution: 1080p                                       | 1.688 / frame | Video    |
+| Topaz Video Enhance | model: Astra 2 (ast-2), resolution: 4K                                           | 2.813 / frame | Video    |
 
 ## Tripo
 
-| Product Name                             | Configuration                                                             | Credits     | Category |
-| :--------------------------------------- | :------------------------------------------------------------------------ | :---------- | :------- |
-| Tripo Generation (with Textures) Product | model: v2.0-20240919, texture_quality: detailed, type: image_to_model     | 84.4 / run  | 3D       |
+| Product Name                             | Configuration                                                                     | Credits       | Category |
+| :--------------------------------------- | :-------------------------------------------------------------------------------  | :------------ | :------- |
+| Tripo Generation (with Textures) Product | model: v2.0-20240919, texture_quality: detailed, type: image_to_model              | 84.4 / run    | 3D       |
 | Tripo Generation (with Textures) Product | model: v2.0-20240919, texture_quality: detailed, type: multiview_to_model | 84.4 / run  | 3D       |
 | Tripo Generation (with Textures) Product | model: v2.0-20240919, texture_quality: detailed, type: text_to_model      | 63.3 / run  | 3D       |
 | Tripo Generation (with Textures) Product | model: v2.0-20240919, texture_quality: standard, type: image_to_model     | 63.3 / run  | 3D       |
@@ -670,6 +835,12 @@ Example: `sora-2`, 1280x720, 8 seconds → about **168.8** credits ($0.10 × 8 �
 | Tripo Generation (with Textures) Product | model: v3.0-20250812, texture_quality: standard, type: image_to_model     | 63.3 / run  | 3D       |
 | Tripo Generation (with Textures) Product | model: v3.0-20250812, texture_quality: standard, type: multiview_to_model | 63.3 / run  | 3D       |
 | Tripo Generation (with Textures) Product | model: v3.0-20250812, texture_quality: standard, type: text_to_model      | 42.2 / run  | 3D       |
+| Tripo Generation (with Textures) Product | model: v3.1, texture_quality: detailed, type: image_to_model               | 84.4 / run  | 3D       |
+| Tripo Generation (with Textures) Product | model: v3.1, texture_quality: detailed, type: multiview_to_model           | 84.4 / run  | 3D       |
+| Tripo Generation (with Textures) Product | model: v3.1, texture_quality: detailed, type: text_to_model                | 63.3 / run  | 3D       |
+| Tripo Generation (with Textures) Product | model: v3.1, texture_quality: standard, type: image_to_model               | 63.3 / run  | 3D       |
+| Tripo Generation (with Textures) Product | model: v3.1, texture_quality: standard, type: multiview_to_model           | 63.3 / run  | 3D       |
+| Tripo Generation (with Textures) Product | model: v3.1, texture_quality: standard, type: text_to_model                | 42.2 / run  | 3D       |
 | Tripo Generation (no textures) Product   | model: v2.0-20240919, type: image_to_model                                | 42.2 / run  | 3D       |
 | Tripo Generation (no textures) Product   | model: v2.0-20240919, type: multiview_to_model                            | 42.2 / run  | 3D       |
 | Tripo Generation (no textures) Product   | model: v2.0-20240919, type: text_to_model                                 | 21.1 / run  | 3D       |
@@ -679,6 +850,9 @@ Example: `sora-2`, 1280x720, 8 seconds → about **168.8** credits ($0.10 × 8 �
 | Tripo Generation (no textures) Product   | model: v3.0-20250812, type: image_to_model                                | 42.2 / run  | 3D       |
 | Tripo Generation (no textures) Product   | model: v3.0-20250812, type: multiview_to_model                            | 42.2 / run  | 3D       |
 | Tripo Generation (no textures) Product   | model: v3.0-20250812, type: text_to_model                                 | 21.1 / run  | 3D       |
+| Tripo Generation (no textures) Product   | model: v3.1, type: image_to_model                                         | 42.2 / run  | 3D       |
+| Tripo Generation (no textures) Product   | model: v3.1, type: multiview_to_model                                     | 42.2 / run  | 3D       |
+| Tripo Generation (no textures) Product   | model: v3.1, type: text_to_model                                          | 21.1 / run  | 3D       |
 | Tripo Style Product                      | NA                                                                        | 10.55 / run | 3D       |
 | Tripo Quadrangular Product               | NA                                                                        | 10.55 / run | 3D       |
 | Tripo Add Texture Product                | texture_quality: detailed                                                 | 42.2 / run  | 3D       |
@@ -692,6 +866,15 @@ Example: `sora-2`, 1280x720, 8 seconds → about **168.8** credits ($0.10 × 8 �
 | Tripo V1-4 Generation Product            | type: refine_model                                                        | 63.3 / run  | 3D       |
 | Tripo V1-4 Generation Product            | type: text_to_model                                                       | 42.2 / run  | 3D       |
 | Tripo Geometry Quality Product           | geometry_quality: detailed                                                | 42.2 / run  | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: text_to_model, output_mode: Geometry only                | 63.3 / run    | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: text_to_model, output_mode: Textured, texture_quality: standard | 84.4 / run    | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: text_to_model, output_mode: Textured, texture_quality: detailed | 105.5 / run   | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: image_to_model, output_mode: Geometry only               | 84.4 / run    | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: image_to_model, output_mode: Textured, texture_quality: standard | 105.5 / run   | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: image_to_model, output_mode: Textured, texture_quality: detailed | 126.6 / run   | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: multiview_to_model, output_mode: Geometry only           | 84.4 / run    | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: multiview_to_model, output_mode: Textured, texture_quality: standard | 105.5 / run   | 3D       |
+| Tripo P1 Generation Product              | model: P1-20260311, type: multiview_to_model, output_mode: Textured, texture_quality: detailed | 126.6 / run   | 3D       |
 
 ## Vidu
 
@@ -836,10 +1019,18 @@ Video endpoints charge for moderated content.
 | Product Name                                 | Configuration                                                                                           | Credits     | Category |
 | :------------------------------------------- | :------------------------------------------------------------------------------------------------------ | :---------- | :------- |
 | xAI Image Generation                         | endpoint: v1/images/generations, model: grok-imagine-image-beta, resolution: 1k                         | 6.96 / run  | Image    |
+| xAI Image Generation                         | endpoint: v1/images/generations, model: grok-imagine-image-quality, resolution: 1k                      | 10.55 / run | Image    |
+| xAI Image Generation                         | endpoint: v1/images/generations, model: grok-imagine-image-quality, resolution: 2k                      | 14.77 / run | Image    |
 | xAI Image Edit Output                        | endpoint: v1/images/edits, model: grok-imagine-image-beta, resolution: 1k                               | 6.96 / run  | Image    |
+| xAI Image Edit Output                        | endpoint: v1/images/edits, model: grok-imagine-image-quality, resolution: 1k                            | 10.55 / run | Image    |
+| xAI Image Edit Output                        | endpoint: v1/images/edits, model: grok-imagine-image-quality, resolution: 2k                            | 14.77 / run | Image    |
 | xAI Image Edit Input                         | endpoint: v1/images/edits, model: grok-imagine-image-beta, resolution: 1k                               | 0.42 / run  | Image    |
+| xAI Image Edit Input                         | endpoint: v1/images/edits, model: grok-imagine-image-quality                                           | 2.11 / run  | Image    |
 | xAI Video Generation Output Video Per Second | endpoint: v1/videos/generations, model: grok-imagine-video-beta, resolution: 480p                       | 38.19 / sec | Video    |
 | xAI Video Generation Output Video Per Second | endpoint: v1/videos/generations, model: grok-imagine-video-beta, resolution: 720p                       | 38.19 / sec | Video    |
+| xAI Video Generation Output Video Per Second | endpoint: v1/videos/generations, model: grok-imagine-video-1.5-preview, resolution: 480p                 | 24.14 / sec | Video    |
+| xAI Video Generation Output Video Per Second | endpoint: v1/videos/generations, model: grok-imagine-video-1.5-preview, resolution: 720p                 | 42.24 / sec | Video    |
+| xAI Video Generation Input Image             | endpoint: v1/videos/generations, model: grok-imagine-video-1.5-preview, type: image-to-video           | 3.02 / sec  | Video    |
 | xAI Video Generation Input Image             | endpoint: v1/videos/generations, model: grok-imagine-video-beta, resolution: 480p, type: image-to-video | 0.42 / sec  | Video    |
 | xAI Video Generation Input Image             | endpoint: v1/videos/generations, model: grok-imagine-video-beta, resolution: 720p, type: image-to-video | 0.42 / sec  | Video    |
 | xAI Video Edit Input+Output Video Per Second | endpoint: v1/videos/edits, model: grok-imagine-video-beta, resolution: 480p                             | 40.3 / sec  | Video    |
@@ -851,4 +1042,4 @@ Video endpoints charge for moderated content.
 
 | Product Name      | Configuration          | Credits    | Category |
 | :---------------- | :--------------------- | :--------- | :------- |
-| GPU Hours Product | gpu_type: rtx_pro_6000 | 0.27 / run | Image    |
+| GPU Hours Product | gpu_type: rtx_pro_6000 | 0.27 / sec | Image    |
