@@ -1,8 +1,7 @@
 ---
-title: "워크플로우 JSON 0.4"
-description: "ComfyUI 워크플로우를 위한 JSON 스키마."
-translationSourceHash: dd7a23ce
-translationFrom: specs/workflow_json_0.4.mdx
+title: "워크플로 JSON 0.4"
+description: "ComfyUI 워크플로를 위한 JSON 스키마."
+reviewSourceHash: dd7a23ce
 ---
 
 ## v0.4
@@ -244,7 +243,7 @@ translationFrom: specs/workflow_json_0.4.mdx
               "properties": {
                 "type": "object",
                 "properties": {
-                  "S&R용 노드 이름": {
+                  "Node name for S&R": {
                     "type": "string"
                   }
                 },
@@ -338,13 +337,14 @@ translationFrom: specs/workflow_json_0.4.mdx
                   },
                   {
                     "type": "array",
-                  "items": {
-                    "type": "string"
+                    "items": {
+                      "type": "string"
+                    }
+                  },
+                  {
+                    "type": "number"
                   }
-                },
-                {
-                  "type": "number"
-                }
+                ]
               }
             ]
           }
