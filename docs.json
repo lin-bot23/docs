@@ -313,6 +313,7 @@
                       {
                         "group": "Wan Video",
                         "pages": [
+                          "tutorials/video/wan/wan-animate-2",
                           "tutorials/video/wan/wan2_2",
                           "tutorials/video/wan/wan2-2-animate",
                           "tutorials/video/wan/wan-dancer",
@@ -3155,6 +3156,7 @@
                       {
                         "group": "Wan 视频",
                         "pages": [
+                          "zh/tutorials/video/wan/wan-animate-2",
                           "zh/tutorials/video/wan/wan2_2",
                           "zh/tutorials/video/wan/wan2-2-animate",
                           "zh/tutorials/video/wan/wan-dancer",
@@ -6012,6 +6014,7 @@
                       {
                         "group": "Wan Video",
                         "pages": [
+                          "ja/tutorials/video/wan/wan-animate-2",
                           "ja/tutorials/video/wan/wan2_2",
                           "ja/tutorials/video/wan/wan2-2-animate",
                           "ja/tutorials/video/wan/wan-dancer",
@@ -8953,6 +8956,7 @@
                       {
                         "group": "Wan Video",
                         "pages": [
+                          "ko/tutorials/video/wan/wan-animate-2",
                           "ko/tutorials/video/wan/wan2_2",
                           "ko/tutorials/video/wan/wan2-2-animate",
                           "ko/tutorials/video/wan/wan-dancer",
