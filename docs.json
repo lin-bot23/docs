@@ -377,6 +377,12 @@
                     "group": "Audio",
                     "pages": [
                       {
+                        "group": "MiniMax Music 3",
+                        "pages": [
+                          "tutorials/audio/minimax/minimax-music-3"
+                        ]
+                      },
+                      {
                         "group": "Stable Audio 1.0",
                         "pages": [
                           "tutorials/audio/stable-audio/stable-audio-1"
@@ -3264,6 +3270,12 @@
                   {
                     "group": "音频",
                     "pages": [
+                      {
+                        "group": "MiniMax Music 3",
+                        "pages": [
+                          "zh/tutorials/audio/minimax/minimax-music-3"
+                        ]
+                      },
                       {
                         "group": "Stable Audio 1.0",
                         "pages": [
@@ -6168,6 +6180,12 @@
                   {
                     "group": "オーディオ",
                     "pages": [
+                      {
+                        "group": "MiniMax Music 3",
+                        "pages": [
+                          "ja/tutorials/audio/minimax/minimax-music-3"
+                        ]
+                      },
                       {
                         "group": "Stable Audio 1.0",
                         "pages": [
@@ -9153,6 +9171,12 @@
                   {
                     "group": "오디오",
                     "pages": [
+                      {
+                        "group": "MiniMax Music 3",
+                        "pages": [
+                          "ko/tutorials/audio/minimax/minimax-music-3"
+                        ]
+                      },
                       {
                         "group": "Stable Audio 1.0",
                         "pages": [
