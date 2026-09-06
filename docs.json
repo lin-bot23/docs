@@ -3981,6 +3981,13 @@
                 ]
               },
               {
+                "group": "Comfy Cloud 节点",
+                "icon": "cloud",
+                "pages": [
+                  "zh/cloud-nodes/overview"
+                ]
+              },
+              {
                 "group": "合作伙伴节点",
                 "icon": "handshake",
                 "pages": [
@@ -7255,6 +7262,13 @@
                       }
                     ]
                   }
+                ]
+              },
+              {
+                "group": "Comfy Cloud ノード",
+                "icon": "cloud",
+                "pages": [
+                  "ja/cloud-nodes/overview"
                 ]
               },
               {
@@ -10545,6 +10559,13 @@
                       }
                     ]
                   }
+                ]
+              },
+              {
+                "group": "Comfy Cloud 노드",
+                "icon": "cloud",
+                "pages": [
+                  "ko/cloud-nodes/overview"
                 ]
               },
               {
