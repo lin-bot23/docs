@@ -3,7 +3,7 @@ title: "Partner Node 価格"
 description: "Anthropic、OpenAI、Kling、Luma など全プロバイダーの Partner Node クレジット価格。モデル、トークン種別、生成種別ごとに分類。"
 sidebarTitle: "料金"
 mode: "wide"
-translationSourceHash: a0a4f434
+translationSourceHash: 66919a56
 translationFrom: tutorials/partner-nodes/pricing.mdx
 translationBlockHashes:
   "_intro": ada9999a
@@ -26,8 +26,8 @@ translationBlockHashes:
   "Luma": 655207a5
   "Meshy": 377490f6
   "Meta": a253fe9a
-  "Minimax": 5d425719
-  "OpenAI": 6eab1f4c
+  "Minimax": 676fec35
+  "OpenAI": cd339084
   "OpenRouter": a94e4b5c
   "Pixverse": 4b9b053c
   "Quiver": b9d45a82
@@ -45,7 +45,7 @@ translationBlockHashes:
   "Wan": 400991a5
   "WaveSpeed": 349a7c9d
   "xAI": 3a2a47a7
-  "Cloud GPU": e228bb68
+  "Cloud GPU": 070a3d12
 ---
 
 
@@ -803,12 +803,16 @@ Ultra モード（Meshy 7 と `latest` モデルで利用可能）は 60.3 ク�
 | MiniMax H3 最初と最後のフレームからビデオ | MiniMax H3 Max          | 768P       | 24.14 / 秒                          |
 | MiniMax H3 リファレンスからビデオ | MiniMax H3 Max               | 480P       | 15.09 / 秒                          |
 | MiniMax H3 リファレンスからビデオ | MiniMax H3 Max               | 768P       | 24.14 / 秒                          |
+| MiniMax H3 テキストからビデオ | MiniMax H3 Max Turbo            | 480P       | 7.54 / 秒                           |
+| MiniMax H3 テキストからビデオ | MiniMax H3 Max Turbo            | 768P       | 12.07 / 秒                          |
+| MiniMax H3 最初と最後のフレームからビデオ | MiniMax H3 Max Turbo    | 480P      | 7.54 / 秒                           |
+| MiniMax H3 最初と最後のフレームからビデオ | MiniMax H3 Max Turbo    | 768P      | 12.07 / 秒                          |
 
 **MiniMax Hailuo 02 Video** は1080Pでは **6秒** のみサポートします。
 
 **MiniMax H3** は秒単位で課金されます（4〜15秒）。**MiniMax H3 リファレンスからビデオ** は、5枚を超える参照画像1枚につき12.07クレジット、参照ビデオは27.16クレジット/秒（768P）または39.22クレジット/秒（2K）で課金されます（1本あたり2秒から、合計最大15秒、概算）。**MiniMax H3 コンテキストIR** の料金は添付メディア（テキストのみ、最初と最後のフレーム、参照メディア）によって異なります（概算）。
 
-**MiniMax H3 Max** は秒単位で課金されます（5〜15秒）。料金は上記の表を参照してください。
+**MiniMax H3 Max** は秒単位で課金されます（5〜15秒）。料金は上記の表を参照してください。**MiniMax H3 Max Turbo** は H3 Max のより高速で低価格なオプションで、テキストからビデオおよび最初と最後のフレームからビデオのノードで利用できます。秒単価は Max の約半分で、上記の表の料金で秒単位で課金されます。
 
 **MiniMax H3 Max リファレンスからビデオ** の課金は2つの部分から成ります：出力ビデオは上表の秒単価で、参照入力はトークン単位で課金されます。リクエスト内のすべての画像・動画・音声から発生するトークンは合算され、1つの無料枠を共有します：
 
@@ -873,6 +877,7 @@ DALL·E と Sora は固定の画像あたりまたは秒あたりのレートを
 
 | モデル        | 入力クレジット / 100万 | 出力クレジット / 100万 |
 | :----------- | -----------------: | :------------------ |
+| gpt-6-astra  |              3017.3 | 15086.5             |
 | gpt-5.6-sol、gpt-5.6-sol-pro |               1055 | 6330                |
 | gpt-5.6-terra、gpt-5.6-terra-pro |           527.5 | 3165                |
 | gpt-5.6-luna、gpt-5.6-luna-pro |              211 | 1266                |
@@ -1409,4 +1414,4 @@ Text to Music: 合計クレジット = **（クレジット / 秒）× `duration
 
 | gpu_type       | クレジット    |
 | :------------- | :--------- |
-| rtx_pro_6000   | 0.266 / 秒 |
+| rtx_pro_6000   | 0.2732 / 秒 |

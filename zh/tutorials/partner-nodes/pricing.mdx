@@ -3,7 +3,7 @@ title: "Partner Node 定价"
 description: "各提供商（包括 Anthropic、OpenAI、Kling 和 Luma）的 Partner Node 积分定价，按模型、令牌类型和生成类型细分。"
 sidebarTitle: "定价"
 mode: "wide"
-translationSourceHash: a0a4f434
+translationSourceHash: 66919a56
 translationFrom: tutorials/partner-nodes/pricing.mdx
 translationBlockHashes:
   "_intro": ada9999a
@@ -26,8 +26,8 @@ translationBlockHashes:
   "Luma": 655207a5
   "Meshy": 377490f6
   "Meta": a253fe9a
-  "Minimax": 5d425719
-  "OpenAI": 6eab1f4c
+  "Minimax": 676fec35
+  "OpenAI": cd339084
   "OpenRouter": a94e4b5c
   "Pixverse": 4b9b053c
   "Quiver": b9d45a82
@@ -45,7 +45,7 @@ translationBlockHashes:
   "Wan": 400991a5
   "WaveSpeed": 349a7c9d
   "xAI": 3a2a47a7
-  "Cloud GPU": e228bb68
+  "Cloud GPU": 070a3d12
 ---
 
 
@@ -803,12 +803,16 @@ Ultra 模式（适用于 Meshy 7 和 `latest` 模型）增加 60.3 积分：文�
 | MiniMax H3 首尾帧转视频  | MiniMax H3 Max                       | 768P       | 24.14 / 秒                          |
 | MiniMax H3 参考转视频    | MiniMax H3 Max                       | 480P       | 15.09 / 秒                          |
 | MiniMax H3 参考转视频    | MiniMax H3 Max                       | 768P       | 24.14 / 秒                          |
+| MiniMax H3 文本转视频    | MiniMax H3 Max Turbo                 | 480P       | 7.54 / 秒                           |
+| MiniMax H3 文本转视频    | MiniMax H3 Max Turbo                 | 768P       | 12.07 / 秒                          |
+| MiniMax H3 首尾帧转视频  | MiniMax H3 Max Turbo                 | 480P       | 7.54 / 秒                           |
+| MiniMax H3 首尾帧转视频  | MiniMax H3 Max Turbo                 | 768P       | 12.07 / 秒                          |
 
 **MiniMax Hailuo 02 Video** 在 1080P 下仅支持 **6 秒**。
 
 **MiniMax H3** 按秒计费（时长 4–15 秒）。**MiniMax H3 参考转视频** 超过 5 张参考图片每张加 12.07 积分，参考视频按 27.16 积分/秒（768P）或 39.22 积分/秒（2K）计费（每段视频 2 秒起，总计最多 15 秒，近似值）。**MiniMax H3 上下文增强** 的价格取决于附加媒体：仅文本、首尾帧或参考媒体（近似值）。
 
-**MiniMax H3 Max** 按秒计费（时长 5–15 秒），费率见上表。
+**MiniMax H3 Max** 按秒计费（时长 5–15 秒），费率见上表。**MiniMax H3 Max Turbo** 是 H3 Max 的更快、更便宜的选项，可用于文本转视频和首尾帧转视频节点，每秒费率约为 Max 的一半，按上表费率按秒计费。
 
 **MiniMax H3 Max 参考转视频** 的计费分两部分：输出视频按上表按秒计费；参考输入按令牌计费。请求中所有图片、视频和音频产生的令牌合并计算，共享同一个免费额度：
 
@@ -873,6 +877,7 @@ DALL·E 和 Sora 使用固定的每张图片或每秒费率。**OpenAI GPT Image
 
 | 模型          | 输入积分 / 1M | 输出积分 / 1M |
 | :----------- | -----------------: | :------------------ |
+| gpt-6-astra  |              3017.3 | 15086.5             |
 | gpt-5.6-sol、gpt-5.6-sol-pro |               1055 | 6330                |
 | gpt-5.6-terra、gpt-5.6-terra-pro |           527.5 | 3165                |
 | gpt-5.6-luna、gpt-5.6-luna-pro |              211 | 1266                |
@@ -1409,4 +1414,4 @@ Gen4 Turbo：**5s** 或 **10s**。总积分 = **(积分/秒) × `时长`**。
 
 | GPU 类型       | 积分        |
 | :------------- | :--------- |
-| rtx_pro_6000   | 0.266 / 秒 |
+| rtx_pro_6000   | 0.2732 / 秒 |
