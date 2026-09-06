@@ -946,6 +946,12 @@
                         ]
                       },
                       {
+                        "group": "Model",
+                        "pages": [
+                          "built-in-nodes/BlockSparseAttention"
+                        ]
+                      },
+                      {
                         "group": "Model Merging",
                         "pages": [
                           "built-in-nodes/SaveLoRANode"
@@ -961,6 +967,8 @@
                           "built-in-nodes/SelectVAEDevice"
                         ]
                       },
+                      "built-in-nodes/ByteDanceImageNode",
+                      "built-in-nodes/ByteDanceImageReferenceNode",
                       "built-in-nodes/ComfyCloudFlux2TextToImageNode",
                       "built-in-nodes/ComfyCloudMageFlowTextToImageNode",
                       "built-in-nodes/ComfyCloudMageFlowTurboTextToImageNode",
@@ -972,10 +980,15 @@
                       "built-in-nodes/KlingCameraControlT2VNode",
                       "built-in-nodes/KlingDualCharacterVideoEffectNode",
                       "built-in-nodes/KlingSingleImageVideoEffectNode",
+                      "built-in-nodes/KlingVideoExtendNode",
                       "built-in-nodes/KlingVirtualTryOnNode",
+                      "built-in-nodes/LtxvApiImageToVideo",
+                      "built-in-nodes/LtxvApiTextToVideo",
                       "built-in-nodes/MoonvalleyImg2VideoNode",
                       "built-in-nodes/MoonvalleyTxt2VideoNode",
                       "built-in-nodes/MoonvalleyVideo2VideoNode",
+                      "built-in-nodes/OpenAIDalle2",
+                      "built-in-nodes/OpenAIDalle3",
                       "built-in-nodes/SeedVR2ProgressiveSampler",
                       "built-in-nodes/StabilityAudioInpaint",
                       "built-in-nodes/StabilityAudioToAudio",
@@ -1220,6 +1233,7 @@
                       {
                         "group": "Color",
                         "pages": [
+                          "built-in-nodes/ImageColorSpace",
                           "built-in-nodes/ImageRGBToYUV",
                           "built-in-nodes/ImageYUVToRGB",
                           "built-in-nodes/NormalizeImages"
@@ -2405,7 +2419,6 @@
                             "group": "Bytedance",
                             "pages": [
                               "built-in-nodes/ByteDanceCreateImageAsset",
-                              "built-in-nodes/ByteDanceImageNode",
                               "built-in-nodes/ByteDanceSeedreamLayerSeparationNode",
                               "built-in-nodes/ByteDanceSeedreamNode",
                               "built-in-nodes/ByteDanceSeedreamNodeV2",
@@ -2487,8 +2500,6 @@
                           {
                             "group": "Openai",
                             "pages": [
-                              "built-in-nodes/OpenAIDalle2",
-                              "built-in-nodes/OpenAIDalle3",
                               "built-in-nodes/OpenAIGPTImage1",
                               "built-in-nodes/OpenAIGPTImageNodeV2"
                             ]
@@ -2643,7 +2654,6 @@
                               "built-in-nodes/ByteDance2TextToVideoNode",
                               "built-in-nodes/ByteDanceCreateVideoAsset",
                               "built-in-nodes/ByteDanceFirstLastFrameNode",
-                              "built-in-nodes/ByteDanceImageReferenceNode",
                               "built-in-nodes/ByteDanceImageToVideoNode",
                               "built-in-nodes/ByteDanceTextToVideoNode",
                               "built-in-nodes/ByteDanceVideoEnhanceNode"
@@ -2698,7 +2708,6 @@
                               "built-in-nodes/KlingStartEndFrameNode",
                               "built-in-nodes/KlingTextToVideoNode",
                               "built-in-nodes/KlingTextToVideoWithAudio",
-                              "built-in-nodes/KlingVideoExtendNode",
                               "built-in-nodes/KlingVideoNode"
                             ]
                           },
@@ -2707,9 +2716,7 @@
                             "pages": [
                               "built-in-nodes/LtxApi25AudioToVideo",
                               "built-in-nodes/LtxApi25ImageToVideo",
-                              "built-in-nodes/LtxApi25TextToVideo",
-                              "built-in-nodes/LtxvApiImageToVideo",
-                              "built-in-nodes/LtxvApiTextToVideo"
+                              "built-in-nodes/LtxApi25TextToVideo"
                             ]
                           },
                           {
@@ -5608,7 +5615,6 @@
                             "group": "Bytedance",
                             "pages": [
                               "zh/built-in-nodes/ByteDanceCreateImageAsset",
-                              "zh/built-in-nodes/ByteDanceImageNode",
                               "zh/built-in-nodes/ByteDanceSeedreamLayerSeparationNode",
                               "zh/built-in-nodes/ByteDanceSeedreamNode",
                               "zh/built-in-nodes/ByteDanceSeedreamNodeV2",
@@ -5690,8 +5696,6 @@
                           {
                             "group": "Openai",
                             "pages": [
-                              "zh/built-in-nodes/OpenAIDalle2",
-                              "zh/built-in-nodes/OpenAIDalle3",
                               "zh/built-in-nodes/OpenAIGPTImage1",
                               "zh/built-in-nodes/OpenAIGPTImageNodeV2"
                             ]
@@ -5846,7 +5850,6 @@
                               "zh/built-in-nodes/ByteDance2TextToVideoNode",
                               "zh/built-in-nodes/ByteDanceCreateVideoAsset",
                               "zh/built-in-nodes/ByteDanceFirstLastFrameNode",
-                              "zh/built-in-nodes/ByteDanceImageReferenceNode",
                               "zh/built-in-nodes/ByteDanceImageToVideoNode",
                               "zh/built-in-nodes/ByteDanceTextToVideoNode",
                               "zh/built-in-nodes/ByteDanceVideoEnhanceNode"
@@ -5901,7 +5904,6 @@
                               "zh/built-in-nodes/KlingStartEndFrameNode",
                               "zh/built-in-nodes/KlingTextToVideoNode",
                               "zh/built-in-nodes/KlingTextToVideoWithAudio",
-                              "zh/built-in-nodes/KlingVideoExtendNode",
                               "zh/built-in-nodes/KlingVideoNode"
                             ]
                           },
@@ -5910,9 +5912,7 @@
                             "pages": [
                               "zh/built-in-nodes/LtxApi25AudioToVideo",
                               "zh/built-in-nodes/LtxApi25ImageToVideo",
-                              "zh/built-in-nodes/LtxApi25TextToVideo",
-                              "zh/built-in-nodes/LtxvApiImageToVideo",
-                              "zh/built-in-nodes/LtxvApiTextToVideo"
+                              "zh/built-in-nodes/LtxApi25TextToVideo"
                             ]
                           },
                           {
@@ -6196,6 +6196,7 @@
                       {
                         "group": "Color",
                         "pages": [
+                          "zh/built-in-nodes/ImageColorSpace",
                           "zh/built-in-nodes/ImageRGBToYUV",
                           "zh/built-in-nodes/ImageYUVToRGB",
                           "zh/built-in-nodes/NormalizeImages"
@@ -6513,6 +6514,12 @@
                         ]
                       },
                       {
+                        "group": "Model",
+                        "pages": [
+                          "zh/built-in-nodes/BlockSparseAttention"
+                        ]
+                      },
+                      {
                         "group": "Model Merging",
                         "pages": [
                           "zh/built-in-nodes/SaveLoRANode"
@@ -6528,6 +6535,8 @@
                           "zh/built-in-nodes/SelectVAEDevice"
                         ]
                       },
+                      "zh/built-in-nodes/ByteDanceImageNode",
+                      "zh/built-in-nodes/ByteDanceImageReferenceNode",
                       "zh/built-in-nodes/ComfyCloudFlux2TextToImageNode",
                       "zh/built-in-nodes/ComfyCloudMageFlowTextToImageNode",
                       "zh/built-in-nodes/ComfyCloudMageFlowTurboTextToImageNode",
@@ -6539,10 +6548,15 @@
                       "zh/built-in-nodes/KlingCameraControlT2VNode",
                       "zh/built-in-nodes/KlingDualCharacterVideoEffectNode",
                       "zh/built-in-nodes/KlingSingleImageVideoEffectNode",
+                      "zh/built-in-nodes/KlingVideoExtendNode",
                       "zh/built-in-nodes/KlingVirtualTryOnNode",
+                      "zh/built-in-nodes/LtxvApiImageToVideo",
+                      "zh/built-in-nodes/LtxvApiTextToVideo",
                       "zh/built-in-nodes/MoonvalleyImg2VideoNode",
                       "zh/built-in-nodes/MoonvalleyTxt2VideoNode",
                       "zh/built-in-nodes/MoonvalleyVideo2VideoNode",
+                      "zh/built-in-nodes/OpenAIDalle2",
+                      "zh/built-in-nodes/OpenAIDalle3",
                       "zh/built-in-nodes/SeedVR2ProgressiveSampler",
                       "zh/built-in-nodes/StabilityAudioInpaint",
                       "zh/built-in-nodes/StabilityAudioToAudio",
@@ -8913,7 +8927,6 @@
                             "group": "Bytedance",
                             "pages": [
                               "ja/built-in-nodes/ByteDanceCreateImageAsset",
-                              "ja/built-in-nodes/ByteDanceImageNode",
                               "ja/built-in-nodes/ByteDanceSeedreamLayerSeparationNode",
                               "ja/built-in-nodes/ByteDanceSeedreamNode",
                               "ja/built-in-nodes/ByteDanceSeedreamNodeV2",
@@ -8995,8 +9008,6 @@
                           {
                             "group": "Openai",
                             "pages": [
-                              "ja/built-in-nodes/OpenAIDalle2",
-                              "ja/built-in-nodes/OpenAIDalle3",
                               "ja/built-in-nodes/OpenAIGPTImage1",
                               "ja/built-in-nodes/OpenAIGPTImageNodeV2"
                             ]
@@ -9151,7 +9162,6 @@
                               "ja/built-in-nodes/ByteDance2TextToVideoNode",
                               "ja/built-in-nodes/ByteDanceCreateVideoAsset",
                               "ja/built-in-nodes/ByteDanceFirstLastFrameNode",
-                              "ja/built-in-nodes/ByteDanceImageReferenceNode",
                               "ja/built-in-nodes/ByteDanceImageToVideoNode",
                               "ja/built-in-nodes/ByteDanceTextToVideoNode",
                               "ja/built-in-nodes/ByteDanceVideoEnhanceNode"
@@ -9206,7 +9216,6 @@
                               "ja/built-in-nodes/KlingStartEndFrameNode",
                               "ja/built-in-nodes/KlingTextToVideoNode",
                               "ja/built-in-nodes/KlingTextToVideoWithAudio",
-                              "ja/built-in-nodes/KlingVideoExtendNode",
                               "ja/built-in-nodes/KlingVideoNode"
                             ]
                           },
@@ -9215,9 +9224,7 @@
                             "pages": [
                               "ja/built-in-nodes/LtxApi25AudioToVideo",
                               "ja/built-in-nodes/LtxApi25ImageToVideo",
-                              "ja/built-in-nodes/LtxApi25TextToVideo",
-                              "ja/built-in-nodes/LtxvApiImageToVideo",
-                              "ja/built-in-nodes/LtxvApiTextToVideo"
+                              "ja/built-in-nodes/LtxApi25TextToVideo"
                             ]
                           },
                           {
@@ -9589,6 +9596,12 @@
                         ]
                       },
                       {
+                        "group": "Model",
+                        "pages": [
+                          "ja/built-in-nodes/BlockSparseAttention"
+                        ]
+                      },
+                      {
                         "group": "Model Merging",
                         "pages": [
                           "ja/built-in-nodes/SaveLoRANode"
@@ -9604,6 +9617,8 @@
                           "ja/built-in-nodes/SelectVAEDevice"
                         ]
                       },
+                      "ja/built-in-nodes/ByteDanceImageNode",
+                      "ja/built-in-nodes/ByteDanceImageReferenceNode",
                       "ja/built-in-nodes/ComfyCloudFlux2TextToImageNode",
                       "ja/built-in-nodes/ComfyCloudMageFlowTextToImageNode",
                       "ja/built-in-nodes/ComfyCloudMageFlowTurboTextToImageNode",
@@ -9615,10 +9630,15 @@
                       "ja/built-in-nodes/KlingCameraControlT2VNode",
                       "ja/built-in-nodes/KlingDualCharacterVideoEffectNode",
                       "ja/built-in-nodes/KlingSingleImageVideoEffectNode",
+                      "ja/built-in-nodes/KlingVideoExtendNode",
                       "ja/built-in-nodes/KlingVirtualTryOnNode",
+                      "ja/built-in-nodes/LtxvApiImageToVideo",
+                      "ja/built-in-nodes/LtxvApiTextToVideo",
                       "ja/built-in-nodes/MoonvalleyImg2VideoNode",
                       "ja/built-in-nodes/MoonvalleyTxt2VideoNode",
                       "ja/built-in-nodes/MoonvalleyVideo2VideoNode",
+                      "ja/built-in-nodes/OpenAIDalle2",
+                      "ja/built-in-nodes/OpenAIDalle3",
                       "ja/built-in-nodes/SeedVR2ProgressiveSampler",
                       "ja/built-in-nodes/StabilityAudioInpaint",
                       "ja/built-in-nodes/StabilityAudioToAudio",
@@ -9694,6 +9714,7 @@
                       {
                         "group": "Color",
                         "pages": [
+                          "ja/built-in-nodes/ImageColorSpace",
                           "ja/built-in-nodes/ImageRGBToYUV",
                           "ja/built-in-nodes/ImageYUVToRGB",
                           "ja/built-in-nodes/NormalizeImages"
@@ -12143,7 +12164,6 @@
                             "group": "Bytedance",
                             "pages": [
                               "ko/built-in-nodes/ByteDanceCreateImageAsset",
-                              "ko/built-in-nodes/ByteDanceImageNode",
                               "ko/built-in-nodes/ByteDanceSeedreamLayerSeparationNode",
                               "ko/built-in-nodes/ByteDanceSeedreamNode",
                               "ko/built-in-nodes/ByteDanceSeedreamNodeV2",
@@ -12225,8 +12245,6 @@
                           {
                             "group": "Openai",
                             "pages": [
-                              "ko/built-in-nodes/OpenAIDalle2",
-                              "ko/built-in-nodes/OpenAIDalle3",
                               "ko/built-in-nodes/OpenAIGPTImage1",
                               "ko/built-in-nodes/OpenAIGPTImageNodeV2"
                             ]
@@ -12381,7 +12399,6 @@
                               "ko/built-in-nodes/ByteDance2TextToVideoNode",
                               "ko/built-in-nodes/ByteDanceCreateVideoAsset",
                               "ko/built-in-nodes/ByteDanceFirstLastFrameNode",
-                              "ko/built-in-nodes/ByteDanceImageReferenceNode",
                               "ko/built-in-nodes/ByteDanceImageToVideoNode",
                               "ko/built-in-nodes/ByteDanceTextToVideoNode",
                               "ko/built-in-nodes/ByteDanceVideoEnhanceNode"
@@ -12436,7 +12453,6 @@
                               "ko/built-in-nodes/KlingStartEndFrameNode",
                               "ko/built-in-nodes/KlingTextToVideoNode",
                               "ko/built-in-nodes/KlingTextToVideoWithAudio",
-                              "ko/built-in-nodes/KlingVideoExtendNode",
                               "ko/built-in-nodes/KlingVideoNode"
                             ]
                           },
@@ -12445,9 +12461,7 @@
                             "pages": [
                               "ko/built-in-nodes/LtxApi25AudioToVideo",
                               "ko/built-in-nodes/LtxApi25ImageToVideo",
-                              "ko/built-in-nodes/LtxApi25TextToVideo",
-                              "ko/built-in-nodes/LtxvApiImageToVideo",
-                              "ko/built-in-nodes/LtxvApiTextToVideo"
+                              "ko/built-in-nodes/LtxApi25TextToVideo"
                             ]
                           },
                           {
@@ -12785,6 +12799,12 @@
                         ]
                       },
                       {
+                        "group": "Model",
+                        "pages": [
+                          "ko/built-in-nodes/BlockSparseAttention"
+                        ]
+                      },
+                      {
                         "group": "Model Merging",
                         "pages": [
                           "ko/built-in-nodes/SaveLoRANode"
@@ -12800,6 +12820,8 @@
                           "ko/built-in-nodes/SelectVAEDevice"
                         ]
                       },
+                      "ko/built-in-nodes/ByteDanceImageNode",
+                      "ko/built-in-nodes/ByteDanceImageReferenceNode",
                       "ko/built-in-nodes/ComfyCloudFlux2TextToImageNode",
                       "ko/built-in-nodes/ComfyCloudMageFlowTextToImageNode",
                       "ko/built-in-nodes/ComfyCloudMageFlowTurboTextToImageNode",
@@ -12811,10 +12833,15 @@
                       "ko/built-in-nodes/KlingCameraControlT2VNode",
                       "ko/built-in-nodes/KlingDualCharacterVideoEffectNode",
                       "ko/built-in-nodes/KlingSingleImageVideoEffectNode",
+                      "ko/built-in-nodes/KlingVideoExtendNode",
                       "ko/built-in-nodes/KlingVirtualTryOnNode",
+                      "ko/built-in-nodes/LtxvApiImageToVideo",
+                      "ko/built-in-nodes/LtxvApiTextToVideo",
                       "ko/built-in-nodes/MoonvalleyImg2VideoNode",
                       "ko/built-in-nodes/MoonvalleyTxt2VideoNode",
                       "ko/built-in-nodes/MoonvalleyVideo2VideoNode",
+                      "ko/built-in-nodes/OpenAIDalle2",
+                      "ko/built-in-nodes/OpenAIDalle3",
                       "ko/built-in-nodes/SeedVR2ProgressiveSampler",
                       "ko/built-in-nodes/StabilityAudioInpaint",
                       "ko/built-in-nodes/StabilityAudioToAudio",
@@ -12896,6 +12923,7 @@
                       {
                         "group": "Color",
                         "pages": [
+                          "ko/built-in-nodes/ImageColorSpace",
                           "ko/built-in-nodes/ImageRGBToYUV",
                           "ko/built-in-nodes/ImageYUVToRGB",
                           "ko/built-in-nodes/NormalizeImages"
