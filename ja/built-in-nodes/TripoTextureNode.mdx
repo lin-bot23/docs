@@ -1,12 +1,14 @@
 ---
 title: "TripoTextureNode - ComfyUI Built-in Node Documentation"
-description: "TripoTextureNode は、Tripo API を使用して、既存の Tripo 3D モデルにテクスチャを追加します。"
+description: "このノードはソース上で非推奨（レガシー）としてマークされています。"
 sidebarTitle: "TripoTextureNode"
 icon: "circle"
 mode: wide
 ---
 
-TripoTextureNode は、Tripo API を使用して、既存の Tripo 3D モデルにテクスチャを追加します。別の Tripo ノードで作成されたモデルのタスク ID を受け取り、テクスチャ処理が完了すると、テクスチャ付きの GLB または FBX モデルを返します。マテリアルマップ、テクスチャ品質、位置合わせ、シードを制御できます。また、テキストプロンプト、スタイル画像、参照画像を使用してテクスチャを誘導することもできます。
+このノードはソース上で非推奨（レガシー）としてマークされています。表示名は「Tripo: Texture model (Legacy)」です。既存のドキュメントのパラメータ表は現在のソースに対して正確なままです。ここではそれらを維持し、概要でレガシー状態を注記します。
+
+Tripo: Texture model (Legacy) ノードは、Tripo API を通じて既存の Tripo 3D モデルにテクスチャを追加します。別の Tripo ノードで作成されたモデルのタスク ID を受け取り、テクスチャジョブが完了すると、テクスチャ付きの GLB または FBX モデルを返します。マテリアルマップ、テクスチャ品質、アラインメント、シードを制御でき、テキストプロンプト、スタイル画像、または参照画像でテクスチャを誘導できます。このノードはテクスチャツールのレガシー版です。
 
 ## 入力
 
@@ -14,49 +16,49 @@ TripoTextureNode は、Tripo API を使用して、既存の Tripo 3D モデル�
 
 | パラメータ | 説明 | データ型 | 必須 | 範囲 |
 |-----------|-------------|-----------|----------|-------|
-| `model_task_id` | テクスチャを適用する Tripo モデルのタスク ID です。モデルタスク ID とセグメンテーションタスク ID を受け付けます。 | MODEL_TASK_ID | はい | - |
-| `texture` | 無視されます。このノードは常にテクスチャを生成するためです。以前のワークフローとの互換性のために残されています。（デフォルト: True） | BOOLEAN | いいえ | true<br />false |
-| `pbr` | PBR マテリアルマップ（ベースカラー、メタリック、ラフネス、ノーマル）です。オフにすると単色のカラーテクスチャになります。（デフォルト: True） | BOOLEAN | いいえ | true<br />false |
-| `texture_seed` | テクスチャ生成用のランダムシードです。同じシードと同じ入力を使うと、同じ結果が得られます。（デフォルト: 42） | INT | いいえ | 0 – 2147483647 |
-| `texture_quality` | テクスチャの解像度品質です。detailed は HD テクスチャ、extreme は 8K Ultra テクスチャです。（デフォルト: "standard"）おおよそのコスト: standard は $0.10、detailed は $0.20、extreme は $0.30 です。 | COMBO | いいえ | "standard"<br />"detailed"<br />"extreme" |
-| `texture_alignment` | 生成されたテクスチャをモデルに位置合わせする方法です。（デフォルト: "original_image"） | COMBO | いいえ | "original_image"<br />"geometry" |
-| `texture_prompt` | テクスチャリングのためのオプションのテキストガイダンスです。インポートされたモデル（Tripo: Import Model）には、色を推定するためのソース画像がないため、実際には必須です。参照画像とは併用できません。（デフォルト: ""） | STRING | いいえ | - |
-| `model_version` | テクスチャモデルです。v3.x で生成されたメッシュには v3.0、v2.5 で生成されたメッシュには v2.5 を使用します。（デフォルト: 最新の v3.0 バージョン） | COMBO | いいえ | 複数のオプションが利用可能です |
-| `style_image` | テクスチャのアートスタイルの参照画像です。`texture_prompt` と一緒に使用する場合にのみ使用されます。 | IMAGE | いいえ | - |
-| `reference` | テクスチャをガイドする参照画像です。`texture_prompt` または `style_image` とは併用できません。（デフォルト: "none"） | DYNAMIC_COMBO | いいえ | "none"<br />"image"<br />"multiview" |
-| `part_names` | テクスチャを適用する Tripo: Segment Model のパーツ名をカンマ区切りで指定します。空の場合はすべてのパーツにテクスチャを適用します。（デフォルト: ""） | STRING | いいえ | - |
+| `model_task_id` | テクスチャを適用するモデルの Tripo タスク ID。モデルタスク ID とセグメンテーションタスク ID を受け付けます。 | MODEL_TASK_ID, SEGMENT_TASK_ID | はい | - |
+| `texture` | 無視されます。このノードは常にテクスチャを生成します。古いワークフロー用に保持されています。（デフォルト: True） | BOOLEAN | いいえ | true<br />false |
+| `pbr` | PBR マテリアルマップ（ベースカラー、メタリック、ラフネス、ノーマル）。オフにすると単色テクスチャになります。（デフォルト: True） | BOOLEAN | いいえ | true<br />false |
+| `texture_seed` | テクスチャ生成用の乱数シード。（デフォルト: 42） | INT | いいえ | 0 – 2147483647 |
+| `texture_quality` | テクスチャ解像度の品質: detailed = HD テクスチャ、extreme = 8K Ultra テクスチャ。（デフォルト: "standard"）。おおよそのコスト: standard $0.10、detailed $0.20、extreme $0.30。 | COMBO | いいえ | "standard"<br />"detailed"<br />"extreme" |
+| `texture_alignment` | 生成されたテクスチャをモデルに整列させる方法。（デフォルト: "original_image"） | COMBO | いいえ | "original_image"<br />"geometry" |
+| `texture_prompt` | テクスチャリング用の任意のテキストガイダンス。色を推論する元画像を持たないインポート済みモデル（Tripo: Import Model）では、実質的に必須です。参照画像と併用できません。（デフォルト: ""） | STRING | いいえ | - |
+| `model_version` | テクスチャモデル: v3.0 は v3.x で生成されたメッシュ用、v2.5 は v2.5 で生成されたメッシュ用です。（デフォルト: v3.0_20250812） | COMBO | いいえ | 複数のオプションが利用可能 |
+| `style_image` | テクスチャの芸術的スタイル用の参照画像。`texture_prompt` と組み合わせてのみ使用されます。 | IMAGE | いいえ | - |
+| `reference` | テクスチャを誘導する参照画像。`texture_prompt` または `style_image` と併用できません。（デフォルト: "none"） | DYNAMIC_COMBO | いいえ | "none"<br />"image"<br />"multiview" |
+| `part_names` | テクスチャを適用する、Tripo: Segment Model からのカンマ区切りのパーツ名。空の場合、すべてのパーツにテクスチャを適用します。（デフォルト: ""） | STRING | いいえ | - |
 
-### "image" 参照入力
+### `image` 参照入力
 
-これらの入力は、`reference` が `"image"` に設定されている場合に使用できます。
-
-| パラメータ | 説明 | データ型 | 必須 | 範囲 |
-|-----------|-------------|-----------|----------|-------|
-| `reference_image` | テクスチャが従うべき単一の参照画像です。 | IMAGE | いいえ | - |
-
-### "multiview" 参照入力
-
-これらの入力は、`reference` が `"multiview"` に設定されている場合に使用できます。
+これらの入力は、`reference` が `"image"` に設定されている場合に利用できます。
 
 | パラメータ | 説明 | データ型 | 必須 | 範囲 |
 |-----------|-------------|-----------|----------|-------|
-| `image_front` | 前面ビュー（0°）です。 | IMAGE | いいえ | - |
-| `image_left` | 左側面ビュー（90°）です。 | IMAGE | いいえ | - |
-| `image_back` | 背面ビュー（180°）です。 | IMAGE | いいえ | - |
-| `image_right` | 右側面ビュー（270°）です。 | IMAGE | いいえ | - |
+| `reference_image` | テクスチャが従うべき単一の参照画像。 | IMAGE | はい | - |
 
-**注:** `"image"` 参照モードと `"multiview"` 参照モードは、空でない `texture_prompt` または `style_image` とは併用できません。`style_image` 入力には、空でない `texture_prompt` が必要です。`texture_prompt` を空のままにした場合、ソースモデル自体にソース画像が必要です（例: text-to-model、image-to-model、multiview-to-model、または以前のテクスチャリングタスクで生成されたモデル）。インポート済み、セグメント化済み、補完済み、リトポロジー済みのモデルなど、ソース画像を持たないモデルは、`texture_prompt` を使用してテクスチャを付ける必要があります。参照画像は、Tripo API が自ら生成したモデルに対してのみ受け付けられます。
+### `multiview` 参照入力
+
+これらの入力は、`reference` が `"multiview"` に設定されている場合に利用できます。
+
+| パラメータ | 説明 | データ型 | 必須 | 範囲 |
+|-----------|-------------|-----------|----------|-------|
+| `image_front` | 正面ビュー（0°）。 | IMAGE | はい | - |
+| `image_left` | 左ビュー（90°）。 | IMAGE | はい | - |
+| `image_back` | 背面ビュー（180°）。 | IMAGE | はい | - |
+| `image_right` | 右ビュー（270°）。 | IMAGE | はい | - |
+
+**注記:** `"image"` および `"multiview"` 参照モードは、空でない `texture_prompt` または `style_image` と併用できません。`style_image` 入力には、空でない `texture_prompt` が必要です。`texture_prompt` を空のままにすると、ソースモデルがあらかじめ独自のソース画像を持っている必要があります（たとえば、テキストからモデル、画像からモデル、マルチビューからモデル、または以前のテクスチャリングタスクで生成されたモデル）。インポート済み、セグメント化済み、完了済み、またはリトポロジー済みのモデルなど、ソース画像を持たないモデルは、`texture_prompt` を使ってテクスチャリングする必要があります。参照画像は、Tripo API 自体が生成したモデルに対してのみ受け付けられます。`part_names` 入力を空のままにすると、すべてのパーツにテクスチャを適用できます。
 
 ## 出力
 
 | 出力名 | 説明 | データ型 |
 |-------------|-------------|-----------|
-| `モデルファイル` | 生成されたモデルファイルです（後方互換性のためだけに存在します）。 | STRING |
-| `モデルタスクID` | 完了したテクスチャ生成タスクのタスク ID です。他の Tripo ノードへの入力として使用できます。 | MODEL_TASK_ID |
-| `GLB` | 生成されたテクスチャ付きモデル（GLB 形式）です。ソースがクアッドメッシュまたは FBX インポートの場合は空になります。 | FILE3DGLB |
-| `FBX` | 生成されたテクスチャ付きモデル（FBX 形式）です。Tripo はクアッドメッシュと FBX インポートの場合に FBX を返します。それ以外の場合は空になります。 | FILE3DFBX |
+| `model_file` | 生成されたモデルファイル（後方互換性のみ）。 | STRING |
+| `model task_id` | 完了したテクスチャ生成タスクのタスク ID。他の Tripo ノードへの入力として使用できます。 | MODEL_TASK_ID |
+| `GLB` | 生成されたテクスチャ付きモデル（GLB 形式）。ソースがクアッドメッシュまたは FBX インポートの場合は空です。 | FILE3DGLB |
+| `FBX` | 生成されたテクスチャ付きモデル（FBX 形式）。Tripo はクアッドメッシュと FBX インポートに対して FBX を返します。それ以外の場合は空です。 | FILE3DFBX |
 
 > このドキュメントは AI によって生成されました。エラーを見つけた場合や改善のご提案がある場合は、ぜひ貢献してください！ [GitHub で編集](https://github.com/Comfy-Org/embedded-docs/blob/main/comfyui_embedded_docs/docs/TripoTextureNode/ja.md)
 
 ---
-**Source fingerprint (SHA-256):** `815c22a9d8f4785ef5219789e0f2eee804776ec7e4752099ec0db0a2b5ad4bb2`
+**Source fingerprint (SHA-256):** `850685123b5f14cded5829d86a7307452a1e812e78d11f52806e64ea41d66350`

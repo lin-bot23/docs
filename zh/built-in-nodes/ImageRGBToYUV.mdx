@@ -1,30 +1,28 @@
 ---
 title: "ImageRGBToYUV - ComfyUI Built-in Node Documentation"
-description: "ImageRGBToYUV 节点执行 RGB 到 YUV 的颜色空间转换。"
+description: "ImageRGBToYUV 节点使用 RGB 到 YCbCr 的颜色转换，将 RGB 图像转换为 YUV 风格的色彩分量。"
 sidebarTitle: "ImageRGBToYUV"
 icon: "circle"
 mode: wide
 ---
 
-# 图像 RGB 到 YUV 转换
-
-ImageRGBToYUV 节点执行 RGB 到 YUV 的颜色空间转换。它接受一个 RGB 图像作为输入，并输出三个分别代表 YUV 通道的独立图像：Y（亮度）、U（蓝差色度）和 V（红差色度）。
+ImageRGBToYUV 节点使用 RGB 到 YCbCr 的颜色转换，将 RGB 图像转换为 YUV 风格的色彩分量。它将结果拆分为三张独立的图像——Y（亮度）、U（蓝色差色度）和 V（红色差色度）——并以与输入相同的宽度和高度返回每个分量。
 
 ## 输入
 
-| 参数 | 描述 | 数据类型 | 必需 | 范围 |
-|------|------|----------|------|------|
-| `图像` | 要转换为 YUV 颜色空间的输入 RGB 图像。这应该是一个 3 通道图像。 | IMAGE | 是 | - |
+| 参数 | 描述 | 数据类型 | 必需 | Range |
+|-----------|-------------|-----------|----------|-------|
+| `图像` | 要转换为 Y、U 和 V 分量的输入 RGB 图像。如果图像包含 alpha 通道，则仅使用前三个（RGB）通道。 | IMAGE | 是 | - |
 
 ## 输出
 
 | 输出名称 | 描述 | 数据类型 |
-|----------|------|----------|
-| `Y`      | Y 通道代表图像的亮度（亮度）。 | IMAGE |
-| `U`      | U 通道代表蓝差色度分量。 | IMAGE |
-| `V`      | V 通道代表红差色度分量。 | IMAGE |
+|-------------|-------------|-----------|
+| `Y` | YUV 颜色空间的亮度分量，以三通道图像形式返回 | IMAGE |
+| `U` | YUV 颜色空间的蓝色差色度分量，以三通道图像形式返回 | IMAGE |
+| `V` | YUV 颜色空间的红色差色度分量，以三通道图像形式返回 | IMAGE |
 
-输出图像将具有与输入图像相同的尺寸。
+每个输出的宽度和高度都与输入图像相同。相应的 Y、U 或 V 分量会在所有三个通道中重复，因此每个输出都以标准三通道图像形式返回。
 
 > 本文档由 AI 生成。如果您发现任何错误或有改进建议，欢迎贡献！ [在 GitHub 上编辑](https://github.com/Comfy-Org/embedded-docs/blob/main/comfyui_embedded_docs/docs/ImageRGBToYUV/zh.md)
 

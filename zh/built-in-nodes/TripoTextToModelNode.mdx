@@ -1,49 +1,51 @@
 ---
 title: "TripoTextToModelNode - ComfyUI Built-in Node Documentation"
-description: "使用 Tripo 的 API，根据文本描述生成完整的 3D 模型。"
+description: "此旧版节点使用 Tripo 的 API 根据文本描述生成成品 3D 模型。"
 sidebarTitle: "TripoTextToModelNode"
 icon: "circle"
 mode: wide
 ---
 
-使用 Tripo 的 API，根据文本描述生成完整的 3D 模型。该节点会等待生成完成后返回模型文件，并可选择附带纹理和 PBR 材质。
+此旧版节点使用 Tripo 的 API 根据文本描述生成成品 3D 模型。它会等待生成完成，然后返回模型文件，并可选包含纹理和 PBR 材质。它已被标记为弃用，仅为兼容旧工作流而保留。
 
 ## 输入
 
 | 参数 | 描述 | 数据类型 | 必填 | 范围 |
 |-----------|-------------|-----------|----------|-------|
-| `提示词` | 要生成的 3D 模型的文本描述（多行）。此参数为必需项，不能为空。 | STRING | 是 | - |
-| `负面提示词` | 要避免在生成的模型中出现的文本描述（多行）。最多 255 个字符。仅在非空时发送给 API。 | STRING | 否 | 最多 255 个字符 |
-| `模型版本` | 用于生成的 Tripo 模型版本（默认：v3.1-20260211）。 | COMBO | 否 | 有多个选项可选 |
-| `风格` | 应用于生成模型的样式（默认：None）。Tripo 已不再支持该参数，因此会被忽略；仅为旧工作流保留。 | COMBO | 否 | 有多个选项可选 |
-| `纹理` | 是否生成纹理贴图。关闭时返回纯几何体，并忽略 `pbr`（默认：True）。 | BOOLEAN | 否 | true / false |
-| `PBR` | 是否生成 PBR 材质贴图（基础色、金属度、粗糙度、法线）。需要启用 `texture`；当 `texture` 关闭时强制关闭（默认：True）。 | BOOLEAN | 否 | true / false |
+| `提示词` | 要生成的 3D 模型的文本描述（多行）。此参数为必填项，不能为空。 | STRING | 是 | - |
+| `负面提示词` | 要避免在生成模型中出现的文本描述（多行）。最多 255 个字符。仅在非空时发送到 API。 | STRING | 否 | 最多 255 个字符 |
+| `模型版本` | 用于生成的 Tripo 模型版本（默认：v3_1_20260211）。 | COMBO | 否 | 多个可用选项 |
+| `风格` | Tripo 已不再支持并被忽略。为兼容旧工作流而保留（默认："None"）。 | COMBO | 否 | 多个可用选项 |
+| `纹理` | 生成纹理贴图。关闭时返回裸几何体并忽略 `pbr`（默认：True）。 | BOOLEAN | 否 | true / false |
+| `PBR` | PBR 材质贴图（基础色、金属度、粗糙度、法线）。需要 `texture`；当 `texture` 关闭时会强制关闭（默认：True）。 | BOOLEAN | 否 | true / false |
 | `图像种子` | 用于图像生成阶段的种子（默认：42）。 | INT | 否 | 0 到 2147483647 |
 | `模型种子` | 用于模型生成阶段的种子（默认：42）。 | INT | 否 | 0 到 2147483647 |
 | `纹理种子` | 用于纹理生成阶段的种子（默认：42）。 | INT | 否 | 0 到 2147483647 |
-| `纹理质量` | 生成纹理的质量。detailed = 高清纹理，extreme = 8K 超高清纹理（默认：standard）。 | COMBO | 否 | "standard"<br />"detailed"<br />"extreme" |
-| `面数限制` | 最大面数。-1 表示由 Tripo 自适应选择（在 v3.x 的 standard 模式下约 140 万面，detailed 模式下约 200 万面）。Tripo 会静默限制上限：v2.5 限制为 500,000 面，四边形网格限制为 150,000 面。（默认：-1） | INT | 否 | -1 到 2000000 |
-| `四边形` | 是否输出四边形网格。Tripo 以 FBX 格式提供四边形网格，因此结果会出现在 FBX 输出上，而 GLB 输出保持为空。（默认：False） | BOOLEAN | 否 | true / false |
+| `纹理质量` | 生成纹理的质量。detailed = HD 纹理，extreme = 8K Ultra 纹理（默认：standard）。 | COMBO | 否 | "standard"<br />"detailed"<br />"extreme" |
+| `面数限制` | 最大面数。-1 让 Tripo 自适应选择（在 v3.x standard 下约 140 万面，在 detailed 下约 200 万面）。Tripo 会静默限制：v2.5 为 500,000，四边形网格为 150,000。（默认：-1） | INT | 否 | -1 到 2000000 |
+| `四边形` | 四边形网格输出。Tripo 以 FBX 格式交付四边形网格，因此结果会出现在 FBX 输出上，而 GLB 输出保持为空。（默认：False） | BOOLEAN | 否 | true / false |
 | `几何质量` | 生成几何体的质量（默认：standard）。 | COMBO | 否 | "standard"<br />"detailed" |
-| `smart_low_poly` | 使用整洁、手工风格的拓扑，生成低多边形网格（500–20,000 个面；启用 `quad` 时为 500–10,000）。最适合简单对象；复杂对象可能会失败。（默认：False） | BOOLEAN | 否 | true / false |
-| `auto_size` | 将带纹理的模型按其真实世界尺寸（以米为单位）缩放。Tripo 将尺寸存储为模型的场景变换，并在模型被转换、绑定或重定向时将其烘焙到模型内；没有纹理时忽略此参数。（默认：True） | BOOLEAN | 否 | true / false |
+| `smart_low_poly` | 具有干净、手工风格拓扑的低多边形网格（500-20,000 个面，quad 为 500-10,000）。最适合简单主体；复杂主体可能会失败。（默认：False） | BOOLEAN | 否 | true / false |
+| `auto_size` | 将带纹理模型缩放到其以米为单位的真实世界尺寸。Tripo 会将尺寸存储为模型的场景变换，并在模型被转换、绑定或重定向时将其烘焙进去；没有纹理时会被忽略。（默认：True） | BOOLEAN | 否 | true / false |
 
 **注意：**
-- `prompt` 参数为必需项：提示词为空时，节点会引发错误。
-- `pbr` 需要 `texture`。当 `texture` 关闭时，节点会强制将 `pbr` 设为 off 并忽略其值。没有 `texture` 时，`auto_size` 也不起作用。
-- 启用 `smart_low_poly` 且 `face_limit` 设置为 -1 以外的值时，面数限制必须为 500 到 20,000（三角形输出），或启用 `quad` 时必须在 500 到 10,000 之间；否则节点会引发错误。
-- 启用 `quad` 时，生成的四边形网格以 FBX 格式提供，因此 FBX 输出会有内容，而 GLB 输出保持为空。
+- 此节点已弃用，并标记为旧版节点。保留它是为了向后兼容旧工作流。
+- `prompt` 参数为必填项：空提示会导致节点抛出错误。
+- `pbr` 需要 `texture`。当 `texture` 关闭时，节点会强制关闭 `pbr` 并忽略其值。没有 `texture` 时，`auto_size` 也不起作用。
+- 当启用 `smart_low_poly` 且 `face_limit` 设置为 -1 以外的值时，对于三角形输出，面数限制必须介于 500 和 20,000 之间；当启用 `quad` 时，必须介于 500 和 10,000 之间；否则节点会抛出错误。
+- 当启用 `quad` 时，生成的四边形网格以 FBX 格式交付，因此 FBX 输出会被填充，而 GLB 输出保持为空。
+- `style` 参数会被接受但会被忽略。
 
 ## 输出
 
 | 输出名称 | 描述 | 数据类型 |
 |-------------|-------------|-----------|
-| `模型文件` | 生成的 3D 模型文件，仅为向后兼容而保留。 | STRING |
+| `模型文件` | 生成的 3D 模型文件名，格式为 `<task_id>.<format>`，仅为向后兼容而保留。 | STRING |
 | `模型任务ID` | 模型生成过程的唯一任务标识符。 | MODEL_TASK_ID |
-| `GLB` | 以 GLB 格式生成的 3D 模型。启用 `quad` 时为空。 | FILE3DGLB |
-| `FBX` | 以 FBX 格式生成的 3D 模型。仅在启用 `quad` 时填充。 | FILE3DFBX |
+| `GLB` | 生成的 GLB 格式 3D 模型。启用 `quad` 时为空。 | FILE3DGLB |
+| `FBX` | 生成的 FBX 格式 3D 模型。仅在启用 `quad` 时填充。 | FILE3DFBX |
 
 > 本文档由 AI 生成。如果您发现任何错误或有改进建议，欢迎贡献！ [在 GitHub 上编辑](https://github.com/Comfy-Org/embedded-docs/blob/main/comfyui_embedded_docs/docs/TripoTextToModelNode/zh.md)
 
 ---
-**Source fingerprint (SHA-256):** `3f4bc09d125fedb6c30968f31804cfc7ec6d2f068a7c28d90b006137803020b0`
+**Source fingerprint (SHA-256):** `c26c8437ea66d08f7f39865fedeaaf4cf8583ca64b368f3b767ea18918dd6c08`
