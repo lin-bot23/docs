@@ -2,13 +2,13 @@
 title: "Wan2.2 Animate ComfyUI 原生工作流"
 description: "统一的人物动画和替换框架，具有精确的运动和表情复制。"
 sidebarTitle: "Wan2.2 Animate"
-translationSourceHash: 081a4697
+translationSourceHash: 98f25028
 translationFrom: tutorials/video/wan/wan2-2-animate.mdx
 translationBlockHashes:
   "_intro": 96eb0424
   "Model Highlights": fc4e7349
   "ComfyOrg Wan2.2 Animate stream replay": a43ba31b
-  "About Wan2.2 Animate workflow": 71233e1e
+  "About Wan2.2 Animate workflow": bc5fdb0d
 ---
 
 
@@ -163,7 +163,8 @@ Wan2.2 动画有两种模式：混合（Mix）和移动（Move）
 6. “Video Extend” 组用于扩展输出视频的长度
     - 每个 `Video Extend` 将再扩展 77 帧（约 4.8125 秒）
     - 如果输入视频不足 5 秒，则可能不需要它
-    - 如果你想要扩展得更长，则需要多次复制和粘贴，并将上一个 Video Extend 的 `batch_images` 连线到下一个 Video Extend，同时还需要将上一个 Video Extend 的 `video_frame_offset` 连线到下一个 Video Extend
+    - 工作流中已经包含第二个 `Video Extend` 子图，它与第一个子图已经连好线，只是处于旁路状态。对它以及它旁边被旁路的 `SaveVideo` 按 `Ctrl + B` 启用，即可继续延长输出，无需复制或重新连线
+    - 如果你需要超过两段，请自行复制 `Video Extend` 子图，然后把上一段的 `IMAGE` 输出连接到新子图的 `image1` 输入，并把 `video_frame_offset` 输出连接到新子图的 `video_frame_offset` 输入
 7. 点击 `Run` 按钮，或使用快捷键 `Ctrl(cmd) + Enter` 来执行视频生成
 
 #### 4.2 移动（Move）模式

@@ -2,13 +2,13 @@
 title: "Wan2.2 Animate ComfyUI ネイティブワークフロー"
 description: "正確な動きおよび表情の再現を実現する統一的人物アニメーション・置換フレームワーク。"
 sidebarTitle: "Wan2.2 Animate"
-translationSourceHash: 081a4697
+translationSourceHash: 98f25028
 translationFrom: tutorials/video/wan/wan2-2-animate.mdx
 translationBlockHashes:
   "_intro": 96eb0424
   "Model Highlights": fc4e7349
   "ComfyOrg Wan2.2 Animate stream replay": a43ba31b
-  "About Wan2.2 Animate workflow": 71233e1e
+  "About Wan2.2 Animate workflow": bc5fdb0d
 ---
 
 
@@ -162,7 +162,8 @@ Wan2.2 Animateには「Mix」と「Move」の2つのモードがあります。
 6. 「Video Extend」グループは、出力ビデオの長さを延長するためのものです。
     - 各 `Video Extend` はさらに77フレーム（約4.8125秒）を延長します。
     - 入力ビデオが5秒未満の場合は、これを使用する必要はないかもしれません。
-    - さらに長く延長したい場合は、複数回コピー＆ペーストする必要があります。前の Video Extend から次の Video Extend に `batch_images` をリンクし、さらに前の Video Extend から次の Video Extend に `video_frame_offset` をリンクする必要があります。
+    - ワークフローには 2 つ目の `Video Extend` サブグラフがすでに含まれています。1 つ目と配線済みのままバイパスされているので、それと隣のバイパスされた `SaveVideo` に対して `Ctrl + B` を押すとさらに延長できます。複製や再配線は不要です
+    - 3 段以上が必要な場合は、`Video Extend` サブグラフを自分で複製し、前の段の `IMAGE` 出力を新しい段の `image1` 入力へ、`video_frame_offset` 出力を新しい段の `video_frame_offset` 入力へ接続します
 7. `Run` ボタンをクリックするか、ショートカット `Ctrl(cmd) + Enter` を使用してビデオ生成を実行してください。
 
 #### 4.2 Moveモード

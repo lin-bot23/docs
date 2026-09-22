@@ -149,7 +149,8 @@ The Wan2.2 animate has two modes: Mix and move
 6. For the "Video Extend" group, it's in order to extend to the output video length
     - Each `Video Extend` will extend another 77 frames(Around 4.8125 seconds)
     - If your input video is less than 5s, you might not need it
-    - If you want to extend longer, you need to copy and paste multiple times, you need to link the `batch_images` from last Video Extend to next one, and also the `video_frame_offset` from last Video Extend to next one
+    - The workflow already contains a second `Video Extend` subgraph. It is wired to the first one and bypassed, so press `Ctrl + B` on it and on the bypassed `SaveVideo` next to it to extend the output further: nothing has to be copied or rewired
+    - If you need more than two segments, duplicate the `Video Extend` subgraph yourself, then connect the previous stage's `IMAGE` output to the new stage's `image1` input and its `video_frame_offset` output to the new stage's `video_frame_offset` input
 7. Click the `Run` button or use the shortcut `Ctrl(cmd) + Enter` to execute video generation
 
 #### 4.2 Move mode
