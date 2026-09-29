@@ -38,16 +38,16 @@ translationBlockHashes:
    从设置菜单中启动禁用自定义节点的 Comfy 桌面版
    ![设置菜单-禁用自定义节点](/images/zh/troubleshooting/desktop-diable-custom-node.jpg)
    或手动运行服务器：
-   ```bash
-   cd path/to/your/comfyui
-   python main.py --disable-all-custom-nodes
-   ```
+```bash
+cd path/to/your/comfyui
+python main.py --disable-all-custom-nodes
+```
    </Tab>
    <Tab title="手动安装">
-   ```bash
-   cd ComfyUI
-   python main.py --disable-all-custom-nodes
-   ```
+```bash
+cd ComfyUI
+python main.py --disable-all-custom-nodes
+```
    </Tab>
    <Tab title="便携版">
    <Tabs>
@@ -57,10 +57,10 @@ translationBlockHashes:
       1. 复制 `run_nvidia_gpu.bat` 或者 `run_cpu.bat` 文件并重命名为 `run_nvidia_gpu_disable_custom_nodes.bat` 
       2. 使用记事本打开复制后的文件
       3. 在文件中添加 `--disable-all-custom-nodes` 参数，或者复制下面的参数保存到 txt 文件中后将文件后缀名改为 `.bat`
-      ```bash
-      .\python_embeded\python.exe -s ComfyUI\main.py --disable-all-custom-nodes  --windows-standalone-build
-      pause
-      ```
+   ```bash
+   .\python_embeded\python.exe -s ComfyUI\main.py --disable-all-custom-nodes  --windows-standalone-build
+   pause
+   ```
       4. 保存文件并关闭
       5. 双击运行文件，如果一切正常，你应该会看到 ComfyUI 启动，并且自定义节点被禁用
       </Tab>
@@ -72,9 +72,9 @@ translationBlockHashes:
    ![ComfyUI troubleshooting](/images/troubleshooting/portable-disable-custom-nodes-cml-2.jpg)
       3. 确保在命令行中文件夹名称是当前便携版所在的文件目录
       4. 输入以下命令,来通过便携版的 python 来启动 ComfyUI 并禁用自定义节点
-      ```
-      .\python_embeded\python.exe -s ComfyUI\main.py --disable-all-custom-nodes
-      ```
+   ```
+   .\python_embeded\python.exe -s ComfyUI\main.py --disable-all-custom-nodes
+   ```
       </Tab>
    </Tabs>
    </Tab>
@@ -165,6 +165,9 @@ flowchart TD
    <Step title="禁用所有插件的前端扩展">
    ![禁用所有插件的前端扩展](/images/zh/troubleshooting/disable_3rd_party.jpg)
    在启动 ComfyUI 后，在设置菜单中找到 `扩展` 菜单，并参考上图步骤禁用所有第三方扩展
+   <Tip>
+      如果你无法进入 ComfyUI 前端，可以直接跳过前端扩展排查部分，继续阅读[通用的自定义节点排查方法](#2-通用的自定义节点排查方法)
+   </Tip>
    </Step>
    <Step title="重启一次 ComfyUI">
    在首次禁用前端扩展后，建议重启一次 ComfyUI 来保证能够顺利地禁用所有的前端扩展加载
@@ -219,7 +222,7 @@ flowchart TD
             如果你更喜欢手动操作或没有安装 Comfy CLI，请按照以下步骤操作：
             <Steps>
                <Step title="创建临时文件夹">
-                  在开始前先进入 `<你的安装位置>\ComfyUI\` 文件夹
+                  在开始前先进入 `<YOUR_COMFYUI_FOLDER>\ComfyUI\` 文件夹
                   <Tabs>
                      <Tab title="Windows">
                      - **备份所有自定义节点**: 将 `custom_nodes` 复制并重命名为 `custom_nodes_backup`

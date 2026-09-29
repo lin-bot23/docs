@@ -93,17 +93,19 @@ import UpdateReminder from '/snippets/zh/tutorials/update-reminder.mdx'
 
 Gemma 4 模型在 ComfyUI 中以文本编码器（text encoder）形式加载。下载对应的模型文件并放入正确的目录：
 
-<Card title="Gemma 4 2B (E2B IT FP8)" icon="download" href="https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e2b_it_fp8_scaled.safetensors">
+<CardGroup cols={2}>
+<Card title="Gemma 4 2B (E2B IT FP8)" icon="download" href="https://huggingface.co/Comfy-Org/gemma-4/blob/main/text_encoders/gemma4_e2b_it_fp8_scaled.safetensors">
     快速轻量，推荐消费级 GPU 使用。
   </Card>
 
-<Card title="Gemma 4 4B (E4B IT FP8)" icon="download" href="https://huggingface.co/Comfy-Org/gemma-4/resolve/main/text_encoders/gemma4_e4b_it_fp8_scaled.safetensors">
+<Card title="Gemma 4 4B (E4B IT FP8)" icon="download" href="https://huggingface.co/Comfy-Org/gemma-4/blob/main/text_encoders/gemma4_e4b_it_fp8_scaled.safetensors">
     性能均衡，工作流默认使用此模型。
   </Card>
 
 <Card title="查看所有变体" icon="external-link" href="https://huggingface.co/Comfy-Org/gemma-4/tree/main/text_encoders">
     浏览所有 Gemma 4 模型权重。
   </Card>
+</CardGroup>
 
 将下载的 `.safetensors` 文件放入以下目录：
 

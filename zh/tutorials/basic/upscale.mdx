@@ -14,6 +14,23 @@ translationBlockHashes:
 
 import InstallationModels from '/snippets/zh/tutorials/basic/installation-models.mdx'
 
+## 什么是图像放大？
+
+图像放大是通过算法将低分辨率图像转换为高分辨率图像的过程。
+与传统插值方法不同，AI 放大模型（例如 ESRGAN）能够智能地重建细节，同时保持图像质量。
+
+例如，默认的 SD1.5 模型往往难以生成大尺寸图像。
+为了获得高分辨率结果，我们通常会先生成较小的图像，然后再使用放大技术。
+
+本文介绍 ComfyUI 中众多放大方法中的一种。在本教程中，我们将引导你完成：
+1. 下载并安装放大模型
+2. 进行基础的图像放大
+3. 将文生图工作流与放大相结合
+
+<Note>
+想要更进阶的放大方案？请查看我们的[图像放大指南](/zh/tutorials/utility/image-upscale)，其中涵盖了各种模型和使用场景，包括人像增强、产品摄影等。
+</Note>
+
 ## 图像放大工作流
 
 ### 模型安装

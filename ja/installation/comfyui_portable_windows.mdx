@@ -152,13 +152,13 @@ To see the GUI go to: http://[::]:8188
 cd ComfyUI_windows_portable
 
 # 組み込み Python を使用してパッケージをインストール
-.\python_embeded\python.exe -m pip install <パッケージ名>
+.\python_embeded\python.exe -m pip install <package-name>
 ```
 
 起動フラグが必要なパッケージをインストールした後、`.bat` ファイル（例：`run_nvidia_gpu.bat`）に対応するフラグを追加します：
 
 ```bat
-.\python_embeded\python.exe -s ComfyUI\main.py --<起動フラグ> --windows-standalone-build
+.\python_embeded\python.exe -s ComfyUI\main.py --<startup-flag> --windows-standalone-build
 ```
 
 カスタムノードの依存関係インストールの詳細については、[カスタムノード依存関係ガイド](/ja/basic-concepts/custom-nodes)を参照してください。

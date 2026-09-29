@@ -103,7 +103,7 @@ To see the GUI go to: http://127.0.0.1:8188
 
 此时你的 ComfyUI 服务已经启动，正常情况下 ComfyUI 会自动打开你的默认浏览器并访问 `http://127.0.0.1:8188` 地址，如果没有自动打开，请手动打开浏览器并访问该地址。
 
-<Note>使用过程中请不要关闭对应的命令行窗口，否则 ComfyUI 将会停止运行</Note>
+<Warning>使用过程中请不要关闭对应的命令行窗口，否则 ComfyUI 将会停止运行</Warning>
 
 <AddExternalModels/>
 
@@ -153,13 +153,13 @@ To see the GUI go to: http://[::]:8188
 cd ComfyUI_windows_portable
 
 # 使用嵌入式 Python 安装包
-.\python_embeded\python.exe -m pip install <包名>
+.\python_embeded\python.exe -m pip install <package-name>
 ```
 
 如果安装的包需要启动参数，在 `.bat` 文件（如 `run_nvidia_gpu.bat`）中添加对应参数：
 
 ```bat
-.\python_embeded\python.exe -s ComfyUI\main.py --<启动参数> --windows-standalone-build
+.\python_embeded\python.exe -s ComfyUI\main.py --<startup-flag> --windows-standalone-build
 ```
 
 有关安装自定义节点依赖的详细说明，请参阅[自定义节点依赖指南](/zh/basic-concepts/custom-nodes)。

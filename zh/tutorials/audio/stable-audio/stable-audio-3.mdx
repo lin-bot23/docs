@@ -29,17 +29,20 @@ Stable Audio 3 提供三个变体：
 
 ## 可用工作流
 
-### Stable Audio 3 Medium
+### Stable Audio 3 Medium {#audio_stable_audio_3_medium}
 
-<Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/audio_stable_audio_3_medium.json">
-    下载 JSON 或在模板库中搜索"Stable Audio 3 Medium"
-  </Card>
+输入一个简短的文本创意、可选时长、种子和类别。使用 Stable Audio 3 生成包含音乐、音效或乐器声音的立体声音频，并可选启用 AI 驱动的提示词扩展。
 
-<Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=audio_stable_audio_3_medium&utm_source=docs&utm_medium=referral&utm_campaign=stable-audio-3">
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/audio_stable_audio_3_medium-1.webp" alt="Stable Audio 3 Medium 工作流预览" />
+
+<CardGroup cols={2}>
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=audio_stable_audio_3_medium&utm_source=docs&utm_medium=referral&utm_campaign=stable-audio-3">
     在 Comfy Cloud 中打开
   </Card>
-
-![Stable Audio 3 Medium 工作流](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/audio_stable_audio_3_medium-1.webp)
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/audio_stable_audio_3_medium.json">
+    下载 JSON，或在模板库中搜索 “Stable Audio 3 Medium”
+  </Card>
+</CardGroup>
 
 **Stable Audio 3 Medium** 工作流是一个完整的文本转音频流水线。你提供一个简短的文本创意、可选时长、种子和类别——工作流会使用 Qwen 配合分类感知的重新提示模板扩展你的提示词，然后通过 Stable Audio 3 检查点生成立体声音频。
 
@@ -51,17 +54,20 @@ Stable Audio 3 提供三个变体：
 5. **启用重新提示** — 打开 `use_reprompt` 开关，让 Qwen 将你的短创意扩展为详细提示词后再生成
 6. 点击**运行**（`Ctrl/Cmd + Enter`）生成音频。文件将保存在 `ComfyUI/output/audio/` 目录
 
-### Stable Audio 3 Medium Base
+### Stable Audio 3 Medium Base {#audio_stable_audio_3_medium_base}
 
-<Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/audio_stable_audio_3_medium_base.json">
-    下载 JSON 或在模板库中搜索"Stable Audio 3 Medium Base"
-  </Card>
+输入你想要生成的声音、音乐或音效的简短文本描述。该工作流会使用 Qwen 扩展你的提示词，并通过 Stable Audio 3 生成立体声音频片段。
 
-<Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=audio_stable_audio_3_medium_base&utm_source=docs&utm_medium=referral&utm_campaign=stable-audio-3">
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/audio_stable_audio_3_medium_base-1.webp" alt="Stable Audio 3 Medium Base 工作流预览" />
+
+<CardGroup cols={2}>
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=audio_stable_audio_3_medium_base&utm_source=docs&utm_medium=referral&utm_campaign=stable-audio-3">
     在 Comfy Cloud 中打开
   </Card>
-
-![Stable Audio 3 Medium Base 工作流](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/audio_stable_audio_3_medium_base-1.webp)
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/audio_stable_audio_3_medium_base.json">
+    下载 JSON，或在模板库中搜索 “Stable Audio 3 Medium Base”
+  </Card>
+</CardGroup>
 
 简化版本，不包含 Qwen 提示词扩展。接收完整的文本提示词直接传递给模型。当你已经有详细的提示词、希望加快生成速度时使用。
 
@@ -77,13 +83,15 @@ Stable Audio 3 提供三个变体：
 
 ### 检查点
 
-<Card title="stable_audio_3_medium.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/stable-audio-3/resolve/main/checkpoints/stable_audio_3_medium.safetensors">
+<CardGroup cols={2}>
+<Card title="stable_audio_3_medium.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/stable-audio-3/blob/main/checkpoints/stable_audio_3_medium.safetensors">
     用于 Medium 工作流。放入 models/checkpoints/
   </Card>
 
-<Card title="stable_audio_3_medium_base.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/stable-audio-3/resolve/main/checkpoints/stable_audio_3_medium_base.safetensors">
+<Card title="stable_audio_3_medium_base.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/stable-audio-3/blob/main/checkpoints/stable_audio_3_medium_base.safetensors">
     用于 Medium Base 工作流。放入 models/checkpoints/
   </Card>
+</CardGroup>
 
 放在以下目录：
 
@@ -97,13 +105,15 @@ Stable Audio 3 提供三个变体：
 
 ### 文本编码器
 
-<Card title="t5gemma_b_b_ul2.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/stable-audio-3/resolve/main/text_encoders/t5gemma_b_b_ul2.safetensors">
+<CardGroup cols={2}>
+<Card title="t5gemma_b_b_ul2.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/stable-audio-3/blob/main/text_encoders/t5gemma_b_b_ul2.safetensors">
     所有 Stable Audio 3 工作流都需要。放入 models/text_encoders/
   </Card>
 
-<Card title="qwen3.5_2b_bf16.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Qwen3.5/resolve/main/text_encoders/qwen3.5_2b_bf16.safetensors">
+<Card title="qwen3.5_2b_bf16.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Qwen3.5/blob/main/text_encoders/qwen3.5_2b_bf16.safetensors">
     Medium 工作流需要（Qwen 重新提示）。放入 models/text_encoders/
   </Card>
+</CardGroup>
 
 放在以下目录：
 

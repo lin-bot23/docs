@@ -46,7 +46,11 @@ import InstallationModels from '/snippets/zh/tutorials/basic/installation-models
 
 请下载下面的图片，并将图片拖入 ComfyUI 的界面中，或者使用菜单 **工作流（Workflows）** -> **打开（Open）** 打开这个图片以加载对应的 workflow
 
-![ComfyUI-文生图工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/basic/text-to-image-workflow.png)
+<img src="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/text-to-image-workflow.png" alt="ComfyUI-文生图工作流" />
+
+<Tip>
+包含工作流 JSON 元数据的图片可以直接拖入 ComfyUI，或使用菜单 `工作流` -> `打开（ctrl+o）` 加载。
+</Tip>
 
 也可以从菜单 **工作流（Workflows）** -> **浏览工作流示例（Browse example workflows）** 中选择 **Text to Image** 工作流
 
@@ -54,7 +58,7 @@ import InstallationModels from '/snippets/zh/tutorials/basic/installation-models
 
 在完成了对应的绘图模型安装后，请参考下图步骤加载对应的模型，并进行第一次图片的生成
 
-![图片生成](/images/tutorial/gettingstarted/first-image-generation-7-queue.jpg)
+![图片生成](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/basic/text-to-image-workflow.png)
 
 请对应图片序号，完成下面操作
 1. 请在**Load Checkpoint** 节点使用箭头或者点击文本区域确保 **v1-5-pruned-emaonly-fp16.safetensors** 被选中，且左右切换箭头不会出现**null** 的文本
@@ -199,16 +203,16 @@ KSampler 节点的参数说明如下
 
 | 参数名称                  | 描述                                                               | 作用                                                            |
 |--------------------------|-------------------------------------------------------------------|----------------------------------------------------------------|
-| **model**                | 去噪使用的扩散模型                                                   | 决定生成图像的风格与质量                                           | 
+| **model**                | 去噪使用的扩散模型                                                   | 决定生成图像的风格与质量                                           |
 | **positive**             | 正向提示词条件编码                                                   | 引导生成包含指定元素的内容                                         |
-| **negative**             | 负向提示词条件编码                                                   | 抑制生成不期望的内容                                              | 
+| **negative**             | 负向提示词条件编码                                                   | 抑制生成不期望的内容                                              |
 | **latent_image**         | 待去噪的潜在空间图像                                                 | 作为噪声初始化的输入载体                                           |
-| **seed**                 | 噪声生成的随机种子                                                   | 控制生成结果的随机性                                              | 
+| **seed**                 | 噪声生成的随机种子                                                   | 控制生成结果的随机性                                              |
 | **control_after_generate** | 种子生成后控制模式                                                 | 决定多批次生成时种子的变化规律                                      |
-| **steps**                | 去噪迭代步数                                                        | 步数越多细节越精细但耗时增加                                       | 
+| **steps**                | 去噪迭代步数                                                        | 步数越多细节越精细但耗时增加                                       |
 | **cfg**                  | 分类器自由引导系数                                                   | 控制提示词约束强度（过高导致过拟合）                                  |
-| **sampler_name**         | 采样算法名称                                                        | 决定去噪路径的数学方法                                             | 
-| **scheduler**            | 调度器类型                                                          | 控制噪声衰减速率与步长分配                                          | 
+| **sampler_name**         | 采样算法名称                                                        | 决定去噪路径的数学方法                                             |
+| **scheduler**            | 调度器类型                                                          | 控制噪声衰减速率与步长分配                                          |
 | **denoise**              | 降噪强度系数                                                        | 控制添加到潜在空间的噪声强度，0.0保留原始输入特征，1.0为完全的噪声               |
 
 在 KSampler 节点中，潜在空间使用 `seed` 作为初始化参数构建随机的噪声,语义向量 `Positive` 和 `Negative` 会作为条件输入到扩散模型中

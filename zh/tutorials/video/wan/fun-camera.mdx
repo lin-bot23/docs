@@ -40,21 +40,49 @@ Wan2.1 Fun Camera 是阿里巴巴 VideoX-Fun 项目推出的镜头运动视频�
 
 下面的所有模型你可以在 [Wan_2.1_ComfyUI_repackaged](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged) 找到
 
-**Diffusion Models** 选择 1.3B 或 14B：
-- [wan2.1_fun_camera_v1.1_1.3B_bf16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_fun_camera_v1.1_1.3B_bf16.safetensors)
-- [wan2.1_fun_camera_v1.1_14B_bf16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/wan2.1_fun_camera_v1.1_14B_bf16.safetensors)
+### Diffusion Models
 
-下面的模型，如果你使用过 Wan2.1 的相关模型，那么你应该已经有了下面的模型，如果没有，请下载下面的模型：
+选择 1.3B 或 14B：
 
-**Text Encoders** 选择其中一个：
-- [umt5_xxl_fp16.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp16.safetensors)
-- [umt5_xxl_fp8_e4m3fn_scaled.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors)
+<CardGroup cols={2}>
+  <Card title="wan2.1_fun_camera_v1.1_1.3B_bf16.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_fun_camera_v1.1_1.3B_bf16.safetensors?download=true">
+    Wan2.1 Fun Camera 1.3B 扩散模型
+  </Card>
+  <Card title="wan2.1_fun_camera_v1.1_14B_bf16.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/diffusion_models/wan2.1_fun_camera_v1.1_14B_bf16.safetensors?download=true">
+    Wan2.1 Fun Camera 14B 扩散模型
+  </Card>
+</CardGroup>
 
-**VAE**
-- [wan_2.1_vae.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/vae/wan_2.1_vae.safetensors)
+如果你之前使用过 Wan2.1 的相关模型，那么你应该已经有了下面的模型。如果没有，请下载下面的模型：
 
-**CLIP Vision**
-- [clip_vision_h.safetensors](https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/resolve/main/split_files/clip_vision/clip_vision_h.safetensors)
+### Text Encoders
+
+选择以下其中一个：
+
+<CardGroup cols={2}>
+  <Card title="umt5_xxl_fp16.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/text_encoders/umt5_xxl_fp16.safetensors?download=true">
+    全精度文本编码器
+  </Card>
+  <Card title="umt5_xxl_fp8_e4m3fn_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/text_encoders/umt5_xxl_fp8_e4m3fn_scaled.safetensors?download=true">
+    FP8 量化文本编码器（显存较低时推荐）
+  </Card>
+</CardGroup>
+
+### VAE
+
+<CardGroup cols={1}>
+  <Card title="wan_2.1_vae.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/vae/wan_2.1_vae.safetensors?download=true">
+    Wan2.1 VAE 模型
+  </Card>
+</CardGroup>
+
+### CLIP Vision
+
+<CardGroup cols={1}>
+  <Card title="clip_vision_h.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Wan_2.1_ComfyUI_repackaged/blob/main/split_files/clip_vision/clip_vision_h.safetensors?download=true">
+    CLIP 视觉编码器
+  </Card>
+</CardGroup>
 
 文件保存位置：
 
