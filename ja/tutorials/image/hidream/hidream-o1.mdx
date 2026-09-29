@@ -33,19 +33,28 @@ HiDream-O1-Image は [MIT ライセンス](https://github.com/HiDream-ai/HiDream
 
 ## HiDream-O1-Image Full ワークフロー
 
+### HiDream O1 Full: Image generation {#image_hidream_o1}
+
+テキストプロンプトを入力し、必要に応じて参照画像をアップロードします。テキストから画像への生成、編集、被写体駆動のパーソナライズに対応し、最大 2048x2048 の高解像度画像を生成します。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_hidream_o1-1.webp" alt="HiDream O1 Full ワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_hidream_o1&utm_source=docs&utm_medium=referral&utm_campaign=hidream-o1">
+    Open in cloud
+  </Card>
+  <Card title="JSON ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_hidream_o1.json">
+    Download workflow
+  </Card>
+</CardGroup>
+
+**出力例**
+
+![HiDream-O1-Image Full の出力例](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_hidream_o1.png)
+
 ### 1. ワークフローをダウンロード
 
 ComfyUI を最新バージョンにアップデートし、メニューから `ワークフロー` → `テンプレートを閲覧` → `Image` に進み、"HiDream O1 Full: Image generation" を見つけてワークフローを読み込んでください。
-
-![HiDream-O1-Image Full ワークフロー](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_hidream_o1.png)
-
-<Card title="JSON ワークフローをダウンロード" icon="download" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/image_hidream_o1.json">
-    Download workflow
-  </Card>
-
-<Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_hidream_o1&utm_source=docs">
-    Open in cloud
-  </Card>
 
 ### 2. モデルをダウンロード
 
@@ -89,19 +98,45 @@ ComfyUI を最新バージョンにアップデートし、メニューから `�
 
 ## HiDream-O1-Image Dev ワークフロー
 
+### HiDream O1 Dev {#image_hidream_o1_dev}
+
+テキストプロンプトと任意の参照画像を入力します。テキストから画像への生成、画像編集、被写体駆動のパーソナライズに対応し、最大 2048x2048 の高解像度画像を生成します。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_hidream_o1_dev-1.webp" alt="HiDream O1 Dev ワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_hidream_o1_dev&utm_source=docs&utm_medium=referral&utm_campaign=hidream-o1">
+    Open in cloud
+  </Card>
+  <Card title="JSON ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_hidream_o1_dev.json">
+    Download workflow
+  </Card>
+</CardGroup>
+
+**入力素材**
+
+このファイルを対応する `LoadImage` ノードにアップロードします：
+
+<CardGroup cols={2}>
+  <Card title="noir_portrait.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/noir_portrait.png">
+    `LoadImage` ノード 213 · `noir_portrait.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/noir_portrait.png" alt="noir_portrait.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**出力例**
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/noir_portrait.png" alt="入力画像" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_hidream_o1_dev.png" alt="HiDream O1 Dev の出力例" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
 ### 1. ワークフローをダウンロード
 
 メニューから `ワークフロー` → `テンプレートを閲覧` → `Image` に進み、"HiDream O1 Dev" を見つけてください。
-
-![HiDream-O1-Image Dev ワークフロー](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_hidream_o1_dev.png)
-
-<Card title="JSON ワークフローをダウンロード" icon="download" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/image_hidream_o1_dev.json">
-    Download workflow
-  </Card>
-
-<Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_hidream_o1_dev&utm_source=docs">
-    Open in cloud
-  </Card>
 
 ### 2. モデルをダウンロード
 

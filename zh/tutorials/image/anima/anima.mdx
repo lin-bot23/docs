@@ -14,6 +14,8 @@ translationBlockHashes:
 
 import UpdateReminder from '/snippets/zh/tutorials/update-reminder.mdx'
 
+<UpdateReminder />
+
 **Anima** 是由 [CircleStone Labs](https://huggingface.co/circlestone-labs/Anima) 与 Comfy Org 合作推出的开源文生图模型。该模型拥有 **20 亿** 参数，专注于生成高质量的 **动漫和非照片级** 图像——非常适合角色设计、场景绘制和概念艺术。
 
 **模型亮点**：
@@ -36,15 +38,24 @@ Anima 提供两个工作流——基础版适用于标准使用，预览版适�
   此工作流使用 Subgraph 节点实现模块化处理。查阅 Subgraph 文档了解如何自定义和扩展工作流。
 </Card>
 
-### Anima Base v1：文生图
+### Anima Base v1：文生图 {#image_anima_base_v1}
 
-<Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_anima_base_v1.json">
-    下载 JSON 或在模板库中搜索 "Anima Base v1"
-  </Card>
+输入描述动漫或艺术插画的文本提示词，生成以动漫概念、角色或风格为主的非照片级图像。
 
-<Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_anima_base_v1&utm_source=docs&utm_medium=referral&utm_campaign=anima">
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_anima_base_v1-1.webp" alt="Anima Base v1 文生图工作流预览" />
+
+<CardGroup cols={2}>
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_anima_base_v1&utm_source=docs&utm_medium=referral&utm_campaign=anima">
     在 Comfy Cloud 中打开
   </Card>
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_anima_base_v1.json">
+    下载 JSON，或在模板库中搜索“Anima Base v1”
+  </Card>
+</CardGroup>
+
+**示例输出**
+
+![Anima Base v1 示例输出](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_anima_base_v1.png)
 
 #### 快速开始
 
@@ -53,19 +64,24 @@ Anima 提供两个工作流——基础版适用于标准使用，预览版适�
 3. 选择 **Anima Base v1: Text to Image** 工作流
 4. 下载缺失的模型（参见[模型下载](#anima-模型下载)），输入提示词后点击 **运行**
 
-#### 示例输出
+### Anima Preview：动漫文生图 {#image_anima_preview}
 
-<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_anima_base_v1.png" alt="Anima Base v1 示例输出" />
+输入文本提示词，使用 Anima 模型生成动漫风格图像。可配置步数、CFG 等参数来控制输出效果。
 
-### Anima Preview：动漫文生图
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_anima_preview-1.webp" alt="Anima Preview 文生图工作流预览" />
 
-<Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_anima_preview.json">
-    下载 JSON 或在模板库中搜索 "Anima Preview"
-  </Card>
-
-<Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_anima_preview&utm_source=docs&utm_medium=referral&utm_campaign=anima">
+<CardGroup cols={2}>
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_anima_preview&utm_source=docs&utm_medium=referral&utm_campaign=anima">
     在 Comfy Cloud 中打开
   </Card>
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_anima_preview.json">
+    下载 JSON，或在模板库中搜索“Anima Preview”
+  </Card>
+</CardGroup>
+
+**示例输出**
+
+![Anima Preview 示例输出](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_anima_preview.png)
 
 #### 快速开始
 
@@ -74,23 +90,19 @@ Anima 提供两个工作流——基础版适用于标准使用，预览版适�
 3. 选择 **Anima Anime Text-to-Image Generation** 工作流
 4. 下载缺失的模型（参见[模型下载](#anima-模型下载)），输入提示词后点击 **运行**
 
-#### 示例输出
-
-<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_anima_preview.png" alt="Anima Preview 示例输出" />
-
 ## Anima 模型下载
 
 所有模型文件均可从 Hugging Face 的 [circlestone-labs/Anima](https://huggingface.co/circlestone-labs/Anima) 获取。
 
-<Card title="anima-base-v1.0.safetensors" icon="download" href="https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/diffusion_models/anima-base-v1.0.safetensors">
+<Card title="anima-base-v1.0.safetensors" icon="download" href="https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/diffusion_models/anima-base-v1.0.safetensors">
     Anima Base v1 扩散模型（2B）。
   </Card>
 
-<Card title="qwen_3_06b_base.safetensors" icon="download" href="https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/text_encoders/qwen_3_06b_base.safetensors">
+<Card title="qwen_3_06b_base.safetensors" icon="download" href="https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/text_encoders/qwen_3_06b_base.safetensors">
     两个工作流共用的文本编码器（Qwen-3 0.6B）。
   </Card>
 
-<Card title="qwen_image_vae.safetensors" icon="download" href="https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/vae/qwen_image_vae.safetensors">
+<Card title="qwen_image_vae.safetensors" icon="download" href="https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/vae/qwen_image_vae.safetensors">
     两个工作流共用的 VAE。
   </Card>
 
@@ -111,7 +123,7 @@ Anima 提供两个工作流——基础版适用于标准使用，预览版适�
 
 如果您使用 Preview 工作流，请下载以下预览版扩散模型：
 
-<Card title="anima-preview3-base.safetensors" icon="download" href="https://huggingface.co/circlestone-labs/Anima/resolve/main/split_files/diffusion_models/anima-preview3-base.safetensors">
+<Card title="anima-preview3-base.safetensors" icon="download" href="https://huggingface.co/circlestone-labs/Anima/blob/main/split_files/diffusion_models/anima-preview3-base.safetensors">
     Anima Preview 扩散模型（2B）。
   </Card>
 

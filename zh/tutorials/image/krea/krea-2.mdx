@@ -47,6 +47,10 @@ Krea 2 提供两个版本：
 
 ## Krea-2 Turbo 文生图工作流
 
+### Krea-2: Text to Image {#image_krea2_turbo_t2i}
+
+使用 Krea 2 从文本提示词生成图像。这是一个为美学质量和创作控制而构建的基础模型，擅长渲染富有表现力、风格多样的图像。
+
 <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_krea2_turbo_t2i-1.webp" alt="Krea-2 Turbo 文生图工作流" />
 
 <CardGroup cols={2}>
@@ -96,15 +100,15 @@ Krea 还发布了一组 Krea 2 的风格 LoRA。在 **CustomCombo** 节点中选
 
 | LoRA | 触发词 | 推荐强度 | 下载 |
 |------|--------|:--------:|------|
-| krea2_darkbrush | monochrome ink wash style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_darkbrush.safetensors) |
-| krea2_dotmatrix | monochrome stippling style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_dotmatrix.safetensors) |
-| krea2_kidsdrawing | naive expressive sketch style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_kidsdrawing.safetensors) |
-| krea2_neondrip | textured abstract style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_neondrip.safetensors) |
-| krea2_rainywindow | rainy window style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_rainywindow.safetensors) |
-| krea2_retroanime | purple retro anime style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_retroanime.safetensors) |
-| krea2_softwatercolor | art deco watercolor style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_softwatercolor.safetensors) |
-| krea2_sunsetblur | ethereal motion blur style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_sunsetblur.safetensors) |
-| krea2_vintagetarot | vintage tarot style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_vintagetarot.safetensors) |
+| krea2_darkbrush | monochrome ink wash style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_darkbrush.safetensors) |
+| krea2_dotmatrix | monochrome stippling style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_dotmatrix.safetensors) |
+| krea2_kidsdrawing | naive expressive sketch style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_kidsdrawing.safetensors) |
+| krea2_neondrip | textured abstract style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_neondrip.safetensors) |
+| krea2_rainywindow | rainy window style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_rainywindow.safetensors) |
+| krea2_retroanime | purple retro anime style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_retroanime.safetensors) |
+| krea2_softwatercolor | art deco watercolor style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_softwatercolor.safetensors) |
+| krea2_sunsetblur | ethereal motion blur style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_sunsetblur.safetensors) |
+| krea2_vintagetarot | vintage tarot style | 1.0 | [下载](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_vintagetarot.safetensors) |
 
 将 `.safetensors` 文件放入 `ComfyUI/models/loras/` 目录。
 
@@ -113,13 +117,13 @@ Krea 还发布了一组 Krea 2 的风格 LoRA。在 **CustomCombo** 节点中选
 如需本地使用，请从 [Comfy-Org/Krea-2](https://huggingface.co/Comfy-Org/Krea-2) 下载 ComfyUI 优化版模型文件。
 
 <CardGroup cols={3}>
-  <Card title="扩散模型 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_fp8_scaled.safetensors">
+  <Card title="扩散模型 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/diffusion_models/krea2_turbo_fp8_scaled.safetensors">
     krea2_turbo_fp8_scaled.safetensors：Turbo FP8（推荐大多数用户使用）
   </Card>
-  <Card title="文本编码器 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors">
+  <Card title="文本编码器 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors">
     qwen3vl_4b_fp8_scaled.safetensors：Qwen3VL-4B 文本编码器
   </Card>
-  <Card title="VAE" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors">
+  <Card title="VAE" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/vae/qwen_image_vae.safetensors">
     qwen_image_vae.safetensors
   </Card>
   <Card title="风格 LoRA" icon="download" href="https://huggingface.co/collections/krea/krea-2-loras">
@@ -141,10 +145,14 @@ Krea 还发布了一组 Krea 2 的风格 LoRA。在 **CustomCombo** 节点中选
 │   ├── 📂 vae/
 │   │   └── qwen_image_vae.safetensors
 │   └── 📂 loras/
-│       └── krea2_softwatercolor.safetensors (及其它风格 LoRA)
+│       └── krea2_softwatercolor.safetensors (and other style LoRAs)
 ```
 
 ## Krea-2 Turbo 风格参考工作流
+
+### Krea-2 Int8: Image Style Reference {#image_krea2_turbo_int8_image_style_reference}
+
+使用 Krea-2 Turbo 模型生成图像，同时参考 1–2 张上传图像的风格，并采用高性能的 Int8 Convrot 格式实现快速推理。
 
 <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_krea2_turbo_int8_image_style_reference-1.webp" alt="Krea-2 Turbo 风格参考工作流" />
 
@@ -156,6 +164,24 @@ Krea 还发布了一组 Krea 2 的风格 LoRA。在 **CustomCombo** 节点中选
     下载 JSON 或在模板库中搜索"Krea-2 风格参考"
   </Card>
 </CardGroup>
+
+**输入素材**
+
+将以下文件上传到对应的 `LoadImage` 节点：
+
+<CardGroup cols={2}>
+  <Card title="krea2_reference_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/krea2_reference_image.png">
+    `LoadImage` 节点 69 · `krea2_reference_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/krea2_reference_image.png" alt="krea2_reference_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**示例输出**
+
+![Krea-2 风格参考示例输出](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_krea2_turbo_int8_image_style_reference.png)
 
 风格参考工作流在 Krea-2 Turbo 流水线的基础上增加了参考图像条件功能。上传一张或多张参考图像，以影响生成输出的美学风格、氛围和视觉方向。
 
@@ -177,16 +203,16 @@ Krea 还发布了一组 Krea 2 的风格 LoRA。在 **CustomCombo** 节点中选
 此风格参考工作流使用专用的扩散模型和 LoRA。文本编码器和 VAE 与文生图工作流共享。
 
 <CardGroup cols={2}>
-  <Card title="扩散模型（INT8）" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_int8_convrot.safetensors">
+  <Card title="扩散模型（INT8）" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/diffusion_models/krea2_turbo_int8_convrot.safetensors">
     krea2_turbo_int8_convrot.safetensors
   </Card>
-  <Card title="文本编码器（FP8）" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors">
+  <Card title="文本编码器（FP8）" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors">
     qwen3vl_4b_fp8_scaled.safetensors：Qwen3VL-4B 文本编码器
   </Card>
-  <Card title="VAE" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors">
+  <Card title="VAE" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/vae/qwen_image_vae.safetensors">
     qwen_image_vae.safetensors
   </Card>
-  <Card title="风格参考 LoRA" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_style_reference.safetensors">
+  <Card title="风格参考 LoRA" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_style_reference.safetensors">
     krea2_style_reference.safetensors
   </Card>
 </CardGroup>

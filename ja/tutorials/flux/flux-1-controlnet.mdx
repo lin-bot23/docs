@@ -48,19 +48,36 @@ Depth 版では深度マップ抽出技術を用いて元画像の空間構造�
 
 ## FLUX.1-Canny-dev 完全版ワークフロー
 
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_canny_model_example&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud で実行</p>
-</a>
+### Flux.1 Canny Model {#flux_canny_model_example}
+
+エッジ検出をガイドに、Flux.1 Canny で画像を生成します。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_canny_model_example-1.webp" alt="Flux.1 Canny ワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=flux_canny_model_example&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-controlnet">
+    Comfy Cloud で開く
+  </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_canny_model_example.json">
+    JSONをダウンロードするか、テンプレートライブラリで&quot;Flux.1 Canny&quot;を検索
+  </Card>
+</CardGroup>
+
+**入力素材**
+
+このファイルを対応する`LoadImage`ノードにアップロードしてください：
+
+<CardGroup cols={2}>
+  <Card title="flux_canny_model_example_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_canny_model_example_input_image.png">
+    `LoadImage`ノード 17 · `flux_canny_model_example_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_canny_model_example_input_image.png" alt="入力画像" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
 
 ### 1. ワークフローおよび関連アセット
-
-下記のワークフロー画像をダウンロードし、ComfyUI にドラッグ＆ドロップしてワークフローを読み込んでください。
-
-![ComfyUI ワークフロー - ControlNet](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/controlnet/flux-1-canny-dev.png)
-
-下記の画像をダウンロードし、入力画像として使用します。
-
-![ComfyUI Flux.1 Canny Controlnet 入力画像](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/controlnet/flux-1-canny-dev-input.png)
 
 ### 2. モデルの手動インストール
 
@@ -114,21 +131,36 @@ ComfyUI/
 
 ## FLUX.1-Depth-dev-lora ワークフロー
 
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_depth_lora_example&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud で実行</p>
-</a>
+### Flux.1 Depth Lora {#flux_depth_lora_example}
 
 LoRA 版ワークフローは、完全版ワークフローに LoRA モデルを追加したものであり、[Flux ワークフローの完全版](/ja/tutorials/flux/flux-1-text-to-image) と比較して、対応する LoRA モデルを読み込むためのノードが追加されています。
 
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_depth_lora_example-1.webp" alt="Flux.1 Depth LoRA ワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=flux_depth_lora_example&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-controlnet">
+    Comfy Cloud で開く
+  </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_depth_lora_example.json">
+    JSONをダウンロードするか、テンプレートライブラリで&quot;Flux.1 Depth LoRA&quot;を検索
+  </Card>
+</CardGroup>
+
+**入力素材**
+
+このファイルを対応する`LoadImage`ノードにアップロードしてください：
+
+<CardGroup cols={2}>
+  <Card title="flux_depth_lora_example_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_depth_lora_example_input_image.png">
+    `LoadImage`ノード 17 · `flux_depth_lora_example_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_depth_lora_example_input_image.png" alt="入力画像" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
 ### 1. ワークフローおよび関連アセット
-
-下記のワークフロー画像をダウンロードし、ComfyUI にドラッグ＆ドロップしてワークフローを読み込んでください。
-
-![ComfyUI ワークフロー - ControlNet](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/controlnet/flux-1-depth-dev-lora.png)
-
-下記の画像をダウンロードし、入力画像として使用します。
-
-![ComfyUI Flux.1 Depth Controlnet 入力画像](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/controlnet/flux-1-depth-dev-lora-input.png)
 
 ### 2. モデルの手動ダウンロード
 

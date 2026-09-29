@@ -248,9 +248,36 @@ ComfyUI/
 
 ## Qwen Image ControlNet DiffSynth-ControlNets Model Patches 工作流
 
-<a href="https://cloud.comfy.org/?template=image_qwen_image_controlnet_patch&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#7c3aed', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold', marginBottom: '1rem'}}>
-    在 Comfy Cloud 上运行
-</a>
+### Qwen-Image ControlNet Model Patch {#image_qwen_image_controlnet_patch}
+
+使用 Qwen-Image ControlNet 模型控制图像生成，通过模型补丁（model patch）支持 canny、depth 和 inpainting 三种控制方式。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_qwen_image_controlnet_patch-1.webp" alt="Qwen-Image ControlNet 模型补丁工作流预览" />
+
+<CardGroup cols={2}>
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_qwen_image_controlnet_patch&utm_source=docs&utm_medium=referral&utm_campaign=qwen-image">
+    在 Comfy Cloud 中打开
+  </Card>
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_qwen_image_controlnet_patch.json">
+    下载 JSON，或在模板库中搜索“Qwen-Image ControlNet Patch”
+  </Card>
+</CardGroup>
+
+**输入素材**
+
+将以下文件上传到对应的 `LoadImage` 节点：
+
+<CardGroup cols={2}>
+  <Card title="image_qwen_image_controlnet_patch_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_controlnet_patch_input_image.png">
+    `LoadImage` 节点 71 · `image_qwen_image_controlnet_patch_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_controlnet_patch_input_image.png" alt="image_qwen_image_controlnet_patch_input_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+### 1. 工作流及输入图片
 
 这个模型实际上并不是一个 controlnet，而是一个 Model patch， 支持 canny、depth、inpaint 三种不同的控制模式
 
@@ -258,26 +285,13 @@ ComfyUI/
 Comfy Org rehost 地址： [Qwen-Image-DiffSynth-ControlNets/model_patches](https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/tree/main/split_files/model_patches)
 
 
-### 1. 工作流及输入图片
-
-下载下面的图片拖入 ComfyUI 中以加载对应的工作流
-![workflow](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-controlnet-model-patch/image_qwen_image_controlnet_patch.png)
-
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/image_qwen_image_controlnet_patch.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>下载 JSON 格式工作流</p>
-</a>
-
-下载下面的图片作为输入图片：
-
-![input](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-controlnet-model-patch/input.png)
-
 ### 2. 模型链接
 
 其它模型与 Qwen-Image 基础工作流一致，你只需下载下面的模型并保存到 `ComfyUI/models/model_patches` 文件夹中
 
-- [qwen_image_canny_diffsynth_controlnet.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/resolve/main/split_files/model_patches/qwen_image_canny_diffsynth_controlnet.safetensors)
-- [qwen_image_depth_diffsynth_controlnet.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/resolve/main/split_files/model_patches/qwen_image_depth_diffsynth_controlnet.safetensors)
-- [qwen_image_inpaint_diffsynth_controlnet.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/resolve/main/split_files/model_patches/qwen_image_inpaint_diffsynth_controlnet.safetensors)
+- [qwen_image_canny_diffsynth_controlnet.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/blob/main/split_files/model_patches/qwen_image_canny_diffsynth_controlnet.safetensors)
+- [qwen_image_depth_diffsynth_controlnet.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/blob/main/split_files/model_patches/qwen_image_depth_diffsynth_controlnet.safetensors)
+- [qwen_image_inpaint_diffsynth_controlnet.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/blob/main/split_files/model_patches/qwen_image_inpaint_diffsynth_controlnet.safetensors)
 
 
 ### 3. 工作流使用说明

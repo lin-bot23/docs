@@ -37,7 +37,11 @@ import UpdateReminder from '/snippets/ja/tutorials/update-reminder.mdx'
   このワークフローは Subgraph ノードを使用したモジュール処理を採用しています。Subgraph のドキュメントを参照して、ワークフローのカスタマイズと拡張方法を学んでください。
 </Card>
 
-### Lens
+### Lens: Text to Image {#image_lens_t2i}
+
+テキストプロンプトを入力し、解像度とアスペクト比を選択します。効率的な Lens テキスト画像生成モデルを使用して、高品質な画像を生成します。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_lens_t2i-1.webp" alt="Lens テキスト画像生成ワークフローのプレビュー" />
 
 <CardGroup cols={2}>
   <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_lens_t2i.json">
@@ -59,13 +63,15 @@ import UpdateReminder from '/snippets/ja/tutorials/update-reminder.mdx'
 3. **Lens** ワークフローを選択
 4. 不足しているモデルをダウンロードして（[モデルダウンロード](#モデルダウンロード) 参照）、プロンプトを入力し **実行** をクリック
 
-#### 出力例
+![Lens テキスト画像生成の出力例](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_lens_t2i.png)
 
-<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_lens_t2i.png" alt="Lens テキスト画像生成の出力例" />
+### Lens Turbo: Text to Image {#image_lens_turbo_t2i}
 
-### Lens Turbo
+テキストプロンプトを入力し、解像度、アスペクト比、推論ステップ数を選択します。Lens テキスト画像生成モデルを使用して、高品質な画像を生成します。
 
 Lens Turbo は蒸留版で、より少ないサンプリングステップで画像を生成し、高速な推論を実現します。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_lens_turbo_t2i-1.webp" alt="Lens Turbo テキスト画像生成ワークフローのプレビュー" />
 
 <CardGroup cols={2}>
   <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_lens_turbo_t2i.json">
@@ -85,9 +91,7 @@ Lens Turbo は蒸留版で、より少ないサンプリングステップで画
 3. **Lens Turbo** ワークフローを選択
 4. 不足しているモデルをダウンロードして（[モデルダウンロード](#モデルダウンロード) 参照）、プロンプトを入力し **実行** をクリック
 
-#### 出力例
-
-<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_lens_turbo_t2i.png" alt="Lens Turbo テキスト画像生成の出力例" />
+![Lens Turbo テキスト画像生成の出力例](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_lens_turbo_t2i.png)
 
 ## モデルダウンロード
 
@@ -117,8 +121,8 @@ Lens Turbo は蒸留版で、より少ないサンプリングステップで画
 📂 ComfyUI/
 ├── 📂 models/
 │   ├── 📂 diffusion_models/
-│   │   ├── lens_bf16.safetensors（または lens_mxfp8.safetensors）
-│   │   └── lens_turbo_bf16.safetensors（または lens_turbo_mxfp8.safetensors）
+│   │   ├── lens_bf16.safetensors (or lens_mxfp8.safetensors)
+│   │   └── lens_turbo_bf16.safetensors (or lens_turbo_mxfp8.safetensors)
 │   ├── 📂 text_encoders/
 │   │   └── gpt_oss_20b_nvfp4.safetensors
 │   └── 📂 vae/

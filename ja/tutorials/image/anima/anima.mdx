@@ -13,6 +13,8 @@ translationBlockHashes:
 
 import UpdateReminder from '/snippets/ja/tutorials/update-reminder.mdx'
 
+<UpdateReminder />
+
 **Anima** は [CircleStone Labs](https://huggingface.co/circlestone-labs/Anima) が Comfy Org と協力して開発したオープンなテキストから画像生成モデルです。**20 億** パラメータを備え、高品質な **アニメおよび非フォトリアリスティック** な画像を生成するように設計されており、キャラクター、シーン、コンセプトアートに最適です。
 
 **モデルの主な特長**：
@@ -35,15 +37,20 @@ Anima は 2 つのワークフローを提供しています——標準的な�
   このワークフローは Subgraph ノードを使用してモジュール化された処理を実現しています。Subgraph のドキュメントを参照して、ワークフローのカスタマイズと拡張方法を学んでください。
 </Card>
 
-### Anima Base v1：テキストから画像へ
+### Anima Base v1：テキストから画像へ {#image_anima_base_v1}
 
-<Card title="ワークフローのダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_anima_base_v1.json">
-    JSON をダウンロードするか、テンプレートライブラリで "Anima Base v1" を検索
-  </Card>
+アニメやアートイラストを説明するテキストプロンプトを入力します。アニメのコンセプト、キャラクター、スタイルに焦点を当てた非フォトリアリスティックな画像を生成します。
 
-<Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_anima_base_v1&utm_source=docs&utm_medium=referral&utm_campaign=anima">
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_anima_base_v1-1.webp" alt="Anima Base v1 テキストから画像へのワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_anima_base_v1&utm_source=docs&utm_medium=referral&utm_campaign=anima">
     Comfy Cloud で開く
   </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_anima_base_v1.json">
+    JSON をダウンロードするか、テンプレートライブラリで "Anima Base v1" を検索
+  </Card>
+</CardGroup>
 
 #### はじめに
 
@@ -52,19 +59,22 @@ Anima は 2 つのワークフローを提供しています——標準的な�
 3. **Anima Base v1: Text to Image** ワークフローを選択します
 4. 不足しているモデルをダウンロードし（[モデルのダウンロード](#anima-モデルのダウンロード)を参照）、プロンプトを入力して **実行** をクリックします
 
-#### サンプル出力
+![Anima Base v1 サンプル出力](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_anima_base_v1.png)
 
-<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_anima_base_v1.png" alt="Anima Base v1 サンプル出力" />
+### Anima Preview：アニメテキストから画像生成 {#image_anima_preview}
 
-### Anima Preview：アニメテキストから画像生成
+Anima モデルを使用して、アニメスタイルの画像を生成するためのテキストプロンプトを入力します。ステップ数や CFG スケールなどの設定を構成して、出力を制御します。
 
-<Card title="ワークフローのダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_anima_preview.json">
-    JSON をダウンロードするか、テンプレートライブラリで "Anima Preview" を検索
-  </Card>
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_anima_preview-1.webp" alt="Anima Preview テキストから画像へのワークフローのプレビュー" />
 
-<Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_anima_preview&utm_source=docs&utm_medium=referral&utm_campaign=anima">
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_anima_preview&utm_source=docs&utm_medium=referral&utm_campaign=anima">
     Comfy Cloud で開く
   </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_anima_preview.json">
+    JSON をダウンロードするか、テンプレートライブラリで "Anima Preview" を検索
+  </Card>
+</CardGroup>
 
 #### はじめに
 
@@ -73,9 +83,7 @@ Anima は 2 つのワークフローを提供しています——標準的な�
 3. **Anima Anime Text-to-Image Generation** ワークフローを選択します
 4. 不足しているモデルをダウンロードし（[モデルのダウンロード](#anima-モデルのダウンロード)を参照）、プロンプトを入力して **実行** をクリックします
 
-#### サンプル出力
-
-<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_anima_preview.png" alt="Anima Preview サンプル出力" />
+![Anima Preview サンプル出力](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_anima_preview.png)
 
 ## Anima モデルのダウンロード
 

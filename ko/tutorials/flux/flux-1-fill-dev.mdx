@@ -61,21 +61,43 @@ ComfyUI/
 
 ## Flux.1 Fill dev 인페인팅 워크플로우
 
+### Flux.1 Inpaint {#flux_fill_inpaint_example}
+
+Flux.1 Fill Inpainting을 사용해 이미지에서 누락된 부분을 채웁니다.
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_fill_inpaint_example-1.webp" alt="Flux.1 Inpaint 워크플로우 미리보기" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud에서 실행" icon="cloud" href="https://cloud.comfy.org/?template=flux_fill_inpaint_example&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-fill-dev">
+    Comfy Cloud에서 열기
+  </Card>
+  <Card title="워크플로 다운로드" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_fill_inpaint_example.json">
+    JSON 다운로드 또는 템플릿 라이브러리에서 "Flux.1 Inpaint" 검색
+  </Card>
+</CardGroup>
+
+**입력 자료**
+
+다음 파일을 해당 `LoadImage` 노드에 업로드하세요:
+
+<CardGroup cols={2}>
+  <Card title="flux_fill_inpaint_example_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_fill_inpaint_example_input_image.png">
+    `LoadImage` 노드 17 · `flux_fill_inpaint_example_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_fill_inpaint_example_input_image.png" alt="flux_fill_inpaint_example_input_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**예시 출력**
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_fill_inpaint_example_input_image.png" alt="입력 이미지" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/flux_fill_inpaint_example.png" alt="Flux.1 Inpaint 예시 출력" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
 ### 1. 인페인팅 워크플로우 및 자산
-
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint.png" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold', marginRight: '10px'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>워크플로우 이미지 다운로드</p>
-</a>
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_fill_inpaint_example&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud에서 실행</p>
-</a>
-
-아래 이미지를 다운로드해 ComfyUI로 드래그하여 해당 워크플로우를 로드하세요.
-![ComfyUI Flux.1 인페인팅](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint.png)
-
-아래 이미지를 다운로드해 입력 이미지로 사용하겠습니다.
-![ComfyUI Flux.1 인페인팅 입력](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint_input.png)
 
 <Note>
 해당 이미지는 이미 알파 채널을 포함하고 있으므로 별도로 마스크를 그릴 필요가 없습니다.

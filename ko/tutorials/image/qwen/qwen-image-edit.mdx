@@ -42,21 +42,45 @@ import UpdateReminder from '/snippets/ko/tutorials/update-reminder.mdx'
 
 <UpdateReminder />
 
+### Qwen Image Edit {#image_qwen_image_edit}
+
+Qwen-Image-Edit의 20B MMDiT 모델을 사용해 정밀한 이중 언어 텍스트 편집과 의미/외형 이중 편집 기능으로 이미지를 편집합니다.
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_qwen_image_edit-1.webp" alt="Qwen-Image-Edit 워크플로 미리보기" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud에서 실행" icon="cloud" href="https://cloud.comfy.org/?template=image_qwen_image_edit&utm_source=docs&utm_medium=referral&utm_campaign=qwen-image-edit">
+    별도 설정 없이 클라우드 GPU에서 이 워크플로우를 실행하세요
+  </Card>
+  <Card title="워크플로 다운로드" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_qwen_image_edit.json">
+    JSON 다운로드 또는 템플릿 라이브러리에서 "Qwen Image Edit" 검색
+  </Card>
+</CardGroup>
+
+**입력 자료**
+
+다음 파일을 해당 `LoadImage` 노드에 업로드하세요:
+
+<CardGroup cols={2}>
+  <Card title="image_qwen_image_edit_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_edit_input_image.png">
+    `LoadImage` 노드 78 · `image_qwen_image_edit_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_edit_input_image.png" alt="image_qwen_image_edit_input_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**예시 출력**
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_edit_input_image.png" alt="입력 이미지" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_qwen_image_edit.jpg" alt="Qwen-Image-Edit 예시 출력" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
 ### 1. 워크플로우 파일
 
-ComfyUI를 업데이트한 후, 템플릿에서 워크플로우 파일을 찾거나 아래 워크플로우를 ComfyUI로 드래그해 불러올 수 있습니다.
-![Qwen-image 텍스트-이미지 워크플로우](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-edit/qwen_image_edit.png)
-
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/image_qwen_image_edit.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold', marginRight: '10px'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>JSON 워크플로우 다운로드</p>
-</a>
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=image_qwen_image_edit&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>ComfyUI 클라우드에서 실행</p>
-</a>
-
-아래 이미지를 입력으로 다운로드하세요
-![Qwen-image 텍스트-이미지 워크플로우](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-edit/input.png)
+ComfyUI를 업데이트한 후, 템플릿에서 워크플로우 파일을 찾거나 미리보기 이미지를 참고해 워크플로우를 불러올 수 있습니다.
 
 ### 2. 모델 다운로드
 

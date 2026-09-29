@@ -61,40 +61,20 @@ Mage-Flow 支持每边 512 到 2048 像素的原生分辨率，并支持任意�
 3. **调整设置**：根据需要配置种子和负面提示词
 4. **点击队列**：按 `Ctrl+Enter` 生成
 
-## Mage-Flow text-to-image workflow
+## Mage-Flow Turbo 文生图工作流
 
-<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/Mage_flow.png" alt="Mage-Flow text-to-image workflow output" />
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/Mage_flow_turbo.png" alt="Mage-Flow Turbo 文生图工作流输出" />
 
 <CardGroup cols={2}>
-  <Card title="Run on Comfy Cloud" icon="cloud" href="https://cloud.comfy.org/?template=image_mage_flow_t2i_int8&utm_source=docs&utm_medium=referral&utm_campaign=mage-flow">
-    Open in Comfy Cloud
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_mage_flow_turbo_t2i_int8&utm_source=docs&utm_medium=referral&utm_campaign=mage-flow">
+    在 Comfy Cloud 中打开
   </Card>
-  <Card title="Download Workflow" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_mage_flow_t2i_int8.json">
-    Download JSON or search "Mage-Flow" in Template Library
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_mage_flow_turbo_t2i_int8.json">
+    下载 JSON，或在模板库中搜索“Mage-Flow Turbo”
   </Card>
 </CardGroup>
 
-<UpdateReminder />
-
-The workflow is organized into a few parts:
-
-1. **Text to Image (Mage-Flow) subgraph**: the core generation pipeline, containing model loading, prompt handling, native-resolution latent generation, sampling, and VAE decode
-2. **SaveImageAdvanced**: saves the generated image
-
-<Card title="Learn about Subgraph" icon="book-open" href="/zh/interface/features/subgraph">
-  This workflow uses Subgraph nodes for modular processing. Check out the Subgraph documentation to learn how to customize and extend the workflow.
-</Card>
-
-### Single-click generation
-
-At its simplest, just enter a text prompt in the subgraph, set your desired resolution, and click **Queue Prompt**. The defaults produce a high-quality image with minimal configuration.
-
-### Using the workflow
-
-1. **Enter a prompt** — type a text description in the subgraph's prompt input
-2. **Set resolution** — adjust width and height for your desired output size. Mage-Flow supports native resolutions from 512 to 2048 pixels per side.
-3. **Adjust settings** — configure the seed and negative prompt as needed
-4. **Click Queue** — press `Ctrl+Enter` to generate
+Turbo 变体使用蒸馏后的 4 步 checkpoint，在保持高质量的同时加快生成速度。其工作流结构与基础文生图工作流完全一致，只是改用 Turbo 扩散模型以获得更低的推理延迟。
 
 ## Mage-Flow-Edit image edit workflow
 

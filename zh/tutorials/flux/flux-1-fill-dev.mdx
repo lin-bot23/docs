@@ -38,10 +38,10 @@ Flux.1 fill dev 的核心特点：
 ![Flux Agreement](/images/tutorial/flux/flux1_fill_dev_agreement.jpg)
 
 完整模型列表：
-- [clip_l.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors?download=true)
-- [t5xxl_fp16.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors?download=true)
-- [ae.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors?download=true)
-- [flux1-fill-dev.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev/resolve/main/flux1-fill-dev.safetensors?download=true)
+- [clip_l.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/clip_l.safetensors)
+- [t5xxl_fp16.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/t5xxl_fp16.safetensors)
+- [ae.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors)
+- [flux1-fill-dev.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-Fill-dev/blob/main/flux1-fill-dev.safetensors)
 
 文件保存位置：
 ```
@@ -58,21 +58,43 @@ ComfyUI/
 
 ## Flux.1 Fill dev inpainting 工作流
 
+### Flux.1 Inpaint {#flux_fill_inpaint_example}
+
+使用 Flux.1 Fill Inpainting 填充图像中缺失的部分。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_fill_inpaint_example-1.webp" alt="Flux.1 Inpaint 工作流预览" />
+
+<CardGroup cols={2}>
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=flux_fill_inpaint_example&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-fill-dev">
+    在 Comfy Cloud 中打开
+  </Card>
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_fill_inpaint_example.json">
+    下载 JSON，或在模板库中搜索“Flux.1 Inpaint”
+  </Card>
+</CardGroup>
+
+**输入素材**
+
+将以下文件上传到对应的 `LoadImage` 节点：
+
+<CardGroup cols={2}>
+  <Card title="flux_fill_inpaint_example_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_fill_inpaint_example_input_image.png">
+    `LoadImage` 节点 17 · `flux_fill_inpaint_example_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_fill_inpaint_example_input_image.png" alt="flux_fill_inpaint_example_input_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**示例输出**
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/flux_fill_inpaint_example_input_image.png" alt="输入图片" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/flux_fill_inpaint_example.png" alt="Flux.1 inpaint 示例输出" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
 ### 1. Inpainting 工作流及相关素材
-
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint.png" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold', marginRight: '10px'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>下载工作流图片</p>
-</a>
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_fill_inpaint_example&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>在 Comfy Cloud 上运行</p>
-</a>
-
-请下载下面的图片，并拖入 ComfyUI 以加载对应的工作流
-![ComfyUI Flux.1 inpaint](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint.png)
-
-请下载下面的图片，我们将使用它来作为输入图片
-![ComfyUI Flux.1 inpaint input](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint_input.png)
 
 <Note>
 对应的图片已经包含 alpha 通道，所以你不需要额外进行蒙版的绘制, 如果你想要自己进行蒙版的绘制请[点击这里](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/inpaint/flux_fill_inpaint_input_original.png)获取不带蒙版的版本，并参考 [ComfyUI 布局重绘示例](/zh/tutorials/basic/inpaint) 中的 MaskEditor 的使用部分来了解如何在`Load Image`节点中绘制蒙版。

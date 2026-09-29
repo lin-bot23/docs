@@ -35,36 +35,41 @@ import UpdateReminder from "/snippets/zh/tutorials/update-reminder.mdx"
 
 ## Boogu-Image-0.1-Turbo 文生图工作流
 
+<UpdateReminder />
+
+### Boogu Turbo: Text to Image {#image_boogu_image_0_1_turbo_t2i}
+
+使用 Boogu Turbo 模型从文本提示词生成高质量图像。这是一个蒸馏的 10B 参数文生图管线，仅需 4 步即可产出照片级结果。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_boogu_image_0_1_turbo_t2i-1.webp" alt="Boogu Turbo 文生图工作流预览" />
+
 <CardGroup cols={2}>
-  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_boogu_image_0_1_turbo_t2i&utm_source=docs&utm_medium=referral&utm_campaign=boogu_image_launch">
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_boogu_image_0_1_turbo_t2i&utm_source=docs&utm_medium=referral&utm_campaign=boogu-image-0-1">
     在 Comfy Cloud 中打开
   </Card>
   <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_boogu_image_0_1_turbo_t2i.json">
-    下载 JSON 或在模板库中搜索 "Boogu image 0.1"
+    下载 JSON，或在模板库中搜索“Boogu Turbo”
   </Card>
 </CardGroup>
-
-<UpdateReminder />
 
 Boogu-Image-0.1-Turbo 工作流使用一个子图封装了扩散、文本编码和 VAE 解码管线。您只需提供文本提示词和分辨率设置，子图会处理其余部分。
 
 ### Boogu-Image-0.1-Turbo 模型下载
 
-<Card title="boogu_image_turbo_fp8_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/resolve/main/diffusion_models/boogu_image_turbo_fp8_scaled.safetensors">
+<CardGroup cols={2}>
+  <Card title="boogu_image_turbo_fp8_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/blob/main/diffusion_models/boogu_image_turbo_fp8_scaled.safetensors">
     Boogu-Image-0.1-Turbo 的扩散模型。
   </Card>
-
-<Card title="qwen3vl_8b_fp8_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/resolve/main/text_encoders/qwen3vl_8b_fp8_scaled.safetensors">
+  <Card title="qwen3vl_8b_fp8_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/blob/main/text_encoders/qwen3vl_8b_fp8_scaled.safetensors">
     Boogu-Image-0.1-Turbo 的文本编码器。
   </Card>
-
-<Card title="ae.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/resolve/main/split_files/vae/ae.safetensors?download=true">
+  <Card title="ae.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/vae/ae.safetensors">
     Boogu-Image-0.1-Turbo 的 VAE。
   </Card>
-
-<Card title="boogu_image_turbo_lora_rank_128_bf16.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/resolve/main/loras/boogu_image_turbo_lora_rank_128_bf16.safetensors">
+  <Card title="boogu_image_turbo_lora_rank_128_bf16.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/blob/main/loras/boogu_image_turbo_lora_rank_128_bf16.safetensors">
     Boogu-Image-0.1-Turbo 的 LoRA 模块 (rank-128)。
   </Card>
+</CardGroup>
 
 **模型存储位置**
 
@@ -83,34 +88,48 @@ Boogu-Image-0.1-Turbo 工作流使用一个子图封装了扩散、文本编码�
 
 ## Boogu-Image-0.1-Edit 图像编辑工作流
 
+### Boogu image 0.1 Edit {#image_boogu_image_0_1_edit}
+
+使用 Boogu 的指令驱动模型编辑图像：输入一张图片，生成编辑后的输出，并附带并排对比视图。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_boogu_image_0_1_edit-1.webp" alt="Boogu image 0.1 Edit 工作流预览" />
+
 <CardGroup cols={2}>
-  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_boogu_image_0_1_edit&utm_source=docs&utm_medium=referral&utm_campaign=boogu_image_launch">
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_boogu_image_0_1_edit&utm_source=docs&utm_medium=referral&utm_campaign=boogu-image-0-1">
     在 Comfy Cloud 中打开
   </Card>
   <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_boogu_image_0_1_edit.json">
-    下载 JSON 或在模板库中搜索 "Boogu image 0.1 Edit"
+    下载 JSON，或在模板库中搜索“Boogu image 0.1 Edit”
   </Card>
 </CardGroup>
 
-<CardGroup cols={1}>
-  <Card title="下载示例图像" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/tech_cowboy.png">
-    获取此工作流的示例输入图像
+**输入素材**
+
+将以下文件上传到对应的 `LoadImage` 节点：
+
+<CardGroup cols={2}>
+  <Card title="tech_cowboy.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/tech_cowboy.png">
+    `LoadImage` 节点 32 · `tech_cowboy.png`
   </Card>
 </CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/tech_cowboy.png" alt="tech_cowboy.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
 
 ### Boogu-Image-0.1-Edit 模型下载
 
-<Card title="boogu_image_edit_fp8_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/resolve/main/diffusion_models/boogu_image_edit_fp8_scaled.safetensors">
+<CardGroup cols={2}>
+  <Card title="boogu_image_edit_fp8_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/blob/main/diffusion_models/boogu_image_edit_fp8_scaled.safetensors">
     Boogu-Image-0.1-Edit 的扩散模型。
   </Card>
-
-<Card title="qwen3vl_8b_fp8_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/resolve/main/text_encoders/qwen3vl_8b_fp8_scaled.safetensors">
+  <Card title="qwen3vl_8b_fp8_scaled.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/Boogu-Image/blob/main/text_encoders/qwen3vl_8b_fp8_scaled.safetensors">
     Boogu-Image-0.1-Edit 的文本编码器。
   </Card>
-
-<Card title="ae.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/resolve/main/split_files/vae/ae.safetensors?download=true">
+  <Card title="ae.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/HiDream-I1_ComfyUI/blob/main/split_files/vae/ae.safetensors">
     Boogu-Image-0.1-Edit 的 VAE。
   </Card>
+</CardGroup>
 
 **模型存储位置**
 

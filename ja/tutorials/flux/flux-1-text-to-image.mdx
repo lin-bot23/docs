@@ -47,14 +47,26 @@ Flux は、優れた画像品質と高い柔軟性で知られており、高品
 
 ### Flux.1 Dev
 
+### Flux.1 Dev fp8: Text to Image {#flux_dev_checkpoint_example}
+
+Flux.1 Dev の fp8 量子化バージョンを使用して画像を生成します。VRAM が限られたデバイスに適しており、必要なモデルファイルは1つだけですが、画質は完全版と比較してやや低下します。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_dev_checkpoint_example-1.webp" alt="Flux.1 Dev fp8 ワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=flux_dev_checkpoint_example&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-text-to-image">
+    Comfy Cloud で開く
+  </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_dev_checkpoint_example.json">
+    JSON をダウンロードするか、テンプレートライブラリで「Flux.1 Dev fp8」を検索
+  </Card>
+</CardGroup>
+
+**出力例**
+
+![Flux.1 Dev fp8 の出力例](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/flux_dev_checkpoint_example.png)
+
 #### 1. ワークフロー・ファイル
-
-下記の画像をダウンロードし、ComfyUI にドラッグ＆ドロップしてワークフローを読み込んでください。
-![Flux Dev オリジナルバージョンワークフロー](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/text-to-image/flux_dev_t5fp16.png)
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_dev_checkpoint_example&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud で実行</p>
-</a>
 
 #### 2. モデルの手動インストール
 
@@ -100,15 +112,22 @@ Flux の優れたプロンプト追従能力により、負のプロンプト（
 </Tip>
 ### Flux.1 Schnell
 
+### Flux.1 Schnell FP8 {#flux_schnell}
+
+Flux.1 Schnell の fp8 量子化バージョンで画像をすばやく生成します。低スペックなハードウェアに最適で、画像生成にはわずか4ステップしか必要としません。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_schnell-1.webp" alt="Flux.1 Schnell FP8 ワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=flux_schnell&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-text-to-image">
+    Comfy Cloud で開く
+  </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_schnell_full_text_to_image.json">
+    JSON をダウンロードするか、テンプレートライブラリで「Flux.1 Schnell」を検索
+  </Card>
+</CardGroup>
+
 #### 1. ワークフロー・ファイル
-
-下記の画像をダウンロードし、ComfyUI にドラッグ＆ドロップしてワークフローを読み込んでください。
-
-![Flux Schnell バージョンワークフロー](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/text-to-image/flux_schnell_t5fp8.png)
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_schnell&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud で実行</p>
-</a>
 
 #### 2. モデルの手動インストール
 
@@ -155,13 +174,26 @@ FP8 バージョンは、元の Flux.1 fp16 バージョンを量子化したも
 
 ### Flux.1 Dev
 
+### Flux.1 Dev: Text to Image {#flux_dev_full_text_to_image}
+
+Flux Dev の完全版で高品質な画像を生成します。より大きな VRAM と複数のモデルファイルが必要ですが、最高のプロンプト追従性能を提供します。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_dev_full_text_to_image-1.webp" alt="Flux.1 Dev テキストから画像へのワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=flux_dev_full_text_to_image&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-text-to-image">
+    Comfy Cloud で開く
+  </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_dev_full_text_to_image.json">
+    JSON をダウンロードするか、テンプレートライブラリで「Flux.1 Dev FP8」を検索
+  </Card>
+</CardGroup>
+
+**出力例**
+
+![Flux.1 Dev FP8 Checkpoint の出力例](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/flux_dev_full_text_to_image.png)
+
 下記の画像をダウンロードし、ComfyUI にドラッグ＆ドロップしてワークフローを読み込んでください。
-
-![Flux Dev fp8 Checkpoint バージョンワークフロー](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/text-to-image/flux_dev_fp8.png)
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_dev_full_text_to_image&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud で実行</p>
-</a>
 
 [flux1-dev-fp8.safetensors](https://huggingface.co/Comfy-Org/flux1-dev/resolve/main/flux1-dev-fp8.safetensors?download=true) をダウンロードし、`ComfyUI/models/checkpoints/` ディレクトリに保存してください。
 
@@ -169,9 +201,22 @@ FP8 バージョンは、元の Flux.1 fp16 バージョンを量子化したも
 
 ### Flux.1 Schnell
 
-下記の画像をダウンロードし、ComfyUI にドラッグ＆ドロップしてワークフローを読み込んでください。
+### Flux.1 Schnell FP8 {#flux_schnell}
 
-![Flux Schnell fp8 Checkpoint バージョンワークフロー](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/text-to-image/flux_schnell_fp8.png)
+Flux.1 Schnell の fp8 量子化バージョンで画像をすばやく生成します。低スペックなハードウェアに最適で、画像生成にはわずか4ステップしか必要としません。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_schnell-1.webp" alt="Flux.1 Schnell FP8 Checkpoint ワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=flux_schnell&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-text-to-image">
+    Comfy Cloud で開く
+  </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_schnell.json">
+    JSON をダウンロードするか、テンプレートライブラリで「Flux.1 Schnell FP8」を検索
+  </Card>
+</CardGroup>
+
+下記の画像をダウンロードし、ComfyUI にドラッグ＆ドロップしてワークフローを読み込んでください。
 
 [flux1-schnell-fp8.safetensors](https://huggingface.co/Comfy-Org/flux1-schnell/resolve/main/flux1-schnell-fp8.safetensors?download=true) をダウンロードし、`ComfyUI/models/checkpoints/` ディレクトリに保存してください。
 

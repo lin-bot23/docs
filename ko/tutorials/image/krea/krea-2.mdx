@@ -47,6 +47,10 @@ Krea 2는 두 가지 변형으로 제공됩니다:
 
 ## Krea-2 Turbo 텍스트 기반 이미지 생성 워크플로
 
+### Krea-2: 텍스트 기반 이미지 생성 {#image_krea2_turbo_t2i}
+
+Krea 2를 사용해 텍스트 프롬프트로 이미지를 생성합니다. 미적 품질과 창의적 제어를 위해 설계된 기반 모델로, 표현력이 풍부하고 스타일적으로 다양한 이미지를 렌더링하는 데 중점을 둡니다.
+
 <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_krea2_turbo_t2i-1.webp" alt="Krea-2 Turbo 텍스트 기반 이미지 생성 워크플로" />
 
 <CardGroup cols={2}>
@@ -96,15 +100,15 @@ Krea는 또한 Krea 2용 스타일 LoRA 컬렉션을 출시했습니다. **Custo
 
 | LoRA | 트리거 단어 | 권장 강도 | 다운로드 |
 |------|-----------|:--------:|---------|
-| krea2_darkbrush | monochrome ink wash style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_darkbrush.safetensors) |
-| krea2_dotmatrix | monochrome stippling style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_dotmatrix.safetensors) |
-| krea2_kidsdrawing | naive expressive sketch style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_kidsdrawing.safetensors) |
-| krea2_neondrip | textured abstract style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_neondrip.safetensors) |
-| krea2_rainywindow | rainy window style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_rainywindow.safetensors) |
-| krea2_retroanime | purple retro anime style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_retroanime.safetensors) |
-| krea2_softwatercolor | art deco watercolor style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_softwatercolor.safetensors) |
-| krea2_sunsetblur | ethereal motion blur style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_sunsetblur.safetensors) |
-| krea2_vintagetarot | vintage tarot style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_vintagetarot.safetensors) |
+| krea2_darkbrush | monochrome ink wash style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_darkbrush.safetensors) |
+| krea2_dotmatrix | monochrome stippling style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_dotmatrix.safetensors) |
+| krea2_kidsdrawing | naive expressive sketch style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_kidsdrawing.safetensors) |
+| krea2_neondrip | textured abstract style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_neondrip.safetensors) |
+| krea2_rainywindow | rainy window style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_rainywindow.safetensors) |
+| krea2_retroanime | purple retro anime style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_retroanime.safetensors) |
+| krea2_softwatercolor | art deco watercolor style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_softwatercolor.safetensors) |
+| krea2_sunsetblur | ethereal motion blur style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_sunsetblur.safetensors) |
+| krea2_vintagetarot | vintage tarot style | 1.0 | [다운로드](https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_vintagetarot.safetensors) |
 
 `.safetensors` 파일을 `ComfyUI/models/loras/` 디렉토리에 넣으세요.
 
@@ -113,13 +117,13 @@ Krea는 또한 Krea 2용 스타일 LoRA 컬렉션을 출시했습니다. **Custo
 로컬에서 사용하려면 [Comfy-Org/Krea-2](https://huggingface.co/Comfy-Org/Krea-2)에서 ComfyUI에 최적화된 모델 파일을 다운로드하세요.
 
 <CardGroup cols={3}>
-  <Card title="확산 모델 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_fp8_scaled.safetensors">
+  <Card title="확산 모델 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/diffusion_models/krea2_turbo_fp8_scaled.safetensors">
     krea2_turbo_fp8_scaled.safetensors: Turbo FP8 (대부분의 사용자에게 권장)
   </Card>
-  <Card title="텍스트 인코더 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors">
+  <Card title="텍스트 인코더 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors">
     qwen3vl_4b_fp8_scaled.safetensors: Qwen3VL-4B 텍스트 인코더
   </Card>
-  <Card title="VAE" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors">
+  <Card title="VAE" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/vae/qwen_image_vae.safetensors">
     qwen_image_vae.safetensors
   </Card>
   <Card title="스타일 LoRA" icon="download" href="https://huggingface.co/collections/krea/krea-2-loras">
@@ -146,6 +150,10 @@ Krea는 또한 Krea 2용 스타일 LoRA 컬렉션을 출시했습니다. **Custo
 
 ## Krea-2 Turbo 스타일 참조 워크플로
 
+### Krea-2 Int8: Image Style Reference {#image_krea2_turbo_int8_image_style_reference}
+
+업로드한 1~2개 이미지의 스타일을 참조하면서 Krea-2 Turbo 모델로 이미지를 생성합니다. 빠른 추론을 위해 고성능 Int8 Convrot 형식을 사용합니다.
+
 <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_krea2_turbo_int8_image_style_reference-1.webp" alt="Krea-2 Turbo 스타일 참조 워크플로" />
 
 <CardGroup cols={2}>
@@ -156,6 +164,24 @@ Krea는 또한 Krea 2용 스타일 LoRA 컬렉션을 출시했습니다. **Custo
     JSON을 다운로드하거나 템플릿 라이브러리에서 "Krea-2 Style Reference"를 검색하세요.
   </Card>
 </CardGroup>
+
+**입력 자료**
+
+다음 파일을 해당 `LoadImage` 노드에 업로드하세요:
+
+<CardGroup cols={2}>
+  <Card title="krea2_reference_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/krea2_reference_image.png">
+    `LoadImage` 노드 69 · `krea2_reference_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/krea2_reference_image.png" alt="krea2_reference_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**예시 출력**
+
+![Krea-2 스타일 참조 예시 출력](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_krea2_turbo_int8_image_style_reference.png)
 
 스타일 참조 워크플로는 Krea-2 Turbo 파이프라인에 참조 이미지 조건화를 추가하여 구축됩니다. 하나 이상의 참조 이미지를 업로드하여 생성된 출력물의 미적 스타일, 분위기 및 시각적 방향에 영향을 줍니다.
 
@@ -177,16 +203,16 @@ Krea는 또한 Krea 2용 스타일 LoRA 컬렉션을 출시했습니다. **Custo
 이 스타일 참조 워크플로는 전용 확산 모델과 LoRA를 사용합니다. 텍스트 인코더와 VAE는 텍스트-이미지 워크플로와 공유됩니다.
 
 <CardGroup cols={2}>
-  <Card title="확산 모델 (INT8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/diffusion_models/krea2_turbo_int8_convrot.safetensors">
+  <Card title="확산 모델 (INT8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/diffusion_models/krea2_turbo_int8_convrot.safetensors">
     krea2_turbo_int8_convrot.safetensors
   </Card>
-  <Card title="텍스트 인코더 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors">
+  <Card title="텍스트 인코더 (FP8)" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/text_encoders/qwen3vl_4b_fp8_scaled.safetensors">
     qwen3vl_4b_fp8_scaled.safetensors: Qwen3VL-4B 텍스트 인코더
   </Card>
-  <Card title="VAE" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/vae/qwen_image_vae.safetensors">
+  <Card title="VAE" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/vae/qwen_image_vae.safetensors">
     qwen_image_vae.safetensors
   </Card>
-  <Card title="스타일 참조 LoRA" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/resolve/main/loras/krea2_style_reference.safetensors">
+  <Card title="스타일 참조 LoRA" icon="download" href="https://huggingface.co/Comfy-Org/Krea-2/blob/main/loras/krea2_style_reference.safetensors">
     krea2_style_reference.safetensors
   </Card>
 </CardGroup>

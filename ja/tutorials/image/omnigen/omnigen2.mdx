@@ -105,16 +105,43 @@ OmniGen2 の統合 7B マルチモーダルモデルとデュアルパスアー�
 
 OmniGen2 は豊富な画像編集機能を備えており、画像へのテキスト追加もサポートします。
 
+### OmniGen2 Image Edit {#image_omnigen2_image_edit}
+
+OmniGen2 の高度な画像編集機能とテキストレンダリング対応により、自然言語の指示で画像を編集します。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_omnigen2_image_edit-1.webp" alt="OmniGen2 画像編集ワークフローのプレビュー" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud で実行" icon="cloud" href="https://cloud.comfy.org/?template=image_omnigen2_image_edit&utm_source=docs&utm_medium=referral&utm_campaign=omnigen2">
+    Comfy Cloud でこのワークフローを直接開いて実行
+  </Card>
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_omnigen2_image_edit.json">
+    JSON をダウンロードするか、テンプレートライブラリで &quot;OmniGen2 Image Edit&quot; を検索
+  </Card>
+</CardGroup>
+
+**入力素材**
+
+このファイルを対応する `LoadImage` ノードにアップロードします：
+
+<CardGroup cols={2}>
+  <Card title="image_omnigen2_image_edit_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_omnigen2_image_edit_input_image.png">
+    `LoadImage` ノード 16 · `image_omnigen2_image_edit_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_omnigen2_image_edit_input_image.png" alt="image_omnigen2_image_edit_input_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**出力例**
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_omnigen2_image_edit_input_image.png" alt="入力画像" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_omnigen2_image_edit.png" alt="OmniGen2 画像編集の出力例" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
 ### 1. ワークフローファイルのダウンロード
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=image_omnigen2_image_edit&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud で実行</p>
-</a>
-
-![テキストから画像へワークフロー](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/image/omnigen2/image_omnigen2_image_edit.png)
-
-以下の画像をダウンロードし、この画像を入力として使用します。
-![入力画像](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/image/omnigen2/input_fairy.png)
 
 ### 2. ワークフローの手順通り実行
 

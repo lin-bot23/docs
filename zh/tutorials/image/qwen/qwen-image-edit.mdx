@@ -42,21 +42,45 @@ import UpdateReminder from '/snippets/zh/tutorials/update-reminder.mdx'
 
 <UpdateReminder />
 
+### Qwen Image Edit {#image_qwen_image_edit}
+
+使用 Qwen-Image-Edit 的 20B MMDiT 模型编辑图像，支持精准的双语文字编辑以及语义与外观双重编辑能力。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_qwen_image_edit-1.webp" alt="Qwen-Image-Edit 工作流预览" />
+
+<CardGroup cols={2}>
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_qwen_image_edit&utm_source=docs&utm_medium=referral&utm_campaign=qwen-image-edit">
+    在 Cloud GPU 上零配置运行此工作流
+  </Card>
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_qwen_image_edit.json">
+    下载 JSON，或在模板库中搜索“Qwen Image Edit”
+  </Card>
+</CardGroup>
+
+**输入素材**
+
+将以下文件上传到对应的 `LoadImage` 节点：
+
+<CardGroup cols={2}>
+  <Card title="image_qwen_image_edit_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_edit_input_image.png">
+    `LoadImage` 节点 78 · `image_qwen_image_edit_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_edit_input_image.png" alt="image_qwen_image_edit_input_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**示例输出**
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_edit_input_image.png" alt="输入图片" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_qwen_image_edit.jpg" alt="Qwen-Image-Edit 示例输出" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
 ### 1. 工作流文件
 
 更新 ComfyUI 后你可以从模板中找到工作流文件，或者将下面的工作流拖入 ComfyUI 中加载
-![Qwen-image 文生图工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-edit/qwen_image_edit.png)
-
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/image_qwen_image_edit.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold', marginRight: '10px'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>下载 JSON 格式工作流</p>
-</a>
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=image_qwen_image_edit&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>在 ComfyUI Cloud 上运行</p>
-</a>
-
-下载下面的图片作为输入
-![Qwen-image 文生图工作流](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-edit/input.png)
 
 ### 2. 模型下载
 
@@ -64,19 +88,19 @@ import UpdateReminder from '/snippets/zh/tutorials/update-reminder.mdx'
 
 **Diffusion model**
 
-- [qwen_image_edit_fp8_e4m3fn.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/resolve/main/split_files/diffusion_models/qwen_image_edit_fp8_e4m3fn.safetensors)
+- [qwen_image_edit_fp8_e4m3fn.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image-Edit_ComfyUI/blob/main/split_files/diffusion_models/qwen_image_edit_fp8_e4m3fn.safetensors)
 
 **LoRA**
 
-- [Qwen-Image-Lightning-4steps-V1.0.safetensors](https://huggingface.co/lightx2v/Qwen-Image-Lightning/resolve/main/Qwen-Image-Lightning-4steps-V1.0.safetensors)
+- [Qwen-Image-Lightning-4steps-V1.0.safetensors](https://huggingface.co/lightx2v/Qwen-Image-Lightning/blob/main/Qwen-Image-Lightning-4steps-V1.0.safetensors)
 
 **Text encoder**
 
-- [qwen_2.5_vl_7b_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors)
+- [qwen_2.5_vl_7b_fp8_scaled.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/blob/main/split_files/text_encoders/qwen_2.5_vl_7b_fp8_scaled.safetensors)
 
 **VAE**
 
-- [qwen_image_vae.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/resolve/main/split_files/vae/qwen_image_vae.safetensors)
+- [qwen_image_vae.safetensors](https://huggingface.co/Comfy-Org/Qwen-Image_ComfyUI/blob/main/split_files/vae/qwen_image_vae.safetensors)
 
 Model Storage Location
 

@@ -48,27 +48,39 @@ Flux는 뛰어난 이미지 품질과 유연성으로 고화질의 다양한 이
 
 ### Flux.1 Dev
 
+### Flux.1 Dev fp8: Text to Image {#flux_dev_checkpoint_example}
+
+Flux.1 Dev fp8 양자화 버전을 사용해 이미지를 생성합니다. VRAM이 제한된 기기에 적합하며 모델 파일 하나만 필요하지만, 전체 버전에 비해 이미지 품질이 약간 낮습니다.
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_dev_checkpoint_example-1.webp" alt="Flux.1 Dev fp8 워크플로우 미리보기" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud에서 실행" icon="cloud" href="https://cloud.comfy.org/?template=flux_dev_checkpoint_example&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-text-to-image">
+    Comfy Cloud에서 이 워크플로우를 실행하세요
+  </Card>
+  <Card title="워크플로 다운로드" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_dev_checkpoint_example.json">
+    JSON 다운로드 또는 템플릿 라이브러리에서 "Flux.1 Dev fp8" 검색
+  </Card>
+</CardGroup>
+
+**예시 출력**
+
+![Flux.1 Dev fp8 예시 출력](https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/flux_dev_checkpoint_example.png)
+
 #### 1. 워크플로우 파일
-
-아래 이미지를 다운로드해 ComfyUI에 드래그하여 워크플로우를 로드하세요.
-![Flux Dev 원본 버전 워크플로우](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/text-to-image/flux_dev_t5fp16.png)
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_dev_checkpoint_example&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud에서 실행</p>
-</a>
 
 #### 2. 수동 모델 설치
 
 <Note>
 - `flux1-dev.safetensors` 파일은 브라우저를 통해 다운로드하기 전에 [black-forest-labs/FLUX.1-dev](https://huggingface.co/black-forest-labs/FLUX.1-dev) 계약에 동의해야 합니다.
-- VRAM이 부족한 경우, [t5xxl_fp8_e4m3fn.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors?download=true)를 사용해 `t5xxl_fp16.safetensors` 파일을 대체해보세요.
+- VRAM이 부족한 경우, [t5xxl_fp8_e4m3fn.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/t5xxl_fp8_e4m3fn.safetensors?download=true)를 사용해 `t5xxl_fp16.safetensors` 파일을 대체해보세요.
 </Note>
 
 다음 모델 파일을 다운로드하세요:
-- [clip_l.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors?download=true)
-- [t5xxl_fp16.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp16.safetensors?download=true) VRAM이 32GB 이상인 경우 권장합니다.
-- [ae.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors?download=true)
-- [flux1-dev.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-dev/resolve/main/flux1-dev.safetensors) 
+- [clip_l.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/clip_l.safetensors?download=true)
+- [t5xxl_fp16.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/t5xxl_fp16.safetensors?download=true) VRAM이 32GB 이상인 경우 권장합니다.
+- [ae.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors?download=true)
+- [flux1-dev.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-dev/blob/main/flux1-dev.safetensors) 
 
 저장 위치:
 ```
@@ -101,15 +113,22 @@ Flux의 뛰어난 프롬프트 추종 능력 덕분에 부정적인 프롬프트
 </Tip>
 ### Flux.1 Schnell
 
+### Flux.1 Schnell FP8 {#flux_schnell}
+
+Flux.1 Schnell fp8 양자화 버전으로 이미지를 빠르게 생성합니다. 저사양 하드웨어에 적합하며, 이미지 생성에 4단계만 필요합니다.
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/flux_schnell-1.webp" alt="Flux.1 Schnell FP8 워크플로우 미리보기" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud에서 실행" icon="cloud" href="https://cloud.comfy.org/?template=flux_schnell&utm_source=docs&utm_medium=referral&utm_campaign=flux-1-text-to-image">
+    Comfy Cloud에서 이 워크플로우를 실행하세요
+  </Card>
+  <Card title="워크플로 다운로드" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/flux_schnell_full_text_to_image.json">
+    JSON 다운로드 또는 템플릿 라이브러리에서 "Flux.1 Schnell" 검색
+  </Card>
+</CardGroup>
+
 #### 1. 워크플로우 파일
-
-아래 이미지를 다운로드해 ComfyUI에 드래그하여 워크플로우를 로드하세요.
-
-![Flux Schnell 버전 워크플로우](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/flux/text-to-image/flux_schnell_t5fp8.png)
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=flux_schnell&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>Comfy Cloud에서 실행</p>
-</a>
 
 #### 2. 수동 모델 설치
 
@@ -120,10 +139,10 @@ Flux의 뛰어난 프롬프트 추종 능력 덕분에 부정적인 프롬프트
 </Note>
 
 완전한 모델 파일 목록:
-- [clip_l.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/clip_l.safetensors?download=true)
-- [t5xxl_fp8_e4m3fn.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/resolve/main/t5xxl_fp8_e4m3fn.safetensors?download=true)
-- [ae.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/ae.safetensors?download=true)
-- [flux1-schnell.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/resolve/main/flux1-schnell.safetensors) 
+- [clip_l.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/clip_l.safetensors?download=true)
+- [t5xxl_fp8_e4m3fn.safetensors](https://huggingface.co/comfyanonymous/flux_text_encoders/blob/main/t5xxl_fp8_e4m3fn.safetensors?download=true)
+- [ae.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/ae.safetensors?download=true)
+- [flux1-schnell.safetensors](https://huggingface.co/black-forest-labs/FLUX.1-schnell/blob/main/flux1-schnell.safetensors) 
 
 파일 저장 위치:
 ```

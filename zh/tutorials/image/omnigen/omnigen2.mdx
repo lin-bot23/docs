@@ -43,13 +43,13 @@ OmniGen2 是一个强大且高效的统一多模态生成模型，总参数量�
 由于本文涉及不同工作流，对应的模型文件及安装位置如下，对应工作流中也已包含了模型文件下载信息：
 
 **Diffusion Models）**
-- [omnigen2_fp16.safetensors](https://huggingface.co/Comfy-Org/Omnigen2_ComfyUI_repackaged/resolve/main/split_files/diffusion_models/omnigen2_fp16.safetensors)
+- [omnigen2_fp16.safetensors](https://huggingface.co/Comfy-Org/Omnigen2_ComfyUI_repackaged/blob/main/split_files/diffusion_models/omnigen2_fp16.safetensors)
 
 **VAE**
-- [ae.safetensors](https://huggingface.co/Comfy-Org/Lumina_Image_2.0_Repackaged/resolve/main/split_files/vae/ae.safetensors)
+- [ae.safetensors](https://huggingface.co/Comfy-Org/Lumina_Image_2.0_Repackaged/blob/main/split_files/vae/ae.safetensors)
 
 **Text Encoders）**
-- [qwen_2.5_vl_fp16.safetensors](https://huggingface.co/Comfy-Org/Omnigen2_ComfyUI_repackaged/resolve/main/split_files/text_encoders/qwen_2.5_vl_fp16.safetensors)
+- [qwen_2.5_vl_fp16.safetensors](https://huggingface.co/Comfy-Org/Omnigen2_ComfyUI_repackaged/blob/main/split_files/text_encoders/qwen_2.5_vl_fp16.safetensors)
 
 
 文件保存位置：
@@ -107,16 +107,43 @@ OmniGen2 是一个强大且高效的统一多模态生成模型，总参数量�
 
 OmniGen2 有丰富的图像编辑能力，并且支持为图像添加文本
 
+### OmniGen2 Image Edit {#image_omnigen2_image_edit}
+
+使用 OmniGen2 强大的图像编辑能力和文字渲染支持，通过自然语言指令编辑图像。
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_omnigen2_image_edit-1.webp" alt="OmniGen2 图片编辑工作流预览" />
+
+<CardGroup cols={2}>
+  <Card title="在 Comfy Cloud 上运行" icon="cloud" href="https://cloud.comfy.org/?template=image_omnigen2_image_edit&utm_source=docs&utm_medium=referral&utm_campaign=omnigen2">
+    在 Comfy Cloud 中直接打开并运行此工作流
+  </Card>
+  <Card title="下载工作流" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_omnigen2_image_edit.json">
+    下载 JSON，或在模板库中搜索“OmniGen2 Image Edit”
+  </Card>
+</CardGroup>
+
+**输入素材**
+
+将以下文件上传到对应的 `LoadImage` 节点：
+
+<CardGroup cols={2}>
+  <Card title="image_omnigen2_image_edit_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_omnigen2_image_edit_input_image.png">
+    `LoadImage` 节点 16 · `image_omnigen2_image_edit_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_omnigen2_image_edit_input_image.png" alt="image_omnigen2_image_edit_input_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
+**示例输出**
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_omnigen2_image_edit_input_image.png" alt="输入图片" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/output/image_omnigen2_image_edit.png" alt="OmniGen2 图片编辑示例输出" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
+
 ### 1. 工作流文件下载
-
-<a className="prose"  target='_blank'  href="https://cloud.comfy.org/?template=image_omnigen2_image_edit&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#28a745', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>在 Comfy Cloud 上运行</p>
-</a>
-
-![输入图片](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/image/omnigen2/image_omnigen2_image_edit.png)
-下载下面的图片，我们将使用它作为输入图片。
-![输入图片](https://raw.githubusercontent.com/Comfy-Org/example_workflows/main/image/omnigen2/input_fairy.png)
-
 
 ### 2. 按步骤完成工作流运行
 

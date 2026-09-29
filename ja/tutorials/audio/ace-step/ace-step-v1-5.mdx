@@ -33,15 +33,16 @@ ACE-Step 1.5は、オープンソースの音楽生成モデルに対する重�
 
 AIO（All-in-One）版は、すべてのモデルを単一のチェックポイントファイルにパッケージ化しており、ダウンロードおよび管理が容易です。
 
-### AIOワークフロー
+### AIOワークフロー {#audio_ace_step_1_5_checkpoint}
 
-<Card title="Comfy Cloudで実行" icon="cloud" href="https://cloud.comfy.org/?template=audio_ace_step_1_5_checkpoint&utm_source=docs">
+<CardGroup cols={2}>
+  <Card title="Comfy Cloudで実行" icon="cloud" href="https://cloud.comfy.org/?template=audio_ace_step_1_5_checkpoint&utm_source=docs&utm_medium=referral&utm_campaign=ace-step-v1-5">
     AIOワークフローをComfy Cloud上で直接実行します。
   </Card>
-
-<Card title="ワークフローをダウンロード" icon="download" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/audio_ace_step_1_5_checkpoint.json">
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/audio_ace_step_1_5_checkpoint.json">
     ローカル環境で使用するためのオールインワンチェックポイントワークフローをダウンロードします。
   </Card>
+</CardGroup>
 
 ### AIOモデルのダウンロード
 
@@ -62,18 +63,20 @@ AIO（All-in-One）版は、すべてのモデルを単一のチェックポイ�
 
 分割版では、個別のモデルコンポーネントをそれぞれ別々にダウンロードできます。
 
-### 分割モデルワークフロー
+### 分割モデルワークフロー {#audio_ace_step_1_5_split}
 
-<Card title="Comfy Cloudで実行" icon="cloud" href="https://cloud.comfy.org/?template=audio_ace_step_1_5_split&utm_source=docs">
+<CardGroup cols={2}>
+  <Card title="Comfy Cloudで実行" icon="cloud" href="https://cloud.comfy.org/?template=audio_ace_step_1_5_split&utm_source=docs&utm_medium=referral&utm_campaign=ace-step-v1-5">
     分割モデルワークフローをComfy Cloud上で直接実行します。
   </Card>
-
-<Card title="ワークフローをダウンロード" icon="download" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/audio_ace_step_1_5_split.json">
+  <Card title="ワークフローをダウンロード" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/audio_ace_step_1_5_split.json">
     ローカル環境で使用するための分割モデルワークフローをダウンロードします。
   </Card>
+</CardGroup>
 
 ### 分割モデルのダウンロード
 
+<CardGroup cols={2}>
 <Card title="acestep_v1.5_turbo.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/diffusion_models/acestep_v1.5_turbo.safetensors">
     拡散モデル（Diffusion Model）。
   </Card>
@@ -89,6 +92,7 @@ AIO（All-in-One）版は、すべてのモデルを単一のチェックポイ�
 <Card title="ace_1.5_vae.safetensors" icon="download" href="https://huggingface.co/Comfy-Org/ace_step_1.5_ComfyUI_files/resolve/main/split_files/vae/ace_1.5_vae.safetensors">
     VAEモデル。
   </Card>
+</CardGroup>
 
 **分割モデルの保存場所**
 

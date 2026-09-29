@@ -244,28 +244,43 @@ ComfyUI/
 
 ## Qwen Image ControlNet DiffSynth-ControlNets 모델 패치 워크플로우
 
-<a href="https://cloud.comfy.org/?template=image_qwen_image_controlnet_patch&utm_source=docs" style={{ display: 'inline-block', backgroundColor: '#7c3aed', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold', marginBottom: '1rem'}}>
-    Comfy Cloud에서 실행하기
-</a>
-
 이 모델은 실제로 ControlNet이 아니라, 캐니, 딥스, 인페인트 등 세 가지 다른 제어 모드를 지원하는 모델 패치입니다.
 
 원본 모델 주소: [DiffSynth-Studio/Qwen-Image ControlNet](https://www.modelscope.cn/collections/Qwen-Image-ControlNet-6157b44e89d444)  
 Comfy Org 재호스팅 주소: [Qwen-Image-DiffSynth-ControlNets/model_patches](https://huggingface.co/Comfy-Org/Qwen-Image-DiffSynth-ControlNets/tree/main/split_files/model_patches)
 
+### Qwen-Image ControlNet Model Patch {#image_qwen_image_controlnet_patch}
+
+Qwen-Image ControlNet 모델을 사용해 이미지 생성을 제어합니다. 모델 패치를 통해 캐니, 깊이, 인페인팅 제어를 지원합니다.
+
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/image_qwen_image_controlnet_patch-1.webp" alt="Qwen-Image ControlNet 모델 패치 워크플로 미리보기" />
+
+<CardGroup cols={2}>
+  <Card title="Comfy Cloud에서 실행" icon="cloud" href="https://cloud.comfy.org/?template=image_qwen_image_controlnet_patch&utm_source=docs&utm_medium=referral&utm_campaign=qwen-image">
+    Comfy Cloud에서 열기
+  </Card>
+  <Card title="워크플로 다운로드" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/image_qwen_image_controlnet_patch.json">
+    JSON 다운로드 또는 템플릿 라이브러리에서 "Qwen-Image ControlNet Patch" 검색
+  </Card>
+</CardGroup>
+
+**입력 자료**
+
+다음 파일을 해당 `LoadImage` 노드에 업로드하세요:
+
+<CardGroup cols={2}>
+  <Card title="image_qwen_image_controlnet_patch_input_image.png" icon="image" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_controlnet_patch_input_image.png">
+    `LoadImage` 노드 71 · `image_qwen_image_controlnet_patch_input_image.png`
+  </Card>
+</CardGroup>
+
+<div style={{display: 'grid', gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '1rem', alignItems: 'start'}}>
+  <img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/image_qwen_image_controlnet_patch_input_image.png" alt="image_qwen_image_controlnet_patch_input_image.png" style={{width: '100%', height: 'auto', objectFit: 'contain'}} />
+</div>
 
 ### 1. 워크플로우 및 입력 이미지
 
-아래 이미지를 다운로드해 ComfyUI로 드래그해 해당 워크플로우를 불러오세요.
-![워크플로우](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-controlnet-model-patch/image_qwen_image_controlnet_patch.png)
-
-<a className="prose"  target='_blank'  href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/refs/heads/main/templates/image_qwen_image_controlnet_patch.json" style={{ display: 'inline-block', backgroundColor: '#0078D6', color: '#ffffff', padding: '10px 20px', borderRadius: '8px', borderColor: "transparent", textDecoration: 'none', fontWeight: 'bold'}}>
-    <p className="prose" style={{ margin: 0, fontSize: "0.8rem" }}>JSON 형식 워크플로우 다운로드</p>
-</a>
-
-아래 이미지를 입력으로 다운로드하세요:
-
-![입력](https://raw.githubusercontent.com/Comfy-Org/example_workflows/refs/heads/main/image/qwen/qwen-image-controlnet-model-patch/input.png)
+ComfyUI를 업데이트한 후, 템플릿에서 워크플로우 파일을 찾거나 위의 워크플로우 미리보기를 ComfyUI로 드래그해 불러올 수 있습니다.
 
 ### 2. 모델 링크
 
