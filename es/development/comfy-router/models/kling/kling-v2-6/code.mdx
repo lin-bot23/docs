@@ -2,13 +2,15 @@
 title: "Usa Kling V2.6 con Comfy Router"
 description: "Llama a kling/kling-v2-6 con Comfy Router: endpoint, forma de la solicitud y la respuesta que devuelve Router."
 sidebarTitle: "Kling V2.6"
-translationSourceHash: f8effa1d
+translationSourceHash: 1e64e957
 translationFrom: development/comfy-router/models/kling/kling-v2-6/code.mdx
 translationBlockHashes:
   "_intro": 04868509
   "Quick start": 48a3d970
   "Schema": 9d23ff94
+  "Examples": 8623c725
 ---
+
 {/* ARCHIVO GENERADO. Generado desde router-schemas/kling/kling-v2-6.json por `pnpm code-pages:gen`. */}
 
 import RouterCodeFooter from "/snippets/es/comfy-router/model-code-footer.mdx";
@@ -71,8 +73,8 @@ curl https://api.comfy.org/v2/models/kling/kling-v2-6 \
 ```
 </CodeGroup>
   </Tab>
-  <Tab title="Encolar y recoger más tarde">
-El mismo cuerpo, enviado a `POST https://api.comfy.org/v2/models/kling/kling-v2-6/requests`. Router responde `201` con un `request_id` en cuanto se admite la ejecución, y el resultado se recoge, desde este proceso o desde otro, en cuanto está listo. [Entrega en cola](/es/development/comfy-router/queue) describe el estado, la cancelación y la recogida.
+  <Tab title="Encolar y recoger el resultado más tarde">
+El mismo cuerpo, enviado a `POST https://api.comfy.org/v2/models/kling/kling-v2-6/requests`. Router responde `201` con un `request_id` en cuanto acepta la ejecución, y el resultado se recoge en cuanto está listo, ya sea desde este proceso o desde otro. [Entrega en cola](/es/development/comfy-router/queue) explica el estado, la cancelación y la recogida del resultado.
 
 <CodeGroup>
 ```python Python
@@ -92,7 +94,7 @@ async def main():
                 "prompt": "A red fox trotting through falling snow, cinematic lighting.",
             },
         )
-        print("request_id:", handle.request_id)  # junto con el ID del modelo, es todo lo que otro proceso necesita
+        print("request_id:", handle.request_id)  # junto con el ID del modelo, es todo lo que necesita otro proceso
 
         # Consulta hasta que la solicitud se complete, esperando el Retry-After que indica el servidor.
         async for update in handle.iter_events():
@@ -118,21 +120,21 @@ const handle = await comfy.models.submit("kling/kling-v2-6", {
   mode: "std",
   prompt: "A red fox trotting through falling snow, cinematic lighting.",
 });
-console.log("requestId:", handle.requestId); // junto con el ID del modelo, es todo lo que otro proceso necesita
+console.log("requestId:", handle.requestId); // junto con el ID del modelo, es todo lo que necesita otro proceso
 
 // Consulta hasta que la solicitud se complete, esperando el Retry-After que indica el servidor.
 for await (const update of handle.events()) {
   console.log(update.status, update.queuePosition);
 }
 
-// El mismo resultado que devuelve models.run(). Una solicitud que falló o se canceló se rechaza aquí.
+// El mismo resultado que devuelve models.run(). Si una solicitud falló o se canceló, la promesa se rechaza aquí.
 const result = await handle.get();
 
 console.log(result.data);
 ```
 
 ```bash cURL
-# 1. Envía. Router responde 201 con request_id, status_url, response_url y cancel_url.
+# 1. Envía la solicitud. Router responde 201 con request_id, status_url, response_url y cancel_url.
 curl https://api.comfy.org/v2/models/kling/kling-v2-6/requests \
   -H "X-API-Key: $COMFY_API_KEY" \
   -H "Idempotency-Key: $(uuidgen)" \
@@ -144,7 +146,7 @@ REQUEST_ID="<request_id from the 201 body>"
 curl -i https://api.comfy.org/v2/models/kling/kling-v2-6/requests/$REQUEST_ID/status \
   -H "X-API-Key: $COMFY_API_KEY"
 
-# 3. Recoge. 200 con la salida nativa del modelo, 202 con el cuerpo del estado mientras sigue en ejecución.
+# 3. Recoge el resultado. 200 con la salida nativa del modelo, 202 con el cuerpo del estado mientras sigue en ejecución.
 curl https://api.comfy.org/v2/models/kling/kling-v2-6/requests/$REQUEST_ID \
   -H "X-API-Key: $COMFY_API_KEY"
 ```
@@ -287,19 +289,19 @@ curl https://api.comfy.org/v2/models/kling/kling-v2-6/requests/$REQUEST_ID \
 </ParamField>
 
 <ParamField body="voice_list" type="object[]">
-  Lista de voces a las que se hace referencia al generar videos. Admite hasta 2 voces; haz referencia a ellas en `prompt` como \<\<\<voice_1>>> y \<\<\<voice_2>>> según el orden de la lista. Requiere `sound` establecido en "on", lo cual solo admiten las versiones V2.6 y posteriores del modelo; en un modelo anterior, o con `sound` en su valor predeterminado "off", las voces no se aplican.
+  Lista de voces a las que se hace referencia al generar videos. Admite hasta 2 voces; haz referencia a ellas en `prompt` como \<\<\<voice_1>>> y \<\<\<voice_2>>> según el orden de la lista. Requiere que `sound` esté establecido en "on", lo cual solo admiten las versiones V2.6 y posteriores del modelo; en un modelo anterior, o si `sound` se deja en su valor predeterminado "off", las voces no tienen efecto.
 </ParamField>
 
 <ParamField body="voice_list[].voice_id" type="string" required>
-  ID de voz devuelto a través de la API de personalización de voces o un ID de voz predefinido del sistema.
+  ID de voz devuelto por la API de personalización de voces o un ID de voz preestablecido del sistema.
 </ParamField>
 
 <ParamField body="watermark_info" type="object">
-  Indica si se generan resultados con marca de agua simultáneamente. Actualmente no se admiten marcas de agua personalizadas.
+  Indica si se generan simultáneamente resultados con marca de agua. Actualmente no se admiten marcas de agua personalizadas.
 </ParamField>
 
 <ParamField body="watermark_info.enabled" type="boolean">
-  true significa generar marca de agua, false significa no generarla.
+  true indica generar la marca de agua; false indica no generarla.
 </ParamField>
 
 Generado a partir del esquema que Router sirve en `GET /v2/models/kling/kling-v2-6/openapi.json`, el mismo documento contra el que valida una llamada antes de que la solicitud llegue al proveedor.
@@ -319,7 +321,7 @@ Generado a partir del esquema que Router sirve en `GET /v2/models/kling/kling-v2
 </ResponseField>
 
 <ResponseField name="data.final_unit_deduction" type="string">
-  Las unidades de deducción de la tarea
+  Unidades de deducción de la tarea
 </ResponseField>
 
 <ResponseField name="data.task_id" type="string">

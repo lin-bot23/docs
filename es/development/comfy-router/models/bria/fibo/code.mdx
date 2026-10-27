@@ -2,13 +2,15 @@
 title: "Usa Fibo con Comfy Router"
 description: "Llama a bria/fibo mediante Comfy Router: endpoint, forma de la solicitud y la respuesta que devuelve Router."
 sidebarTitle: "Fibo"
-translationSourceHash: c333bf76
+translationSourceHash: d5613678
 translationFrom: development/comfy-router/models/bria/fibo/code.mdx
 translationBlockHashes:
   "_intro": 6bacca99
+  "Quick start": e65d8565
   "Schema": fff2cf41
   "Examples": 987e8ba6
 ---
+
 {/* ARCHIVO GENERADO. Generado desde router-schemas/bria/fibo.json por `pnpm code-pages:gen`. */}
 
 import RouterCodeFooter from "/snippets/es/comfy-router/model-code-footer.mdx";
@@ -19,20 +21,19 @@ Referencia de API para `bria/fibo`, servida por Comfy Router de Bria.
 
 ## Inicio rápido
 
-Crea una clave en [tu espacio de trabajo de Comfy](https://platform.comfy.org/profile/api-keys?onboarding=router) y expórtala como `COMFY_API_KEY`. Los fragmentos de Python y TypeScript usan los SDK de Comfy (`pip install comfy-sdk` y `npm install @comfyorg/sdk`); el fragmento de cURL es la misma llamada por HTTP directo.
+Crea una clave en [tu espacio de trabajo de Comfy](https://platform.comfy.org/profile/api-keys?onboarding=router) y expórtala como `COMFY_API_KEY`. Los fragmentos de Python y TypeScript usan los SDK de Comfy (`pip install comfy-sdk` y `npm install @comfyorg/sdk`); el fragmento de cURL es la misma llamada sobre HTTP sin procesar.
 
 **ID del modelo:** `bria/fibo`
 
 **Endpoint:** `POST https://api.comfy.org/v2/models/bria/fibo`
 
-<Tabs defaultTabIndex={1}>
-  <Tab title="Esperar el resultado">
+<Tabs defaultTabIndex={1}><Tab title="Esperar el resultado">
 <CodeGroup>
 ```python Python
 from comfy_sdk import Comfy
 
-# Reads COMFY_API_KEY from the environment.
-# The SDK automatically creates an idempotency key and reuses it for automatic retries.
+# Lee COMFY_API_KEY desde el entorno.
+# El SDK crea automáticamente una clave de idempotencia y la reutiliza para los reintentos automáticos.
 with Comfy() as client:
     result = client.models.run(
         "bria/fibo",
@@ -48,8 +49,8 @@ print(result)
 ```typescript TypeScript
 import { comfy } from "@comfyorg/sdk";
 
-// Reads COMFY_API_KEY from the environment.
-// The SDK automatically creates an idempotency key and reuses it for automatic retries.
+// Lee COMFY_API_KEY desde el entorno.
+// El SDK crea automáticamente una clave de idempotencia y la reutiliza para los reintentos automáticos.
 const { data } = await comfy.models.run("bria/fibo", {
   images: ["iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAC2klEQVR42u3TQQ0AQAgEMeTgX8W5gi8OjoROVgGhUdLhwgkEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAAkACQAJAAkACQAJAAkACQAJAAkACQAFjSy7SPAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8IIAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASABIAEgASABIAEgASABIAEgASABIAEgASABIAAgACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkAadSRm+WukYdfewAAAABJRU5ErkJggg=="],
   instruction: "make the background light blue",
@@ -66,8 +67,7 @@ curl https://api.comfy.org/v2/models/bria/fibo \
   -d "{\"images\": [\"iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAC2klEQVR42u3TQQ0AQAgEMeTgX8W5gi8OjoROVgGhUdLhwgkEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAAkACQAJAAkACQAJAAkACQAJAAkACQAFjSy7SPAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8IIAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASABIAEgASABIAEgASABIAEgASABIAEgASABIAAgACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkAadSRm+WukYdfewAAAABJRU5ErkJggg==\"], \"instruction\": \"make the background light blue\"}"
 ```
 </CodeGroup>
-  </Tab>
-  <Tab title="Encolar y recoger más tarde">
+  </Tab><Tab title="Encolar y recoger más tarde">
 El mismo cuerpo, enviado a `POST https://api.comfy.org/v2/models/bria/fibo/requests`. Router responde `201` con un `request_id` en cuanto se admite la ejecución, y el resultado se recoge cuando está listo, desde este proceso o desde otro. [Entrega en cola](/es/development/comfy-router/queue) explica el estado, la cancelación y la recogida.
 
 <CodeGroup>
@@ -75,8 +75,8 @@ El mismo cuerpo, enviado a `POST https://api.comfy.org/v2/models/bria/fibo/reque
 import asyncio
 from comfy_sdk import AsyncComfy
 
-# Reads COMFY_API_KEY from the environment.
-# Each submit() call mints its own Idempotency-Key and reuses it for automatic retries.
+# Lee COMFY_API_KEY del entorno.
+# Cada llamada a submit() genera su propia Idempotency-Key y la reutiliza en los reintentos automáticos.
 async def main():
     async with AsyncComfy() as client:
         handle = await client.models.submit(
@@ -86,14 +86,14 @@ async def main():
                 "instruction": "make the background light blue",
             },
         )
-        print("request_id:", handle.request_id)  # with the model ID, all another process needs
+        print("request_id:", handle.request_id)  # con el ID del modelo, todo lo que otro proceso necesita
 
-        # Poll until the request completes, waiting the Retry-After the server names.
+        # Consulta hasta que la solicitud se complete, esperando el Retry-After que indica el servidor.
         async for update in handle.iter_events():
             print(update.status, update.queue_position)
 
-        # The provider's own payload, the same value models.run() returns.
-        # A request that failed or was cancelled raises the typed Router error here.
+        # El payload propio del proveedor, el mismo valor que devuelve models.run().
+        # Una solicitud que falló o se canceló lanza aquí el error tipado de Router.
         result = await handle.get()
 
     print(result)
@@ -104,42 +104,44 @@ asyncio.run(main())
 ```typescript TypeScript
 import { comfy } from "@comfyorg/sdk";
 
-// Reads COMFY_API_KEY from the environment.
-// Each submit() call mints its own Idempotency-Key and reuses it for automatic retries.
+// Lee COMFY_API_KEY del entorno.
+// Cada llamada a submit() genera su propia Idempotency-Key y la reutiliza en los reintentos automáticos.
 const handle = await comfy.models.submit("bria/fibo", {
   images: ["iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAC2klEQVR42u3TQQ0AQAgEMeTgX8W5gi8OjoROVgGhUdLhwgkEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAAkACQAJAAkACQAJAAkACQAJAAkACQAFjSy7SPAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8IIAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASABIAEgASABIAEgASABIAEgASABIAEgASABIAAgACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkAadSRm+WukYdfewAAAABJRU5ErkJggg=="],
   instruction: "make the background light blue",
 });
-console.log("requestId:", handle.requestId); // with the model ID, all another process needs
+console.log("requestId:", handle.requestId); // con el ID del modelo, todo lo que otro proceso necesita
 
-// Poll until the request completes, waiting the Retry-After the server names.
+// Consulta hasta que la solicitud se complete, esperando el Retry-After que indica el servidor.
 for await (const update of handle.events()) {
   console.log(update.status, update.queuePosition);
 }
 
-// The same result models.run() returns. A request that failed or was cancelled rejects here.
+// El mismo resultado que devuelve models.run(). Una solicitud que falló o se canceló se rechaza aquí.
 const result = await handle.get();
 
 console.log(result.data);
 ```
 
 ```bash cURL
-# 1. Submit. Router answers 201 with request_id, status_url, response_url and cancel_url.
+# 1. Envía. Router responde 201 con request_id, status_url, response_url y cancel_url.
 curl https://api.comfy.org/v2/models/bria/fibo/requests \
   -H "X-API-Key: $COMFY_API_KEY" \
   -H "Idempotency-Key: $(uuidgen)" \
   -H "Content-Type: application/json" \
   -d "{\"images\": [\"iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAC2klEQVR42u3TQQ0AQAgEMeTgX8W5gi8OjoROVgGhUdLhwgkEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAAkACQAJAAkACQAJAAkACQAJAAkACQAFjSy7SPAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8IIAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASABIAEgASABIAEgASABIAEgASABIAEgASABIAAgACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkAadSRm+WukYdfewAAAABJRU5ErkJggg==\"], \"instruction\": \"make the background light blue\"}"
 
-# 2. Poll until status is COMPLETED, waiting the Retry-After seconds each response names.
+# 2. Consulta hasta que el estado sea COMPLETED, esperando los segundos de Retry-After que indica cada respuesta.
 REQUEST_ID="<request_id from the 201 body>"
 curl -i https://api.comfy.org/v2/models/bria/fibo/requests/$REQUEST_ID/status \
   -H "X-API-Key: $COMFY_API_KEY"
 
-# 3. Collect. 200 with the model's native output, 202 with the status body while it is still running.
+# 3. Recoge. 200 con la salida nativa del modelo, 202 con el cuerpo de estado mientras sigue en ejecución.
 curl https://api.comfy.org/v2/models/bria/fibo/requests/$REQUEST_ID \
   -H "X-API-Key: $COMFY_API_KEY"
 ```
+
+
 </CodeGroup>
   </Tab>
 </Tabs>
@@ -149,7 +151,7 @@ curl https://api.comfy.org/v2/models/bria/fibo/requests/$REQUEST_ID \
 ### Entrada
 
 <ParamField body="guidance_scale" type="number" default="5">
-  Determina qué tan fielmente debe seguir la instrucción la imagen generada.
+  Determina qué tan fielmente debe seguir la imagen generada la instrucción.
 
   Rango: `3` a `5`
 
@@ -157,23 +159,23 @@ curl https://api.comfy.org/v2/models/bria/fibo/requests/$REQUEST_ID \
 </ParamField>
 
 <ParamField body="images" type="string[]" required>
-  La imagen de origen que se va a editar. URL pública o codificada en Base64. Formatos aceptados: JPEG, JPG, PNG, WEBP. Debe contener exactamente un elemento.
+  La imagen de origen que se va a editar. URL de acceso público o codificada en Base64. Formatos aceptados: JPEG, JPG, PNG, WEBP. Debe contener exactamente un elemento.
 </ParamField>
 
 <ParamField body="instruction" type="string">
-  Instrucción de edición en texto (por ejemplo, "haz que el cielo sea azul", "agrega un gato"). Se debe proporcionar instruction o structured_instruction.
+  Instrucción de edición en texto (por ejemplo, "haz el cielo azul", "añade un gato"). Se debe proporcionar instruction o structured_instruction.
 </ParamField>
 
 <ParamField body="ip_signal" type="boolean" default="false">
-  Si es verdadero, devuelve una advertencia por posible contenido con propiedad intelectual en la instrucción.
+  Si es true, devuelve una advertencia por posible contenido de propiedad intelectual en la instrucción.
 </ParamField>
 
 <ParamField body="mask" type="string">
-  URL de la imagen de máscara opcional o codificada en Base64. Las áreas negras se conservan y las blancas se editan.
+  URL de imagen de máscara opcional o codificada en Base64. Las zonas negras se conservarán y las blancas se editarán.
 </ParamField>
 
 <ParamField body="model_version" type="string">
-  La versión del modelo que se va a usar. Comfy Router la toma del segmento de ruta `{model}`, así que omítela allí; el valor que Bria ejecuta es `FIBO`, que también es el predeterminado de la ruta v1 cuando el campo está ausente. No está restringido a un enum en esta mitad: Router escribe el valor después de que se haya validado el cuerpo enviado por quien llama.
+  La versión del modelo que se va a usar. Comfy Router la toma del segmento de ruta `{model}`, así que omítela ahí; el valor que ejecuta Bria es `FIBO`, que también es el predeterminado de la ruta v1 cuando el campo está ausente. En esta mitad no está restringido a un enum: Router escribe el valor después de que se haya validado el cuerpo del llamador.
 </ParamField>
 
 <ParamField body="negative_prompt" type="string">
@@ -181,7 +183,7 @@ curl https://api.comfy.org/v2/models/bria/fibo/requests/$REQUEST_ID \
 </ParamField>
 
 <ParamField body="prompt_content_moderation" type="boolean" default="true">
-  Si es verdadero, devuelve 422 cuando falla la moderación de la instrucción.
+  Si es true, devuelve 422 cuando falla la moderación de la instrucción.
 </ParamField>
 
 <ParamField body="seed" type="integer">
@@ -189,7 +191,7 @@ curl https://api.comfy.org/v2/models/bria/fibo/requests/$REQUEST_ID \
 </ParamField>
 
 <ParamField body="steps_num" type="integer" default="50">
-  Cantidad de pasos de difusión.
+  Número de pasos de difusión.
 
   Rango: `20` a `50`
 </ParamField>
@@ -199,18 +201,18 @@ curl https://api.comfy.org/v2/models/bria/fibo/requests/$REQUEST_ID \
 </ParamField>
 
 <ParamField body="sync" type="boolean">
-  Debe ser falso u omitirse. El modo sincrónico de Bria (true) se rechaza en lugar de reenviarse, tanto en Comfy Router como en la ruta `/proxy/` propia de esta operación: Comfy Router fija el modo de retorno antes del despacho y consulta el resultado dentro de la llamada, y la ruta `/proxy/` devuelve el request_id y el status_url para consultar.
+  Debe ser false u omitirse. El modo síncrono de Bria (true) se rechaza en lugar de reenviarse, tanto en Comfy Router como en la ruta `/proxy/` de esta operación: Comfy Router fija el modo de retorno antes del despacho y consulta el resultado dentro de la llamada, y la ruta `/proxy/` devuelve el request_id y la status_url que se deben consultar.
 </ParamField>
 
 <ParamField body="visual_input_content_moderation" type="boolean" default="true">
-  Si es verdadero, devuelve 422 cuando falla la moderación de las imágenes o de la máscara.
+  Si es true, devuelve 422 cuando falla la moderación de las imágenes o de la máscara.
 </ParamField>
 
 <ParamField body="visual_output_content_moderation" type="boolean" default="true">
-  Si es verdadero, devuelve 422 cuando falla la moderación de la salida visual.
+  Si es true, devuelve 422 cuando falla la moderación de la salida visual.
 </ParamField>
 
-Generado a partir del esquema que Router sirve en `GET /v2/models/bria/fibo/openapi.json`, el mismo documento contra el que valida una llamada antes de que la solicitud llegue al proveedor.
+Generado a partir del esquema que Router sirve en `GET /v2/models/bria/fibo/openapi.json`, el mismo documento con el que valida una llamada antes de que la solicitud llegue al proveedor.
 
 ### Salida
 
@@ -247,7 +249,7 @@ Generado a partir del esquema que Router sirve en `GET /v2/models/bria/fibo/open
 </ResponseField>
 
 <ResponseField name="result.refined_prompt" type="string">
-  Versión refinada del prompt, o null en una generación COMPLETED que Bria no refinó. Es anulable porque la clave está PRESENTE y contiene null en lugar de estar omitida; se observó en vivo en bria/image-edit-gen-fill.
+  Versión refinada del prompt, o null en una generación COMPLETED que Bria no refinó. Es anulable porque la clave está PRESENTE y lleva null en lugar de estar omitida; se observó en vivo en bria/image-edit-gen-fill.
 </ResponseField>
 
 <ResponseField name="result.seed" type="integer">
@@ -255,7 +257,7 @@ Generado a partir del esquema que Router sirve en `GET /v2/models/bria/fibo/open
 </ResponseField>
 
 <ResponseField name="result.structured_instruction" type="string">
-  La instrucción estructurada, un documento JSON serializado como cadena, que devuelve `/v2/structured_instruction/generate`. Esa operación no completa ninguna de las dos URL.
+  La instrucción estructurada, un documento JSON serializado como cadena, que devuelve `/v2/structured_instruction/generate`. Esa operación no rellena ninguna de las dos URL.
 </ResponseField>
 
 <ResponseField name="result.structured_prompt" type="string">

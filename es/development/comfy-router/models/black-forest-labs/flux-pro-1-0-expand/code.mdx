@@ -2,18 +2,20 @@
 title: "Usa FLUX Pro 1.0 Expand con Comfy Router"
 description: "Llama a bfl/flux-pro-1.0-expand con Comfy Router: endpoint, forma de la solicitud y respuesta que devuelve el Router."
 sidebarTitle: "FLUX Pro 1.0 Expand"
-translationSourceHash: 2f758245
+translationSourceHash: d422efaf
 translationFrom: development/comfy-router/models/black-forest-labs/flux-pro-1-0-expand/code.mdx
 translationBlockHashes:
   "_intro": 62a96b75
   "Quick start": 988468b8
   "Schema": dfc6f70d
+  "Examples": d27504bc
 ---
+
 {/* ARCHIVO GENERADO. Generado a partir de router-schemas/bfl/flux-pro-1.0-expand.json por `pnpm code-pages:gen`. */}
 
 import RouterCodeFooter from "/snippets/es/comfy-router/model-code-footer.mdx";
 
-Referencia de API de `bfl/flux-pro-1.0-expand`, que Comfy Router ofrece desde Black Forest Labs.
+Referencia de API de `bfl/flux-pro-1.0-expand`, servido por Comfy Router desde Black Forest Labs.
 
 **Entrada:** Imagen, Texto · **Salida:** Imagen
 
@@ -67,8 +69,7 @@ curl https://api.comfy.org/v2/models/bfl/flux-pro-1.0-expand \
   -d "{\"image\": \"iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAIAAADTED8xAAAC2klEQVR42u3TQQ0AQAgEMeTgX8W5gi8OjoROVgGhUdLhwgkEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAEgASABIAAkACQAJAAkACQAJAAkACQAJAAkACQAFjSy7SPAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA8IIAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAASABIAEgASABIAEgASABIAEgASABIAEgASABIAAgACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkACQAJAAkAadSRm+WukYdfewAAAABJRU5ErkJggg==\", \"prompt\": \"extend the plain white background upward\", \"top\": 64}"
 ```
 </CodeGroup>
-  </Tab>
-<Tab title="Encolar y recuperar más tarde">
+  </Tab><Tab title="Encolar y recuperar más tarde">
 El mismo cuerpo, enviado a `POST https://api.comfy.org/v2/models/bfl/flux-pro-1.0-expand/requests`. Router responde `201` con un `request_id` en cuanto admite la ejecución, y el resultado se recupera cuando está listo, desde este proceso o desde otro. [Entrega en cola](/es/development/comfy-router/queue) explica el estado, la cancelación y la recuperación.
 
 <CodeGroup>
@@ -88,7 +89,7 @@ async def main():
                 "top": 64,
             },
         )
-        print("request_id:", handle.request_id)  # junto con el ID del modelo, todo lo que necesita otro proceso
+        print("request_id:", handle.request_id)  # junto con el ID del modelo, es todo lo que necesita otro proceso
 
         # Consulta periódicamente hasta que la solicitud se complete, esperando el Retry-After que indica el servidor.
         async for update in handle.iter_events():
@@ -113,7 +114,7 @@ const handle = await comfy.models.submit("bfl/flux-pro-1.0-expand", {
   prompt: "extend the plain white background upward",
   top: 64,
 });
-console.log("requestId:", handle.requestId); // junto con el ID del modelo, todo lo que necesita otro proceso
+console.log("requestId:", handle.requestId); // junto con el ID del modelo, es todo lo que necesita otro proceso
 
 // Consulta periódicamente hasta que la solicitud se complete, esperando el Retry-After que indica el servidor.
 for await (const update of handle.events()) {
@@ -143,7 +144,7 @@ curl -i https://api.comfy.org/v2/models/bfl/flux-pro-1.0-expand/requests/$REQUES
 curl https://api.comfy.org/v2/models/bfl/flux-pro-1.0-expand/requests/$REQUEST_ID \
   -H "X-API-Key: $COMFY_API_KEY"
 ```
-</CodeGroup>
+</CodeGroup></CodeGroup>
   </Tab>
 </Tabs>
 
@@ -244,7 +245,7 @@ Generado a partir del esquema que Router sirve en `GET /v2/models/bfl/flux-pro-1
 </ResponseField>
 
 <ResponseField name="result" type="object" required>
-  La generación finalizada. No admite nulos aquí: la entrada `required` de este componente es una promesa de que una respuesta `200` incluye el resultado, y un `result` que admita nulos lo reduciría a una simple verificación de presencia de la clave.
+  La generación finalizada. Aquí no admite nulos: la entrada `required` de este componente es una promesa de que una respuesta `200` incluye el resultado, y un `result` que admita nulos lo reduciría a una simple verificación de presencia de la clave.
 </ResponseField>
 
 <ResponseField name="result.cost" type="number">

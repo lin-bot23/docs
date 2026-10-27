@@ -1,18 +1,20 @@
 ---
 title: "Guía de generación de música con YuE2 en ComfyUI"
-description: "Genera canciones completas con voces en ComfyUI con el modelo de código abierto YuE2: texto a música con planificación ABC y covers que conservan la melodía con SheetSage2."
+description: "Genera canciones completas con voces en ComfyUI con YuE2, el modelo de código abierto de texto a música con planificación ABC y covers que conservan la melodía."
 sidebarTitle: "YuE2"
-translationSourceHash: 7197dbf5
+translationSourceHash: d90032ab
 translationFrom: tutorials/audio/yue2/yue2.mdx
 translationBlockHashes:
   "_intro": bae5280d
   "Text to Music {#audio_yue2_text2music}": a539576d
+  "Music Cover {#audio_yue2_music_cover}": 1915b2c2
 ---
+
 import UpdateReminder from "/snippets/es/tutorials/update-reminder.mdx";
 
-YuE2 es un modelo de generación musical de código abierto de Multimodal Art Projection (m-a-p) que convierte un prompt de estilo y una letra en una canción completa con voces y acompañamiento instrumental. Es un modelo de 3B de parámetros, genera estructuras de canción completas con secciones como intro, verso, estribillo, puente y outro, y admite varios idiomas de canto, incluidos el inglés, el chino y el japonés.
+YuE2 es un modelo de generación musical de código abierto de Multimodal Art Projection (m-a-p) que convierte un prompt de estilo y una letra en una canción completa con voces y acompañamiento instrumental. Es un modelo de 3B de parámetros que genera estructuras de canción completas con secciones como intro, verso, estribillo, puente y outro, y admite varios idiomas de canto, incluidos el inglés, el chino y el japonés.
 
-Lo que distingue a YuE2 de la mayoría de los sistemas de texto a música es su paso de composición editable. Antes de generar el audio, YuE2 puede escribir primero un plan musical simbólico en notación ABC: una melodía, opcionalmente con acordes, que puedes inspeccionar y editar. La canción final se renderiza a partir de ese plan. Esto hace que los resultados sean más fáciles de dirigir que la generación de audio en una sola pasada, y también habilita el flujo de trabajo de cover que aparece más abajo, donde una canción de referencia se transcribe a la misma notación y se vuelve a cantar con un nuevo estilo y una nueva letra.
+Lo que distingue a YuE2 de la mayoría de los sistemas de texto a música es su paso de composición editable. Antes de generar el audio, YuE2 puede escribir primero un plan musical simbólico en notación ABC: una melodía, opcionalmente con acordes, que puedes inspeccionar y editar. La canción final se renderiza a partir de ese plan. Esto hace que los resultados sean más fáciles de dirigir que la generación de audio en una sola pasada, y también impulsa el flujo de trabajo de cover que aparece más abajo, donde una canción de referencia se transcribe a la misma notación y se vuelve a cantar con un nuevo estilo y una nueva letra.
 
 YuE2 es compatible de forma nativa con ComfyUI. Actualiza a la última versión de [ComfyUI](https://github.com/comfyanonymous/ComfyUI) antes de empezar. Se requiere ComfyUI v0.36.0 o posterior.
 
@@ -30,7 +32,8 @@ Genera una canción completa a partir de una descripción del estilo musical y t
 
 <CardGroup cols={2}>
   {/* TODO: Enable Cloud template when audio_yue2_text2music is available on Comfy Cloud */}
-  {/*<Card title="Ejecutar en Comfy Cloud" icon="cloud" href="https://cloud.comfy.org/?template=audio_yue2_text2music&utm_source=docs&utm_medium=referral&utm_campaign=yue2">*/}
+  {/*<Card title="Ejecutar en Comfy Cloud" icon="cloud" href="https://cloud.comfy.org/?template=audio_yue2_text2music&utm_source=docs&utm_medium=referral&utm_campaign=yue2">
+  */}
   {/*  Abrir en Comfy Cloud*/}
   {/*</Card>*/}
   <Card title="Descargar flujo de trabajo" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/audio_yue2_text2music.json">
@@ -108,25 +111,26 @@ Si dejas la entrada **abc** vacía, la planificación se desactiva y la música 
 
 La duración solicitada está limitada por el contexto del modelo. Cuando el estilo, la letra y el plan ABC ocupan más contexto del que la ejecución puede ceder, ComfyUI reduce el presupuesto a lo que queda y lo informa en la consola: `YuE2 music budget reduced to ... tokens (... seconds) to fit the prompt.` Por eso, un prompt largo acorta la canción en lugar de hacer fallar la ejecución. Cuando no queda nada en absoluto, la ejecución se detiene con `YuE2 prompt leaves no room for music; shorten the style, lyrics, or ABC.`
 
-Cuando la consola muestra la advertencia `YuE2 semantic reached its token budget before the end token.`, el modelo se quedó sin presupuesto antes de escribir el token de fin de la canción, y el audio renderizado puede cortarse de golpe en lugar de terminar la canción, porque esos tokens semánticos son el contenido de la canción que renderiza la etapa de audio. Aumenta **Max Duration** para dar más espacio a la canción. Si esa misma ejecución también registró una reducción de presupuesto, el prompt ya está usando el contexto disponible, así que acorta el estilo, la letra o el plan ABC. La fase de notación informa la misma advertencia como `YuE2 abc reached its token budget before the end token.`, donde la partitura se corta y `max_abc_tokens` del nodo YuE2 Generate ABC es el presupuesto que debes aumentar.
+Cuando la consola muestra la advertencia `YuE2 semantic reached its token budget before the end token.`, el modelo se quedó sin presupuesto antes de escribir el token de fin de la canción, y el audio renderizado puede cortarse de golpe en lugar de terminar la canción, porque esos tokens semánticos son el contenido de la canción que renderiza la etapa de audio. Aumenta **Max Duration** para dar más espacio a la canción. Si esa misma ejecución también registró una reducción de presupuesto, el prompt ya está usando el contexto disponible, así que acorta el estilo, la letra o el plan ABC. La fase de notación informa la misma advertencia como `YuE2 abc reached its token budget before the end token.`, donde la partitura se corta y `max_abc_tokens` del nodo YuE2 Generar ABC es el presupuesto que debes aumentar.
 
 ### 7. Escala de orientación
 
-El nodo **YuE2 Generate Music** tiene una opción avanzada `cfg_scale` (de 0 a 100, valor predeterminado 1.0) que establece la orientación autoregresiva sobre el estilo y la letra:
+El nodo **YuE2 Generar música** tiene una opción avanzada `cfg_scale` (de 0 a 100, valor predeterminado 1.0) que establece la orientación autoregresiva sobre el estilo y la letra:
 
 - `1.0` desactiva la orientación, lo que coincide con el flujo de trabajo ABC. Las plantillas incluidas mantienen este valor predeterminado
 - `1.01` coincide con la escala de orientación que el modelo usaba antes de añadir esta opción, para ejecuciones con la planificación desactivada (`abc` vacío)
 
-## Versión de una canción existente (Music Cover) {#audio_yue2_music_cover}
+## Cover musical {#audio_yue2_music_cover}
 
-Crea una nueva versión de una canción existente. Este flujo de trabajo usa SheetSage2 para transcribir la melodía de un audio de referencia a una partitura ABC editable y luego usa YuE2 para regenerar la canción con un estilo y una letra nuevos.
+Crea una nueva versión de una canción existente. Este flujo de trabajo usa SheetSage2 para transcribir la melodía de un audio de referencia a una partitura ABC editable y luego usa YuE2 para regenerar la canción con un nuevo estilo y una nueva letra.
 
-<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/audio_yue2_music_cover-1.webp" alt="Vista previa del flujo de trabajo de Music Cover de YuE2" />
+<img src="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/templates/audio_yue2_music_cover-1.webp" alt="Vista previa del flujo de trabajo de cover musical con YuE2" />
 
 <CardGroup cols={2}>
   {/* TODO: Enable Cloud template when audio_yue2_music_cover is available on Comfy Cloud */}
-  {/*<Card title="Ejecutar en Comfy Cloud" icon="cloud" href="https://cloud.comfy.org/?template=audio_yue2_music_cover&utm_source=docs&utm_medium=referral&utm_campaign=yue2">*/}
-  {/*  Abrir en Comfy Cloud*/}
+  {/*<Card title="Run on Comfy Cloud" icon="cloud" href="https://cloud.comfy.org/?template=audio_yue2_music_cover&utm_source=docs&utm_medium=referral&utm_campaign=yue2">
+  */}
+  {/*  Open in Comfy Cloud*/}
   {/*</Card>*/}
   <Card title="Descargar flujo de trabajo" icon="download" href="https://github.com/Comfy-Org/workflow_templates/blob/main/templates/audio_yue2_music_cover.json">
     Descarga el JSON o busca &quot;YuE2: Music Cover&quot; en la Biblioteca de plantillas
@@ -139,7 +143,7 @@ Sube este archivo al nodo `LoadAudio` correspondiente:
 
 <CardGroup cols={2}>
   <Card title="yue2_reference_song.flac" icon="music" href="https://raw.githubusercontent.com/Comfy-Org/workflow_templates/main/input/yue2_reference_song.flac">
-    Nodo `LoadAudio` · `yue2_reference_song.flac`
+    nodo `LoadAudio` · `yue2_reference_song.flac`
   </Card>
 </CardGroup>
 
@@ -148,17 +152,17 @@ Sube este archivo al nodo `LoadAudio` correspondiente:
 1. Carga una canción de referencia en **Audio**
 2. Describe la nueva dirección musical en **Style**
 3. Introduce la letra que quieres que se cante en **Lyrics**
-4. Encola el flujo de trabajo para generar una nueva versión
+4. Pon el flujo de trabajo en cola para generar una nueva versión cover
 
-El audio de referencia aporta la melodía, mientras que YuE2 crea una nueva interpretación y un nuevo arreglo a partir de tu Style y tu Lyrics.
+El audio de referencia aporta la melodía, mientras que YuE2 crea una nueva interpretación y un nuevo arreglo a partir de tu Style y tus Lyrics.
 
-### 2. Descarga de modelos
+### 2. Descargas de modelos
 
 <CardGroup cols={2}>
-  <Card title="checkpoint de YuE2" icon="download" href="https://huggingface.co/Comfy-Org/YuE2/blob/main/checkpoints/yue2_3b_int8_convrot.safetensors">
+  <Card title="YuE2 checkpoint" icon="download" href="https://huggingface.co/Comfy-Org/YuE2/blob/main/checkpoints/yue2_3b_int8_convrot.safetensors">
     yue2_3b_int8_convrot.safetensors
   </Card>
-  <Card title="codificador de audio SheetSage2" icon="download" href="https://huggingface.co/Comfy-Org/YuE2/blob/main/audio_encoders/sheetsage2_bf16.safetensors">
+  <Card title="Codificador de audio SheetSage2" icon="download" href="https://huggingface.co/Comfy-Org/YuE2/blob/main/audio_encoders/sheetsage2_bf16.safetensors">
     sheetsage2_bf16.safetensors
   </Card>
 </CardGroup>
@@ -174,9 +178,9 @@ Coloca los archivos en los siguientes directorios:
 │       └── sheetsage2_bf16.safetensors
 ```
 
-### 3. Cómo funciona la versión
+### 3. Cómo funciona el cover
 
-El flujo de trabajo no pasa el audio de referencia directamente a YuE2. En su lugar:
+El flujo de trabajo no introduce el audio de referencia directamente en YuE2. En su lugar:
 
 ```
 Reference Audio
@@ -188,12 +192,12 @@ Melody ABC score
 YuE2 (generation with new Style and Lyrics)
 ```
 
-Como el vínculo con la canción original es la melodía, las versiones funcionan mejor cuando la letra nueva se mantiene razonablemente cerca de la frase y del número de sílabas del original.
+Como la conexión con la canción original es la melodía, los covers funcionan mejor cuando la nueva letra se mantiene razonablemente cerca de la frase y del número de sílabas originales.
 
-### 4. Escribir el Style y la letra
+### 4. Escribir el estilo y la letra
 
-Describe con claridad el estilo musical objetivo. Los elementos útiles incluyen género, tipo de voz, idioma, tempo, instrumentos y ambiente:
+Describe con claridad el estilo musical objetivo. Algunos elementos útiles son el género, el tipo de voz, el idioma, el tempo, los instrumentos y el ambiente:
 
 > English, soulful jazz-pop, expressive male vocal, relaxed 88 BPM, Rhodes piano, upright bass, brushed drums, warm saxophone, intimate late-night atmosphere
 
-Usa las mismas etiquetas de sección `[Verse]` / `[Chorus]` / `[Bridge]` / `[Outro]` que en el flujo de trabajo de texto a música. Para que la melodía encaje mejor, mantén la letra nueva con una longitud similar a la de los versos originales.
+Usa las mismas etiquetas de sección `[Verse]` / `[Chorus]` / `[Bridge]` / `[Outro]` que en el flujo de trabajo de texto a música. Para que la melodía coincida mejor, mantén la nueva letra con una longitud similar a la de los versos originales.
