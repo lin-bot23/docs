@@ -103,18 +103,24 @@ Comfy桌面版会在启动 2 秒后检查自身是否有更新，之后每 10 �
 
 Comfy桌面版会重启并应用更新。当**更新**选项卡显示 **Comfy桌面版已是最新版本**，且**已安装**显示你下载的版本时，说明更新已成功。
 
-![更新选项卡显示 Comfy桌面版已是最新版本，并显示已安装的版本、检查更新按钮和自动安装桌面版更新开关](/images/desktop/usage/comfy_desktop_settings_02_updates.png)
+![更新选项卡显示 Comfy桌面版已是最新版本和已安装 v1.2.1，编号为：1 状态行和已安装的版本，2 检查更新，3 自动安装桌面版更新](/images/desktop/usage/comfy_desktop_settings_02_updates.png)
+
+1. **Comfy桌面版已是最新版本** 和 **已安装**：状态行，以及你当前运行的应用版本。当检查发现更新时，该行会显示 **有更新 {version} 可用**。
+2. **检查更新**：立即执行一次检查。Comfy桌面版也会自行检查，启动 2 秒后检查一次，之后每 10 分钟检查一次。
+3. **自动安装桌面版更新**：默认开启。请参阅[让更新自行安装](#让更新自行安装)。
 
 ## 选择共享文件夹和安装位置 {#storage}
 
 共享文件夹让每个构建都使用相同的模型、输入和输出，因此模型只需下载一次，而不必为每个构建各下载一次。**文件夹**选项卡用于设置这些文件夹，以及 Comfy 桌面版建议放置你所创建构建的文件夹。
 
-![文件夹选项卡：带路径的默认安装位置、包含模型、输入和输出行的共享文件夹列表、下载标签、用于下载和添加模型文件夹，然后是移除 Comfy 桌面版数据](/images/desktop/usage/comfy_desktop_settings_03_storage.png)
+![文件夹选项卡，编号为：1 默认安装位置，2 共享文件夹，3 一行文件夹及其路径，4 用于下载和下载标签，5 添加模型文件夹，6 移除 Comfy 桌面版数据](/images/desktop/usage/comfy_desktop_settings_03_storage.png)
 
-在每个文件夹行上，点击路径可打开该文件夹，或点击文件夹图标以选择其他文件夹。
-
-- **默认安装位置**：创建构建时 Comfy 桌面版建议使用的父文件夹。更改它不会移动已有的构建。
-- **共享文件夹**：一个包含 **模型**、**输入** 和 **输出** 文件夹的列表。每个构建默认都会使用它们。若要为单个构建更改这一点，请参阅[选择构建使用的文件夹](/zh/installation/desktop/usage/build-folders#选择该构建使用哪些文件夹)。
+1. **默认安装位置**：创建构建时 Comfy 桌面版建议使用的父文件夹。更改它不会移动已有的构建。
+2. **共享文件夹**：一个包含 **模型**、**输入** 和 **输出** 文件夹的列表。每个构建默认都会使用它们。若要为单个构建更改这一点，请参阅[选择构建使用的文件夹](/zh/installation/desktop/usage/build-folders#选择该构建使用哪些文件夹)。
+3. **文件夹行**：点击路径可打开该文件夹，或点击文件夹图标以选择其他文件夹。
+4. **用于下载** 和 **下载** 标签：下载内容会进入的模型行。请参阅[下载文件的保存位置](/zh/installation/desktop/usage/downloads#下载文件保存在哪里)。
+5. **添加模型文件夹**：添加另一个所有构建默认都会使用的模型文件夹。
+6. **移除 Comfy 桌面版数据**：在 macOS 和 Linux 上，在你卸载应用之前移除应用的日志、缓存和临时文件。请参阅[在 macOS 上卸载 Comfy 桌面版](/zh/installation/desktop/overview#卸载-comfy桌面版)或[在 Linux 上移除残留数据](/zh/installation/desktop/overview#卸载-comfy桌面版)。
 
 管理共享模型文件夹：
 
@@ -133,17 +139,16 @@ Comfy桌面版会重启并应用更新。当**更新**选项卡显示 **Comfy桌
   在 Windows 上，如果你的用户文件夹中已有 `ComfyUI-Installs` 或 `ComfyUI-Shared`，Comfy 桌面版会继续使用它们。如果你将 Comfy 桌面版安装在系统盘以外的驱动器上，这些文件夹则位于 `<drive>:\Comfy-Desktop` 下。
 </Note>
 
-在 macOS 和 Linux 上，**文件夹**选项卡还提供 **移除 Comfy 桌面版数据**，它会在你卸载应用之前移除应用的日志、缓存和临时文件。请参阅[在 macOS 上卸载 Comfy 桌面版](/zh/installation/desktop/overview#卸载-comfy桌面版)或[在 Linux 上移除残留数据](/zh/installation/desktop/overview#卸载-comfy桌面版)。
-
 ## 设置镜像和硬件加速 {#advanced}
 
 如果你所在地区从 pypi.org 或 github.com 下载较慢，可以在 **高级** 选项卡中将 Comfy Desktop 指向一个镜像。
 
-![高级选项卡：PyPI 镜像 URL、使用国内镜像（Git 和 PyPI）、使用硬件加速，以及包含缓存目录的缓存部分](/images/desktop/usage/comfy_desktop_settings_04_advanced.png)
+![高级选项卡，编号为：1 PyPI 镜像 URL，2 使用国内镜像（Git 和 PyPI），3 使用硬件加速，4 缓存](/images/desktop/usage/comfy_desktop_settings_04_advanced.png)
 
-- **PyPI 镜像 URL**：一个 Python 软件包索引，例如 `https://mirrors.aliyun.com/pypi/simple/`。Comfy Desktop 从该索引安装 Python 软件包，并将 pypi.org 用作附加索引。默认为空。
-- **使用国内镜像（Git 和 PyPI）**：默认关闭。开启后，Git 仓库将从 gitcode.com 克隆而不是 github.com，Python 软件包来自 mirrors.aliyun.com 和 mirrors.cloud.tencent.com 而不是 pypi.org。当应用语言为中文时，该开关位于 **首选项** 选项卡的 **应用行为** 下。当系统语言为中文时，安装向导还会询问 **是否启用国内镜像？**。
-- **使用硬件加速**：默认开启。使用 GPU 渲染 Comfy Desktop。更改后需重新启动 Comfy Desktop 才能生效。
+1. **PyPI 镜像 URL**：一个 Python 软件包索引，例如 `https://mirrors.aliyun.com/pypi/simple/`。Comfy Desktop 从该索引安装 Python 软件包，并将 pypi.org 用作附加索引。默认为空。
+2. **使用国内镜像（Git 和 PyPI）**：默认关闭。开启后，Git 仓库将从 gitcode.com 克隆而不是 github.com，Python 软件包来自 mirrors.aliyun.com 和 mirrors.cloud.tencent.com 而不是 pypi.org。当应用语言为中文时，该开关位于 **首选项** 选项卡的 **应用行为** 下。当系统语言为中文时，安装向导还会询问 **是否启用国内镜像？**。
+3. **使用硬件加速**：默认开启。使用 GPU 渲染 Comfy Desktop。更改后需重新启动 Comfy Desktop 才能生效。
+4. **缓存**：安装 Standalone 构建时，Comfy Desktop 将 ComfyUI 捆绑包下载到的文件夹。请参阅[保留下载缓存](#保留下载缓存)。
 
 ### 保留下载缓存
 
@@ -155,8 +160,9 @@ Comfy Desktop 只在该文件夹中保留最新的捆绑包。下载完成后，
 
 应用日志记录了 Comfy桌面版 执行的操作，包括构建安装或启动时的输出。在 [Comfy桌面版问题追踪器](https://github.com/Comfy-Org/Comfy-Desktop/issues) 上反馈问题时，请附上该日志。
 
-![带有诊断部分和打开日志文件夹按钮的日志标签页](/images/desktop/usage/comfy_desktop_settings_05_logs.png)
+![日志选项卡，编号为：1 诊断，2 打开日志文件夹](/images/desktop/usage/comfy_desktop_settings_05_logs.png)
 
-- 在**日志**标签页中，**诊断**部分下方，点击**打开日志文件夹**。
+1. **诊断**：包含反馈 Comfy 桌面版问题所需工具的部分。
+2. **打开日志文件夹**：打开保存应用日志的文件夹。
 
 该文件夹保存当前会话的 `app.log`。每次启动时，以及当 `app.log` 超过 5 MB 时，Comfy桌面版 都会将旧文件重命名为 `app.log_<timestamp>.log`，并最多保留 50 个。请选择问题发生时所处会话的日志文件。

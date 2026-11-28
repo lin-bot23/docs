@@ -93,18 +93,24 @@ When an update is available, an entry at the bottom of the **sidebar** shows its
 
 Comfy Desktop restarts into the update. The update worked when the **Updates** tab reads **Comfy Desktop is up to date** and **Installed** shows the version you downloaded.
 
-![Updates tab reading Comfy Desktop is up to date, with the installed version, the Check for updates button, and the Automatically install Desktop updates switch](/images/desktop/usage/comfy_desktop_settings_02_updates.png)
+![Updates tab reading Comfy Desktop is up to date with Installed v1.2.1, numbered: 1 the status line and the installed version, 2 Check for updates, 3 Automatically install Desktop updates](/images/desktop/usage/comfy_desktop_settings_02_updates.png)
+
+1. **Comfy Desktop is up to date** and **Installed**: the status line and the app version you now run. When a check finds an update, the line reads **Update {version} available** instead.
+2. **Check for updates**: runs a check right away. Comfy Desktop also checks on its own, 2 seconds after it starts and then every 10 minutes.
+3. **Automatically install Desktop updates**: on by default. See [Let updates install on their own](#let-updates-install-on-their-own).
 
 ## Choose shared folders and the install location {#storage}
 
 Shared folders let every build use the same models, inputs, and outputs, so you download a model once instead of once per build. The **Folders** tab sets these folders and the folder where Comfy Desktop suggests putting the builds you create.
 
-![Folders tab: Default install location with its path, the Shared folders list with Models, Input, and Output rows, the Downloads tag, Use for downloads, and Add models folder, then Remove Comfy Desktop data](/images/desktop/usage/comfy_desktop_settings_03_storage.png)
+![Folders tab, numbered: 1 Default install location, 2 Shared folders, 3 a folder row with its path, 4 Use for downloads and the Downloads tag, 5 Add models folder, 6 Remove Comfy Desktop data](/images/desktop/usage/comfy_desktop_settings_03_storage.png)
 
-On each folder row, click the path to open the folder, or click the folder icon to pick another folder.
-
-- **Default install location**: the parent folder Comfy Desktop suggests when you create a build. Changing it doesn't move existing builds.
-- **Shared folders**: one list of **Models**, **Input**, and **Output** folders. Every build uses them by default. To change that for one build, see [Choose which folders the build uses](/installation/desktop/usage/build-folders#choose-which-folders-the-build-uses).
+1. **Default install location**: the parent folder Comfy Desktop suggests when you create a build. Changing it doesn't move existing builds.
+2. **Shared folders**: one list of **Models**, **Input**, and **Output** folders. Every build uses them by default. To change that for one build, see [Choose which folders the build uses](/installation/desktop/usage/build-folders#choose-which-folders-the-build-uses).
+3. **Folder row**: click the path to open the folder, or click the folder icon to pick another folder.
+4. **Use for downloads** and the **Downloads** tag: the models row that downloads go to. See [Where downloads are saved](/installation/desktop/usage/downloads#where-downloads-are-saved).
+5. **Add models folder**: adds another models folder that every build uses by default.
+6. **Remove Comfy Desktop data**: on macOS and Linux, removes the app's logs, caches, and temporary files before you uninstall it. See [uninstall Comfy Desktop on macOS](/installation/desktop/overview#uninstall-comfy-desktop) or [remove leftover data on Linux](/installation/desktop/overview#uninstall-comfy-desktop).
 
 To manage the shared model folders:
 
@@ -123,17 +129,16 @@ By default, the folders are:
   On Windows, if your user folder already had `ComfyUI-Installs` or `ComfyUI-Shared`, Comfy Desktop keeps using those. If you installed Comfy Desktop on a drive other than the system drive, the folders are under `<drive>:\Comfy-Desktop` instead.
 </Note>
 
-On macOS and Linux, the **Folders** tab also has **Remove Comfy Desktop data**, which removes the app's logs, caches, and temporary files before you uninstall it. See [uninstall Comfy Desktop on macOS](/installation/desktop/overview#uninstall-comfy-desktop) or [remove leftover data on Linux](/installation/desktop/overview#uninstall-comfy-desktop).
-
 ## Set mirrors and hardware acceleration {#advanced}
 
 If downloads from pypi.org or github.com are slow where you are, point Comfy Desktop at a mirror on the **Advanced** tab.
 
-![Advanced tab: PyPI mirror URL, Use Chinese mirrors (Git & PyPI), Use hardware acceleration, and the Cache section with the cache directory](/images/desktop/usage/comfy_desktop_settings_04_advanced.png)
+![Advanced tab, numbered: 1 PyPI mirror URL, 2 Use Chinese mirrors (Git & PyPI), 3 Use hardware acceleration, 4 Cache](/images/desktop/usage/comfy_desktop_settings_04_advanced.png)
 
-- **PyPI mirror URL**: a Python package index, such as `https://mirrors.aliyun.com/pypi/simple/`. Comfy Desktop installs Python packages from this index and uses pypi.org as an extra index. Empty by default.
-- **Use Chinese mirrors (Git & PyPI)**: off by default. When it's on, Git repositories clone from gitcode.com instead of github.com, and Python packages come from mirrors.aliyun.com and mirrors.cloud.tencent.com instead of pypi.org. When the app language is Chinese, this switch is on the **Preferences** tab under **App behavior** instead. When your system language is Chinese, setup also asks **Enable Chinese mirrors?**.
-- **Use hardware acceleration**: on by default. Uses the GPU to render Comfy Desktop. Restart Comfy Desktop for a change to take effect.
+1. **PyPI mirror URL**: a Python package index, such as `https://mirrors.aliyun.com/pypi/simple/`. Comfy Desktop installs Python packages from this index and uses pypi.org as an extra index. Empty by default.
+2. **Use Chinese mirrors (Git & PyPI)**: off by default. When it's on, Git repositories clone from gitcode.com instead of github.com, and Python packages come from mirrors.aliyun.com and mirrors.cloud.tencent.com instead of pypi.org. When the app language is Chinese, this switch is on the **Preferences** tab under **App behavior** instead. When your system language is Chinese, setup also asks **Enable Chinese mirrors?**.
+3. **Use hardware acceleration**: on by default. Uses the GPU to render Comfy Desktop. Restart Comfy Desktop for a change to take effect.
+4. **Cache**: the folder Comfy Desktop downloads a ComfyUI bundle into when it installs a Standalone build. See [Keep the download cache](#keep-the-download-cache).
 
 ### Keep the download cache
 
@@ -145,8 +150,9 @@ Comfy Desktop keeps only the most recent bundle in this folder. When a download 
 
 The app log records what Comfy Desktop does, including the output when a build installs or starts. Attach it when you report a problem on the [Comfy Desktop issue tracker](https://github.com/Comfy-Org/Comfy-Desktop/issues).
 
-![Logs tab with the Diagnostics section and the Open logs folder button](/images/desktop/usage/comfy_desktop_settings_05_logs.png)
+![Logs tab, numbered: 1 Diagnostics, 2 Open logs folder](/images/desktop/usage/comfy_desktop_settings_05_logs.png)
 
-- On the **Logs** tab, under **Diagnostics**, click **Open logs folder**.
+1. **Diagnostics**: the section that holds the tools for reporting a problem with Comfy Desktop.
+2. **Open logs folder**: opens the folder that holds the app log.
 
 The folder holds `app.log` for the current session. At each start, and when `app.log` passes 5 MB, Comfy Desktop renames the old file to `app.log_<timestamp>.log` and keeps up to 50 of them. Pick the file from the session where the problem happened.

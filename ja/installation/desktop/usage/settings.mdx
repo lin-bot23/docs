@@ -103,18 +103,24 @@ Comfyデスクトップは、起動から2秒後に自身の更新を確認し�
 
 Comfyデスクトップは更新を適用して再起動します。**更新**タブに**Comfyデスクトップは最新の状態です**と表示され、**インストール済み**にダウンロードしたバージョンが表示されていれば、更新は成功しています。
 
-![Comfyデスクトップは最新の状態であると表示された更新タブ。インストール済みバージョン、アップデートを確認ボタン、デスクトップの更新を自動でインストールする切り替えが表示されている](/images/desktop/usage/comfy_desktop_settings_02_updates.png)
+![Comfyデスクトップは最新の状態です・インストール済み v1.2.1 と表示された更新タブ。番号は 1 ステータス行とインストール済みバージョン、2 アップデートを確認、3 デスクトップの更新を自動でインストールする](/images/desktop/usage/comfy_desktop_settings_02_updates.png)
+
+1. **Comfyデスクトップは最新の状態です**と**インストール済み**: ステータス行と、現在実行しているアプリのバージョンです。確認で更新が見つかると、この行は**バージョン {version} の更新が利用可能**と表示されます。
+2. **アップデートを確認**: すぐに確認を実行します。Comfyデスクトップは起動の 2 秒後と、その後 10 分ごとにも自動で確認します。
+3. **デスクトップの更新を自動でインストールする**: デフォルトでオンです。[更新を自動でインストールする](#更新を自動でインストールする)を参照してください。
 
 ## 共有フォルダーとインストール先を選択する {#storage}
 
 共有フォルダーを使用すると、すべてのビルドが同じモデル、入力、出力を使えるため、モデルをビルドごとにダウンロードするのではなく一度だけダウンロードすれば済みます。**フォルダー**タブでは、これらのフォルダーと、作成したビルドを Comfy デスクトップが配置する場所として提案するフォルダーを設定します。
 
-![フォルダータブ: パスが表示されたデフォルトのインストール先、Models・Input・Output の行がある共有フォルダー一覧、ダウンロードタグ、ダウンロードに使用、モデルフォルダーを追加、続いて Comfy デスクトップのデータを削除](/images/desktop/usage/comfy_desktop_settings_03_storage.png)
+![フォルダータブ。番号は 1 デフォルトのインストール先、2 共有フォルダー、3 パスが表示されたフォルダーの行、4 ダウンロードに使用とダウンロードタグ、5 モデルフォルダーを追加、6 Comfy デスクトップのデータを削除](/images/desktop/usage/comfy_desktop_settings_03_storage.png)
 
-各フォルダーの行で、パスをクリックするとそのフォルダーが開き、フォルダーのアイコンをクリックすると別のフォルダーを選択できます。
-
-- **デフォルトのインストール先**: ビルドを作成するときに Comfy デスクトップが提案する親フォルダーです。これを変更しても、既存のビルドは移動しません。
-- **共有フォルダー**: **Models**、**Input**、**Output** フォルダーの単一の一覧です。すべてのビルドがデフォルトでこれらを使用します。特定のビルドでこれを変更するには、[ビルドが使用するフォルダーを選択する](/ja/installation/desktop/usage/build-folders#ビルドが使用するフォルダーを選択)を参照してください。
+1. **デフォルトのインストール先**: ビルドを作成するときに Comfy デスクトップが提案する親フォルダーです。これを変更しても、既存のビルドは移動しません。
+2. **共有フォルダー**: **Models**、**Input**、**Output** フォルダーの単一の一覧です。すべてのビルドがデフォルトでこれらを使用します。特定のビルドでこれを変更するには、[ビルドが使用するフォルダーを選択する](/ja/installation/desktop/usage/build-folders#ビルドが使用するフォルダーを選択)を参照してください。
+3. **フォルダーの行**: パスをクリックするとそのフォルダーが開き、フォルダーのアイコンをクリックすると別のフォルダーを選択できます。
+4. **ダウンロードに使用**と**ダウンロード**タグ: ダウンロードの保存先になるモデルの行です。[ダウンロードの保存先](/ja/installation/desktop/usage/downloads#ダウンロードの保存先)を参照してください。
+5. **モデルフォルダーを追加**: すべてのビルドがデフォルトで使用するモデルフォルダーを追加します。
+6. **Comfy デスクトップのデータを削除**: macOS と Linux では、アンインストールの前にアプリのログ、キャッシュ、一時ファイルを削除します。[Comfy デスクトップのアンインストール](/ja/installation/desktop/overview#comfyデスクトップのアンインストール)を参照してください。
 
 共有モデルフォルダーを管理するには:
 
@@ -133,17 +139,16 @@ Comfyデスクトップは更新を適用して再起動します。**更新**�
   Windows では、ユーザーフォルダーにすでに `ComfyUI-Installs` または `ComfyUI-Shared` が存在する場合、Comfy デスクトップはそれらを使い続けます。Comfy デスクトップをシステムドライブ以外のドライブにインストールした場合、フォルダーは代わりに `<drive>:\Comfy-Desktop` の下にあります。
 </Note>
 
-macOS と Linux では、**フォルダー**タブに**Comfy デスクトップのデータを削除**もあり、アプリをアンインストールする前にアプリのログ、キャッシュ、一時ファイルを削除します。[macOS で Comfy デスクトップをアンインストールする](/ja/installation/desktop/overview#comfyデスクトップのアンインストール)または [Linux で残存データを削除する](/ja/installation/desktop/overview#comfyデスクトップのアンインストール)を参照してください。
-
 ## ミラーとハードウェアアクセラレーションを設定する {#advanced}
 
 pypi.org や github.com からのダウンロードが遅い環境では、**Advanced** タブで Comfy Desktop にミラーを指定できます。
 
-![Advanced タブ: PyPI ミラー URL、Use Chinese mirrors (Git & PyPI)、Use hardware acceleration、およびキャッシュディレクトリを含むキャッシュセクション](/images/desktop/usage/comfy_desktop_settings_04_advanced.png)
+![Advanced タブ。番号は 1 PyPI mirror URL、2 Use Chinese mirrors (Git & PyPI)、3 Use hardware acceleration、4 Cache](/images/desktop/usage/comfy_desktop_settings_04_advanced.png)
 
-- **PyPI mirror URL**: Python パッケージインデックスです（例: `https://mirrors.aliyun.com/pypi/simple/`）。Comfy Desktop はこのインデックスから Python パッケージをインストールし、pypi.org を追加のインデックスとして使用します。デフォルトでは空です。
-- **Use Chinese mirrors (Git & PyPI)**: デフォルトではオフです。オンにすると、Git リポジトリは github.com ではなく gitcode.com からクローンされ、Python パッケージは pypi.org ではなく mirrors.aliyun.com と mirrors.cloud.tencent.com から取得されます。アプリの言語が中国語の場合、この切り替えは **Advanced** タブではなく **Preferences** タブの **App behavior** にあります。システムの言語が中国語の場合、セットアップ時に **Enable Chinese mirrors?** も尋ねられます。
-- **Use hardware acceleration**: デフォルトではオンです。GPU を使用して Comfy Desktop を描画します。変更を反映するには Comfy Desktop を再起動してください。
+1. **PyPI mirror URL**: Python パッケージインデックスです（例: `https://mirrors.aliyun.com/pypi/simple/`）。Comfy Desktop はこのインデックスから Python パッケージをインストールし、pypi.org を追加のインデックスとして使用します。デフォルトでは空です。
+2. **Use Chinese mirrors (Git & PyPI)**: デフォルトではオフです。オンにすると、Git リポジトリは github.com ではなく gitcode.com からクローンされ、Python パッケージは pypi.org ではなく mirrors.aliyun.com と mirrors.cloud.tencent.com から取得されます。アプリの言語が中国語の場合、この切り替えは **Advanced** タブではなく **Preferences** タブの **App behavior** にあります。システムの言語が中国語の場合、セットアップ時に **Enable Chinese mirrors?** も尋ねられます。
+3. **Use hardware acceleration**: デフォルトではオンです。GPU を使用して Comfy Desktop を描画します。変更を反映するには Comfy Desktop を再起動してください。
+4. **Cache**: Standalone ビルドをインストールするとき、Comfy Desktop が ComfyUI バンドルをダウンロードするフォルダーです。[ダウンロードキャッシュを保持する](#ダウンロードキャッシュを保持する)を参照してください。
 
 ### ダウンロードキャッシュを保持する
 
@@ -155,8 +160,9 @@ Comfy Desktop はこのフォルダーに最新のバンドルだけを保持し
 
 アプリログには、Comfyデスクトップが実行した内容が記録されます。これには、ビルドのインストール時または起動時の出力も含まれます。[Comfyデスクトップのイシュートラッカー](https://github.com/Comfy-Org/Comfy-Desktop/issues)で問題を報告する際は、このログを添付してください。
 
-![診断セクションと「ログフォルダーを開く」ボタンがあるログタブ](/images/desktop/usage/comfy_desktop_settings_05_logs.png)
+![ログタブ。番号は 1 診断、2 ログフォルダーを開く](/images/desktop/usage/comfy_desktop_settings_05_logs.png)
 
-- **ログ**タブの**診断**セクションで、**ログフォルダーを開く**をクリックします。
+1. **診断**: Comfyデスクトップの問題を報告するためのツールが入っているセクションです。
+2. **ログフォルダーを開く**: アプリログが入っているフォルダーを開きます。
 
 フォルダーには、現在のセッションの `app.log` が含まれています。起動のたびに、また `app.log` が 5 MB を超えると、Comfyデスクトップは古いファイルを `app.log_<timestamp>.log` に名前変更し、最大 50 個まで保持します。問題が発生したセッションのファイルを選択してください。

@@ -103,18 +103,24 @@ Cuando hay una actualización disponible, una entrada en la parte inferior de la
 
 Comfy Desktop se reinicia con la actualización. La actualización se completó cuando la pestaña **Updates** dice **Comfy Desktop is up to date** y **Installed** muestra la versión que descargaste.
 
-![Pestaña Updates que indica Comfy Desktop is up to date, con la versión instalada, el botón Check for updates y el interruptor Automatically install Desktop updates](/images/desktop/usage/comfy_desktop_settings_02_updates.png)
+![Pestaña Updates que indica Comfy Desktop is up to date e Installed v1.2.1, numerada: 1 la línea de estado y la versión instalada, 2 Check for updates, 3 Automatically install Desktop updates](/images/desktop/usage/comfy_desktop_settings_02_updates.png)
+
+1. **Comfy Desktop is up to date** e **Installed**: la línea de estado y la versión de la aplicación que ejecutas ahora. Cuando una comprobación encuentra una actualización, la línea dice **Update {version} available** en su lugar.
+2. **Check for updates**: ejecuta una comprobación de inmediato. Comfy Desktop también comprueba por su cuenta, 2 segundos después de iniciarse y luego cada 10 minutos.
+3. **Automatically install Desktop updates**: activado de forma predeterminada. Consulta [Dejar que las actualizaciones se instalen solas](#dejar-que-las-actualizaciones-se-instalen-solas).
 
 ## Elegir carpetas compartidas y la ubicación de instalación {#storage}
 
 Las carpetas compartidas permiten que cada instalación use los mismos modelos, entradas y salidas, así descargas un modelo una sola vez en lugar de una vez por cada instalación. La pestaña **Folders** establece estas carpetas y la carpeta donde Comfy Desktop sugiere colocar las instalaciones que creas.
 
-![Pestaña Folders: Default install location con su ruta, la lista de carpetas compartidas con las filas Models, Input y Output, la etiqueta Downloads, Use for downloads y Add models folder, y luego Remove Comfy Desktop data](/images/desktop/usage/comfy_desktop_settings_03_storage.png)
+![Pestaña Folders, numerada: 1 Default install location, 2 Shared folders, 3 una fila de carpeta con su ruta, 4 Use for downloads y la etiqueta Downloads, 5 Add models folder, 6 Remove Comfy Desktop data](/images/desktop/usage/comfy_desktop_settings_03_storage.png)
 
-En cada fila de carpeta, haz clic en la ruta para abrir la carpeta, o haz clic en el icono de carpeta para elegir otra carpeta.
-
-- **Default install location**: la carpeta principal que Comfy Desktop sugiere cuando creas una instalación. Cambiarla no mueve las instalaciones existentes.
-- **Carpetas compartidas**: una sola lista de carpetas **Models**, **Input** y **Output**. Cada instalación las usa de forma predeterminada. Para cambiar eso en una instalación concreta, consulta [Elegir qué carpetas usa la instalación](/es/installation/desktop/usage/build-folders#elegir-qué-carpetas-usa-la-compilación).
+1. **Default install location**: la carpeta principal que Comfy Desktop sugiere cuando creas una instalación. Cambiarla no mueve las instalaciones existentes.
+2. **Shared folders**: una sola lista de carpetas **Models**, **Input** y **Output**. Cada instalación las usa de forma predeterminada. Para cambiar eso en una instalación concreta, consulta [Elegir qué carpetas usa la instalación](/es/installation/desktop/usage/build-folders#elegir-qué-carpetas-usa-la-compilación).
+3. **Fila de carpeta**: haz clic en la ruta para abrir la carpeta, o en el icono de carpeta para elegir otra.
+4. **Use for downloads** y la etiqueta **Downloads**: la fila de modelos donde se guardan las descargas. Consulta [Dónde se guardan las descargas](/es/installation/desktop/usage/downloads#dónde-se-guardan-las-descargas).
+5. **Add models folder**: añade otra carpeta de modelos que todas las instalaciones usan de forma predeterminada.
+6. **Remove Comfy Desktop data**: en macOS y Linux, elimina los registros, las cachés y los archivos temporales de la aplicación antes de que la desinstales. Consulta [Desinstalar Comfy Desktop en macOS](/es/installation/desktop/overview#desinstalar-comfy-desktop) o [eliminar los datos restantes en Linux](/es/installation/desktop/overview#desinstalar-comfy-desktop).
 
 Para administrar las carpetas de modelos compartidas:
 
@@ -133,17 +139,16 @@ De forma predeterminada, las carpetas son:
   En Windows, si tu carpeta de usuario ya tenía `ComfyUI-Installs` o `ComfyUI-Shared`, Comfy Desktop sigue usando esas. Si instalaste Comfy Desktop en una unidad distinta de la unidad del sistema, las carpetas están en `<drive>:\Comfy-Desktop`.
 </Note>
 
-En macOS y Linux, la pestaña **Folders** también tiene **Remove Comfy Desktop data**, que elimina los registros, las cachés y los archivos temporales de la aplicación antes de que la desinstales. Consulta [Desinstalar Comfy Desktop en macOS](/es/installation/desktop/overview#desinstalar-comfy-desktop) o [eliminar los datos restantes en Linux](/es/installation/desktop/overview#desinstalar-comfy-desktop).
-
 ## Configurar espejos y aceleración por hardware {#advanced}
 
 Si las descargas desde pypi.org o github.com son lentas en tu región, configura Comfy Desktop para que use un espejo en la pestaña **Advanced**.
 
-![Pestaña Advanced: URL del espejo de PyPI, Use Chinese mirrors (Git & PyPI), Use hardware acceleration y la sección Cache con el directorio de caché](/images/desktop/usage/comfy_desktop_settings_04_advanced.png)
+![Pestaña Advanced, numerada: 1 PyPI mirror URL, 2 Use Chinese mirrors (Git & PyPI), 3 Use hardware acceleration, 4 Cache](/images/desktop/usage/comfy_desktop_settings_04_advanced.png)
 
-- **PyPI mirror URL**: un índice de paquetes de Python, como `https://mirrors.aliyun.com/pypi/simple/`. Comfy Desktop instala los paquetes de Python desde este índice y usa pypi.org como índice adicional. Está vacío de forma predeterminada.
-- **Use Chinese mirrors (Git & PyPI)**: desactivado de forma predeterminada. Cuando está activado, los repositorios Git se clonan desde gitcode.com en lugar de github.com, y los paquetes de Python provienen de mirrors.aliyun.com y mirrors.cloud.tencent.com en lugar de pypi.org. Cuando el idioma de la aplicación es chino, este interruptor aparece en su lugar en la pestaña **Preferences**, dentro de **App behavior**. Si el idioma de tu sistema es chino, la configuración inicial también pregunta **Enable Chinese mirrors?**.
-- **Use hardware acceleration**: activado de forma predeterminada. Usa la GPU para renderizar Comfy Desktop. Reinicia Comfy Desktop para que el cambio surta efecto.
+1. **PyPI mirror URL**: un índice de paquetes de Python, como `https://mirrors.aliyun.com/pypi/simple/`. Comfy Desktop instala los paquetes de Python desde este índice y usa pypi.org como índice adicional. Está vacío de forma predeterminada.
+2. **Use Chinese mirrors (Git & PyPI)**: desactivado de forma predeterminada. Cuando está activado, los repositorios Git se clonan desde gitcode.com en lugar de github.com, y los paquetes de Python provienen de mirrors.aliyun.com y mirrors.cloud.tencent.com en lugar de pypi.org. Cuando el idioma de la aplicación es chino, este interruptor aparece en su lugar en la pestaña **Preferences**, dentro de **App behavior**. Si el idioma de tu sistema es chino, la configuración inicial también pregunta **Enable Chinese mirrors?**.
+3. **Use hardware acceleration**: activado de forma predeterminada. Usa la GPU para renderizar Comfy Desktop. Reinicia Comfy Desktop para que el cambio surta efecto.
+4. **Cache**: la carpeta en la que Comfy Desktop descarga el paquete de ComfyUI al instalar un build Standalone. Consulta [Mantener la caché de descargas](#mantener-la-caché-de-descargas).
 
 ### Mantener la caché de descargas
 
@@ -155,8 +160,9 @@ Comfy Desktop conserva solo el paquete más reciente en esta carpeta. Cuando ter
 
 El registro de la aplicación recoge lo que hace Comfy Desktop, incluido el resultado que se genera al instalar o iniciar una compilación. Adjúntalo cuando reportes un problema en el [seguidor de problemas de Comfy Desktop](https://github.com/Comfy-Org/Comfy-Desktop/issues).
 
-![Pestaña Registros con la sección Diagnóstico y el botón Abrir carpeta de registros](/images/desktop/usage/comfy_desktop_settings_05_logs.png)
+![Pestaña Logs, numerada: 1 Diagnostics, 2 Open logs folder](/images/desktop/usage/comfy_desktop_settings_05_logs.png)
 
-- En la pestaña **Registros**, dentro de **Diagnóstico**, haz clic en **Abrir carpeta de registros**.
+1. **Diagnostics**: la sección que contiene las herramientas para reportar un problema de Comfy Desktop.
+2. **Open logs folder**: abre la carpeta que contiene el registro de la aplicación.
 
 La carpeta contiene `app.log` de la sesión actual. En cada inicio, y cuando `app.log` supera los 5 MB, Comfy Desktop renombra el archivo antiguo a `app.log_<timestamp>.log` y conserva hasta 50 de ellos. Elige el archivo de la sesión en la que ocurrió el problema.
